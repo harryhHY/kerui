@@ -1,0 +1,260 @@
+.rowlike {
+    margin: .2rem .57rem;
+    display: flex;
+}
+
+.rowlike view {
+    flex: 1;
+    text-align: center;
+    font-size: .16rem;
+    color: #FFF;
+    width: .91rem;
+    height: 1.22rem;
+    line-height: 1.22rem;
+}
+
+.collike {
+    margin: .2rem .68rem;
+    flex-direction: column;
+}
+
+.collike view {
+    height: 1.07rem;
+    width: 2.5rem;
+    line-height: 1.07rem;
+    flex: 1;
+    text-align: center;
+    font-size: .16rem;
+    color: #FFF;
+}
+
+.hover {
+    opacity: .2;
+}
+
+.wrap {
+    font-size: .16rem;
+}
+
+.scroll-view {
+    height: 1.66rem;
+    white-space: nowrap;
+    margin-bottom: 0.1rem;
+}
+
+.color-a,
+.color-b,
+.color-c {
+    line-height: 1.66rem;
+    text-align: center;
+    font-size: .16rem;
+    color: #fff;
+}
+
+.row-view {
+    display: inline-block !important;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    line-height: 1.66rem;
+    border-radius: 0 0 8px 8px;
+}
+
+.row-view image {
+    width: 100%;
+    height: 100%;
+}
+
+.page-section-btns {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 .23rem;
+}
+
+.page-section-btns>view {
+    flex: 1;
+    height: .28rem;
+    width: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #6895FF;
+    border: .007rem solid #38F;
+    border-radius: .05rem;
+    margin: .1rem .14rem;
+}
+
+.scrollToTop {
+    border-right: 1px solid #ddd;
+}
+
+.next {
+    border-left: 1px solid #ddd;
+}
+
+.main-container {
+    margin: .05rem .1rem 0 .1rem;
+}
+
+.main-title {
+    height: 21px;
+    border-left: 3px solid #5091C7;
+    padding-left: 0.05rem;
+    color: #5C8AF5;
+    font-weight: 700;
+    font-size: 0.2rem;
+}
+
+.main-title-top {
+    height: 21px;
+    /* border-left: 3px solid #5091C7; */
+    padding-left: 0.05rem;
+    color: #5C8AF5;
+    font-weight: 700;
+    font-size: 0.2rem;
+}
+
+.v-swiper {
+    height: 100%;
+}
+
+.news {
+    /* color: red; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #3388FF;
+    font-size: 0.12rem;
+    text-align: inherit;
+}
+
+.horn {
+    height: 100%;
+    width: 0.2rem;
+    float: left;
+    transform: rotate(20deg);
+}
+
+.gun {
+    width: 100%;
+    height: 100%;
+}
+
+.news-con {
+    float: left;
+    height: 100%;
+    line-height: 25px;
+    font-size: 0.13rem;
+    width: 90%;
+}
+
+.news-title {
+    float: left;
+    width: 29%;
+    height: 100%;
+    line-height: 21px;
+}
+
+.main-line {
+    width: 100%;
+    height: 1px;
+    background-color: #DBDBDB;
+    margin: 0 auto;
+    margin-top: 0.1rem;
+}
+
+.top-description {
+    display: block;
+    height: 2rem;
+    padding: 0;
+}
+
+.con-img {
+    width: 100%;
+    height: 100%;
+    margin-top: .15rem;
+    /* float: left; */
+}
+
+.con-img image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.05rem;
+    box-shadow: 0.02rem 0.02rem 0.02rem 0.01rem #dedede;
+}
+
+.con-title {
+    /* float: left; */
+    width: 100%;
+    height: 30%;
+}
+
+.title_one {
+    position: absolute;
+    top: .1rem;
+    left: .1rem;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 0.25rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-family: SimHei;
+    font-size: .14rem;
+}
+
+.title_two {
+    position: absolute;
+    bottom: .1rem;
+    right: .1rem;
+    color: #ffffff;
+    font-size: 0.15rem;
+}
+
+.small-default {
+    margin-right: 0.05rem;
+    width: 0.15rem;
+    height: 0.16rem;
+    float: left;
+}
+.imgtitle{
+    display: flex;
+    align-items: center;
+    height: 0.4rem;
+    color: #1296db;
+    margin-top: .15rem;
+    padding-left: 0.15rem;
+}
+.imgtitle image{
+    width: 0.32rem;
+    height: 0.32rem;
+}
+.textitle{
+    display: flex;
+    align-items: center;
+    height: 0.4rem;
+    color: #61649f;
+    margin-top: .15rem;
+    padding-left: 0.15rem;
+}
+.textitle image{
+    width: 0.32rem;
+    height: 0.32rem;
+}
+.cl:after{
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.cl{
+    zoom: 1;
+}
+.textcontent_view{
+    padding:0.1rem 0.15rem 0;
+    text-indent:0.15rem;
+}

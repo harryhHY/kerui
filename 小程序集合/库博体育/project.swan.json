@@ -1,0 +1,25 @@
+{
+    "appid": "19638700",
+    "compilation-args": {
+        "common": {
+            "enhance": true
+        }
+    },
+    "host": "baiduboxapp",
+    "preview": {
+        "packageId": 474626
+    },
+    "projectname": "imgmoban3",
+    "publish": {
+        "version": "1.0.6.0"
+    },
+    "setting": {
+        "urlCheck": false
+    },
+    "swan": {
+        "baiduboxapp": {
+            "extensionJsVersion": "1.10.4",
+            "swanJsVersion": "3.150.255-rc"
+        }
+    }
+}

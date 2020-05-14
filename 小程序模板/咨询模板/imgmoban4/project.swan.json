@@ -1,0 +1,42 @@
+{
+    "appid": "18442508",
+    "compilation-args": {
+        "common": {
+            "enhance": true
+        }
+    },
+    "editor": {
+        "curPath": "D:\\山猫体育直播\\jsconfig.json",
+        "expands": [],
+        "markdownUploadTimeMap": {},
+        "paths": [
+            "D:\\小程序模板\\moban1\\pages\\index\\index.json",
+            "D:\\山猫体育直播\\jsconfig.json"
+        ],
+        "recentlyFiles": [
+            "D:\\山猫体育直播\\jsconfig.json",
+            "D:\\小程序模板\\moban1\\pages\\index\\index.json",
+            "D:\\小程序模板\\moban1\\pages\\index\\index.js",
+            "D:\\小程序模板\\moban1\\pages\\index\\index.css",
+            "D:\\小程序模板\\moban1\\typings\\swan.d.ts",
+            "D:\\小程序模板\\moban1\\utils\\http.js"
+        ]
+    },
+    "host": "baiduboxapp",
+    "preview": {
+        "packageId": 283094
+    },
+    "projectname": "imgmoban4",
+    "publish": {
+        "version": "1.0.4.0"
+    },
+    "setting": {
+        "urlCheck": false
+    },
+    "swan": {
+        "baiduboxapp": {
+            "swanJsVersion": "3.120.9",
+            "extensionJsVersion": "1.7.3"
+        }
+    }
+}

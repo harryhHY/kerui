@@ -1,0 +1,25 @@
+{
+    "appid": "19084895",
+    "compilation-args": {
+        "common": {
+            "enhance": true
+        }
+    },
+    "host": "baiduboxapp",
+    "preview": {
+        "packageId": 423301
+    },
+    "projectname": "奶茶视频",
+    "publish": {
+        "version": "1.0.3.0"
+    },
+    "setting": {
+        "urlCheck": false
+    },
+    "swan": {
+        "baiduboxapp": {
+            "extensionJsVersion": "1.11.5",
+            "swanJsVersion": "3.160.8"
+        }
+    }
+}

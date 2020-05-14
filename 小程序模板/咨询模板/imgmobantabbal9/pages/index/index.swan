@@ -1,0 +1,62 @@
+<!-- index.swan -->
+<view class="container">
+<!-- 轮播图 -->
+    <view class="card-area">
+        <view class='cl headerlogo_view'>
+            <image src="../../images/logo.png" class='headerlogo left'></image>
+            <image src="../../images/logo1.png" class='headerlogo1 left'></image>
+        </view>
+        <view class='balls_view' s-if='showHttploading'>
+            <view class="balls">
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+        </view>
+        <view>
+            <swiper 
+             indicator-dots="{{indicator_dots}}"
+             indicator-color="{{indicator_color}}"
+             indicator-active-color="{{indicator_active_color}}"
+             autoplay="{{Bannerautoplay}}"
+             interval="{{autoPlayInterval}}"
+             duration="{{switchDuration}}"
+            >
+             <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>
+                </swiper-item>
+            </block>
+            </swiper >
+        </view>
+        <view class="content_view cl">
+            <view s-for="item,index in items" bind:tap="navigateTo" data-id="{{item.id}}" class="content_fff span_view">
+                <view class="content">
+                    <image src="{{apimg}}{{item.news_img}}" class='contentimage'></image>
+                    <view class='news_time_view'>
+                        <image src="../../images/logo1.png" class='headerlogo1'></image>
+                        {{item.news_time}}
+                    </view>
+                    <view class='span_view ov news_title'>
+                        {{item.news_title}}
+                    </view>
+                </view>
+                    <!-- <view class="left content_image">
+                        <image src="{{apimg}}{{item.news_img}}"></image>
+                    </view>
+                    <view class="left content_news_title">
+                        {{item.news_title}}                        
+                        <view class="cl disflex">
+                            <view class="left news_time">{{item.news_time}}</view>
+                            <view class='left news_goods disflex'>
+                               <image src="../../images/good.png" class='goodimg'></image> {{item.news_goods}}
+                            </view>
+                            <view class='right tuijian'>
+                                推荐
+                            </view>
+                        </view>
+                    </view> -->
+
+            </view>
+        </view>
+</view>

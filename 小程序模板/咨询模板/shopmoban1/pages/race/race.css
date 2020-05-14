@@ -1,0 +1,46 @@
+#race{
+  font-size: 0.16rem;
+}
+.content_today_view{
+  position: relative;
+  margin: 0 0.1rem;
+  padding: 0 .1rem;
+  background-color: #fff;
+}
+.content_image{
+  width: 0.52rem;
+  height: 0.52rem;
+}
+.text_name{
+  text-align: center;
+  font-size: 0.12rem;
+}
+.team_view{
+  width: 35%;
+  display: inline-block;
+text-align: center;
+}
+.score_view{
+  font-size: 0.25rem;
+  font-weight: 700;
+  color: #000000;
+}
+.race_message{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.01rem solid #dedede;
+  border-radius: 0.05rem;
+}
+.hover{
+  background-color: #87CEFA;
+  color: #fff;
+  border-color: #fff;
+}

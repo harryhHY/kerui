@@ -1,0 +1,106 @@
+<view id="race" bind:touchmove="handleTap1">
+
+    <view class="loading_title centerimg" s-if="showlodingtitle">
+        <image src="../../images/logo.png"></image>
+        下拉即可刷新
+    </view>
+    <view class='balls_view' s-if='showHttploading'>
+        <view class="balls">
+            <view></view>
+            <view></view>
+            <view></view>
+        </view>
+    </view>
+    <view class="swiper_view">
+        <swiper 
+            indicator-dots="{{indicator_dots}}"
+            indicator-color="{{indicator_color}}"
+            indicator-active-color="{{indicator_active_color}}"
+            autoplay="{{Bannerautoplay}}"
+            interval="{{autoPlayInterval}}"
+            duration="{{switchDuration}}"
+        >
+            <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>
+                </swiper-item>
+            </block>
+        </swiper >
+    </view>
+     <tabs 
+        class="race_tab"
+        active-name="{{activeName}}" 
+        bindtabchange="tabsOne"
+        tabs-underline-color="#ffffff"
+        >
+        <tab-item s-for="tab in tabs" name="{{tab.name}}" label="{{tab.label}}" />
+    </tabs>
+    <view class="centerimg">
+        <button s-for="item,index in buttonList" type="{{item.default}}" size="mini" hover-class="hover" hover-stop-propagation='true' bind:tap="changeday" data-daytype= "{{item.value}}" >
+            {{item.text}}
+        </button>
+    </view>
+    <view class="intro">
+        <view class="content_today_view cl" s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
+            <view class='content_body'>
+                <view class='content_top'>
+                    <text class='lname span_view ov'>
+                        {{item.lname}}
+                    </text>
+                    <text class='gameTimeFormat span_view ov'>
+                        {{item.gameTimeFormat}}
+                    </text>
+                    <text class='gameStage span_view ov' s-if="{{item.gameStage != null}}">
+                        {{item.gameStage}}
+                    </text>
+                    <text class='gameStage span_view ov' s-if="{{item.gameStage == null}}">
+                        未
+                    </text>
+                </view>
+                <view class='content_body2 cl'>
+                    <view class='content_left left cl'>
+                        <view class='right hname'>
+                            {{item.hname}}
+                        </view>
+                        <view class='hRedCard right'>
+                            {{item.hRedCard}}
+                        </view>
+                        <view class='hYellowCard right'>
+                            {{item.hYellowCard}}
+                        </view>
+                    </view>
+                    <view class='left hTotalScore' s-if='{{item.aTotalScore!=null}}'>
+                        {{item.hTotalScore}}-{{item.aTotalScore}}
+                    </view>
+                    <view class='left aTotalScore' s-if='{{item.aTotalScore==null}}'>
+                        VS
+                    </view>
+                    <view class='content_right left'>
+                        <view class='aname left'>
+                            {{item.aname}}
+                        </view>
+                        <view class='aRedCard left'>
+                            {{item.aRedCard}}
+                        </view>
+                        <view class='aYellowCard left'>
+                            {{item.aYellowCard}}
+                        </view>
+                    </view>
+                </view>
+                <view class='content_bottom' s-if='{{item.hCornerKick!=null}}'>
+                    角:{{item.hCornerKick}}-{{item.aCornerKick}}
+                </view>
+            </view>
+            <view class='content_right cl'>
+                <view class='cl'>
+                     <view class='playtype right' s-if="{{item.room != '视频直播' && item.aTotalScore != null  && is_video }}">
+                        正在直播
+                    </view>
+                    <view s-if="{{item.room == '视频直播' && item.aTotalScore != null  && is_video }}" class="playtype1 right">
+                        查看比分
+                </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,119 @@
+.rowlike {
+    margin: .2rem .57rem;
+    display: flex;
+}
+
+.rowlike view {
+    flex: 1;
+    text-align: center;
+    font-size: .16rem;
+    color: #FFF;
+    width: .91rem;
+    height: 1.22rem;
+    line-height: 1.22rem;
+}
+
+.collike {
+    margin: .1rem .1rem;
+    flex-direction: column;
+}
+
+.collike view {
+    /* width: 100%; */
+    line-height: 1.07rem;
+    flex: 1;
+    text-align: center;
+    font-size: .16rem;
+    color: #FFF;
+}
+
+.hover {
+    opacity: .2;
+}
+
+.detail-title {
+    /* height: 0.5rem; */
+    /* line-height: 0.5rem; */
+    padding: 0;
+}
+
+.title-h {
+    margin: 0 auto;
+    margin: .3rem 0.1rem;
+    color: #000000;
+    font-weight: 600;
+    font-size: 0.2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: left;
+}
+
+.collike .pic {
+    width: 100%;
+    height: 190px;
+}
+
+.collike .pic image {
+    width: 100%;
+    height: 190px;
+    /* height: 100%; */
+}
+
+.collike .article {
+    color: #333;
+    line-height: 0.5rem;
+    text-indent: 0.2rem;
+}
+
+.border-bottom:after {
+    height: 0;
+}
+
+.logo-con {
+    width: 100%;
+    height: 0.3rem;
+}
+.logo_view{
+    margin: 0.2rem 0 0 0.1rem;
+}
+.logo-img {
+    height: 0.3rem;
+    width: 0.3rem;
+    float: left;
+}
+
+.logo-box {
+    height: 0.3rem;
+    width: 0.5rem;
+    float: left;
+    border: none;
+}
+
+.logo-img-two {
+    height: 0.15rem;
+    width: 100%;
+}
+
+.logo-time {
+    height: 0.15rem;
+    width: 120%;
+    font-size: 0.1rem;
+    color: #CACACA;
+}
+
+#text img {
+    width: 100% !important;
+}
+
+/* template */
+
+#myVideo {
+    width: 100%;
+}
+
+#myVideo .wrap {
+    padding-bottom: 0;
+}

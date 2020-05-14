@@ -1,0 +1,106 @@
+<!-- index.swan -->
+<view class="container">
+<!-- 轮播图 -->
+    <view class="card-area">
+        <!-- <view class="logodiv">
+            <image s-for="item,index in logoList" src="{{item.imgsrc}}" class="logoimages {{item.classname}}"></image>
+        </view> -->
+        <view class="main-title-top cl">
+            <!-- <view class="news-title">新闻资讯</view> -->
+            <!-- <image src="{{horn}}" class="horn"></image> -->
+            
+            <view class="scroll_title left">焦点：</view>
+            <view class="news-con">
+                <view class="swiper-wrap v-swiper cl">
+                    <swiper 
+                        indicator-color="rgba(0,0,0,0.30)"
+                        indicator-active-color="#fff"
+                        duration="{{switchDuration}}"
+                        interval="{{autoPlayInterval}}"
+                        autoplay="{{switchAutoPlayStatus}}"
+                        vertical="true"
+                        circular="true"
+                        current="0"
+                        previous-margin="0px"
+                        next-margin="0px"
+                        display-multiple-items="1"
+                        class="gun right"
+                    >
+                        <block s-for="item,index in itemNews">
+                            <swiper-item>
+                                <view class="news">{{item}}</view>
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                </view>
+            </view>
+        </view>
+        <view>
+            <swiper 
+             indicator-dots="{{indicator_dots}}"
+             indicator-color="{{indicator_color}}"
+             indicator-active-color="{{indicator_active_color}}"
+             autoplay="{{Bannerautoplay}}"
+             interval="{{autoPlayInterval}}"
+             duration="{{switchDuration}}"
+            >
+             <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}"  bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>                           
+                </swiper-item>
+            </block>
+            </swiper >
+        </view>
+        <!-- <view class="bannertext">
+            精彩，由我创造
+        </view> -->
+
+        <view class="swiper-wrap">
+            <!-- <swiper
+                class="scroll-view"
+                autoplay = "{{switchAutoPlayStatus}}"
+                duration="{{switchDuration}}"
+                interval="{{autoPlayInterval}}"
+            >
+                <view id="four" class="color-a row-view"><image src="{{banner_one}}"></image></view>
+                <view id="five" class="color-b row-view"><image src="{{banner_two}}"></image></view>
+                <view id="six" class="color-c row-view"><image src="{{banner_three}}"></image></view>
+            </swiper> -->
+        </view>
+    <view class="main-container">
+        <view class="main-line"></view>
+        <view class="top-description box border-bottom" s-for="item in items"  bind:tap="navigateTo" data-id="{{item.id}}" hover-stop-propagation="true">
+            <view class="immediate">
+                即时咨询：
+            </view>
+            <view class="data_title">
+                {{item.news_title}}
+            </view>
+            <view class="centerimg">
+                <image src="{{apimg}}{{item.news_img}}" class="data_image"></image>
+            </view>
+            <view class="titlelogo cl">
+                <span >imgmobantabBal4</span>
+                <view class="right centerimg more_view">
+                    <span>999+</span>
+                    <image src="../../images/comment.png" class="right titlelogo_image" style="margin-right:0.05rem"></image>
+                    <image src="../../images/fenxiang.png" class="right titlelogo_image" style="margin-right:0.05rem"></image>
+                    <image src="../../images/collect.png" class="right titlelogo_image"></image>
+                </view>
+            </view>
+            <!-- <view class="">即时咨询：</view>
+            <view class="con-title" bindtap="tapHandle">
+                <view class="title_one">{{item.news_title}}</view>
+            </view>
+            <view  class="con-img">
+                <image class='content_image' src="{{apimg}}{{item.news_img}}"></image>
+            </view> -->
+        </view>
+    </view>
+</view>
+    
+    <!-- <img src="../../images/smartapp.png"> -->
+    <!-- <button type="primary" class="btn">
+	    <navigator class="nav" url="/pages/newpage/new?id=新页面" hover-class="navigator-hover">跳转到新页面</navigator>
+    </button> -->
+</view>

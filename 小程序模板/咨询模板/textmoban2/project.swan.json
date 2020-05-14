@@ -1,0 +1,43 @@
+{
+    "appid": "18332201",
+    "compilation-args": {
+        "common": {
+            "enhance": true
+        }
+    },
+    "editor": {
+        "curPath": "D:\\小程序模板\\moban1\\pages\\index\\index.json",
+        "expands": [
+            "D:\\小程序模板\\moban1\\typings",
+            "D:\\小程序模板\\moban1\\pages",
+            "D:\\小程序模板\\moban1\\pages\\index"
+        ],
+        "markdownUploadTimeMap": {},
+        "paths": [
+            "D:\\小程序模板\\moban1\\pages\\index\\index.json"
+        ],
+        "recentlyFiles": [
+            "D:\\小程序模板\\moban1\\pages\\index\\index.json",
+            "D:\\小程序模板\\moban1\\pages\\index\\index.js",
+            "D:\\小程序模板\\moban1\\pages\\index\\index.css",
+            "D:\\小程序模板\\moban1\\typings\\swan.d.ts",
+            "D:\\小程序模板\\moban1\\utils\\http.js"
+        ]
+    },
+    "host": "baiduboxapp",
+    "preview": {
+        "packageId": 283094
+    },
+    "publish": {
+        "version": "1.0.2.0"
+    },
+    "setting": {
+        "urlCheck": false
+    },
+    "swan": {
+        "baiduboxapp": {
+            "swanJsVersion": "3.120.9",
+            "extensionJsVersion": "1.7.3"
+        }
+    }
+}

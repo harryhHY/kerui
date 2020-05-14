@@ -1,0 +1,51 @@
+<!-- index.swan -->
+<view class="container">
+<!-- 轮播图 -->
+    <view class="card-area">
+        <view class="logodiv">
+            <image s-for="item,index in logoList" src="{{item.imgsrc}}" class="logoimages {{item.classname}}"></image>
+        </view>
+        <view class='balls_view' s-if='showHttploading'>
+            <view class="balls">
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+        </view>
+        <view>
+            <swiper 
+             indicator-dots="{{indicator_dots}}"
+             indicator-color="{{indicator_color}}"
+             indicator-active-color="{{indicator_active_color}}"
+             autoplay="{{Bannerautoplay}}"
+             interval="{{autoPlayInterval}}"
+             duration="{{switchDuration}}"
+            >
+             <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}"  bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>                           
+                </swiper-item>
+            </block>
+            </swiper >
+        </view>
+        <view  class="content_div cl">
+            <view class='content' s-for="item,index in items" bind:tap="navigateTo" data-id="{{item.id}}">
+                <view class='content_pipi'>
+                    <view class='left image_view'>
+                        <image src="{{apimg}}{{item.news_img}}"></image>
+                    </view>
+                    <view class='right news_title'>
+                        {{item.news_title}}
+                        <view class='news_goods_view cl'>
+                            <text class='pagename left'>蜜桃视频</text>
+                            <text class='red right'>❤:{{item.news_goods}}</text>
+                        </view>
+                    </view>
+                    <view class='news_time'>
+                        {{item.news_time}}
+                    </view>
+                    
+                </view>
+            </view>       
+        </view>
+</view>

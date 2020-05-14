@@ -1,0 +1,50 @@
+<template id="race">
+     <tabs 
+        class="race_tab"
+        active-name="{{activeName}}" 
+        bindtabchange="tabsOne"
+        tabs-underline-color="#ffffff"
+        >
+        <tab-item s-for="tab in tabs" name="{{tab.name}}" label="{{tab.label}}" />
+    </tabs>
+    <view class="centerimg">
+        <button s-for="item,index in buttonList" type="{{item.default}}" size="mini" hover-class="hover" hover-stop-propagation='true' bind:tap="changeday" data-daytype= "{{item.value}}" >
+            {{item.text}}
+        </button>
+    </view>
+    <view class="intro">       
+        <view class="content_today_view" s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
+            <view class="time_view">
+                {{item.gameTimeFormat}}
+                <view class="gamename">{{item.lname}}</view>
+            </view>
+            <view class="content_race cl">
+                <view class="left race_team">
+                    <view class="centerimg1">
+                        <image src="{{item.hicon}}" class="race_icon"></image>
+                        {{item.hname}}
+                    </view>
+                    <view class="centerimg1 ">
+                        <image src="{{item.aicon}}" class="race_icon"></image>
+                        {{item.aname}}
+                    </view>
+                </view>
+                <view class="left score_view" s-if="{{item.aTotalScore != null}}">
+                    <view class="race_totalscore">{{item.hTotalScore}}</view>
+                    <view class="race_totalscore">{{item.aTotalScore}}</view>
+                </view>
+                <view s-if="{{item.aTotalScore == null}}" class="left score_view clred">
+                    :
+                </view>
+                <view class="centerimg race_gameStage">
+                    <view>
+                        {{item.gameStage}}
+                    </view>
+                    <view s-if="{{item.room == '视频直播' && item.aTotalScore != null}}" class="chakanbifen">
+                        查看比分
+                    </view>
+                </view>
+            </view>            
+        </view>
+    </view>
+</template>

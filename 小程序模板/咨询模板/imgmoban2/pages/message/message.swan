@@ -1,0 +1,25 @@
+<view id="message">
+    <view class="wrap">    
+        <view class="list-area border-bottom nickname">
+            <view class="list-item-key-4">昵称：</view>
+            <view class="list-item-value">
+                <input bindfocus="bindKeyfocus" selection-start="3" placeholder="请输入您的昵称" selection-end="7" focus={{true}} confirm-hold="false" confirm-type="send" bindinput="nickname" value="{=nicknamevalue=}" />
+            </view>
+        </view>
+    </view>
+    <view class="wrap">
+        <view class="card-area">
+            <view class="top-description border-bottom message_view1">手机号码：</view>
+            <input class="ipt message_view1" placeholder="请在此输入您的手机号码" bindinput="email" value="{=email=}"/>
+        </view>
+    </view>
+    <view class="wrap" bindfocus="searchFocus">
+        <view class="description">请输入咨询内容：</view>
+        <textarea  bindinput="bindInput" value="{=bindInput=}" class="message_content"/>
+    </view>
+    <view class="jButton">
+        <button type="primary" size="default" bind:tap="submit"  data-icon="none">
+            提交咨询
+        </button>
+    </view>
+</view>

@@ -1,0 +1,15 @@
+<template id="commodity" class="cl">
+    <view class="commodity_left left">
+        商品中心
+    </view>
+    <view class="commodity_right left cl">
+        <view class="left content_view" s-for="item,index in contentList" >
+            <view class="image_view">
+                <image src="{{item.imgsrc}}"></image>
+            </view>
+            <view class="commodity_detil ov">
+                {{item.name}}
+            </view>
+        </view>
+    </view>
+</template>

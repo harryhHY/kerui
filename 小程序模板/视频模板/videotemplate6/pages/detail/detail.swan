@@ -1,0 +1,26 @@
+<view class='wrap'>
+    <view class="card-area">
+        <image src="{{logo}}" class="logo-img"></image>
+        <view class="logo-con">
+            <view class="logo-box">
+                <image src="{{logo1}}" class="logo-img-two"></image>
+                <view class="logo-time">{{timer}}</view>
+            </view>
+        </view>
+        <view class="wrap">
+            <video style="width: 100%;" id="myVideo"  src="{{video_Src}}" autoplay="true"></video>
+        </view>
+        <view class="top-description detail-title border-bottom">
+            <view class="title-h">{{title}}</view>
+        </view>
+
+        <view class="collike">
+            <!-- <view class="pic">
+                <image src="{{apimg}}{{detailImg}}" />
+            </view> -->
+            <!-- <view class="article">
+                <rich-text id="text" nodes="{{htmlSnip}}" selectable="true"></rich-text>
+            </view> -->
+        </view>
+    </view>
+</view>

@@ -1,0 +1,91 @@
+<template id="race">
+     <tabs 
+        class="race_tab"
+        active-name="{{activeName}}" 
+        bindtabchange="tabsOne">
+        <tab-item s-for="tab in tabs" name="{{tab.name}}" label="{{tab.label}}" />
+    </tabs>
+    <view class="intro">
+        <view class="centerimg date_view">
+            <image src="../../images/ri.png" class="iconimg"></image>
+            <span class="date_span">{{today}}</span>
+            <span class="date_span">今天</span>            
+        </view>
+        <view class="content_today_view" s-for="item,index in todayList">
+            <view class="time_view">{{item.gameTimeFormat}}</view>
+            <view class="content_race cl">
+                <view class="left race_team">
+                    <view class="centerimg1 ">
+                        <image src="{{item.aicon}}" class="race_icon"></image>
+                        {{item.aname}}
+                    </view>
+                    <view class="centerimg1">
+                        <image src="{{item.hicon}}" class="race_icon"></image>
+                        {{item.hname}}
+                    </view>
+                </view>
+                <view class="left score_view">
+                    <view class="race_totalscore">{{item.aTotalScore}}</view>
+                    <view class="race_totalscore">{{item.hTotalScore}}</view>
+                </view>
+                <view class="centerimg race_gameStage">
+                    {{item.gameStage}}
+                </view>
+            </view>            
+        </view>
+        <view class="centerimg date_view">
+            <image src="../../images/ri.png" class="iconimg"></image>
+            <span class="date_span">{{tomorrow}}</span>
+            <span class="date_span">明天</span>            
+        </view>
+        <view class="content_today_view" s-for="item,index in tomorrowList">
+            <view class="time_view">{{item.gameTimeFormat}}</view>
+            <view class="content_race cl">
+                <view class="left race_team">
+                    <view class="centerimg1 ">
+                        <image src="{{item.aicon}}" class="race_icon"></image>
+                        {{item.aname}}
+                    </view>
+                    <view class="centerimg1">
+                        <image src="{{item.hicon}}" class="race_icon"></image>
+                        {{item.hname}}
+                    </view>
+                </view>
+                <view class="left score_view">
+                    <view class="race_totalscore">{{item.aTotalScore}}</view>
+                    <view class="race_totalscore">{{item.hTotalScore}}</view>
+                </view>
+                <view class="centerimg race_gameStage">
+                    {{item.gameStage}}
+                </view>
+            </view>            
+        </view>
+        <view class="centerimg date_view">
+            <image src="../../images/ri.png" class="iconimg"></image>
+            <span class="date_span">{{acquired}}</span>
+            <span class="date_span">后天</span>            
+        </view>
+        <view class="content_today_view" s-for="item,index in acquiredList">
+            <view class="time_view">{{item.gameTimeFormat}}</view>
+            <view class="content_race cl">
+                <view class="left race_team">
+                    <view class="centerimg1 ">
+                        <image src="{{item.aicon}}" class="race_icon"></image>
+                        {{item.aname}}
+                    </view>
+                    <view class="centerimg1">
+                        <image src="{{item.hicon}}" class="race_icon"></image>
+                        {{item.hname}}
+                    </view>
+                </view>
+                <view class="left score_view">
+                    <view class="race_totalscore">{{item.aTotalScore}}</view>
+                    <view class="race_totalscore">{{item.hTotalScore}}</view>
+                </view>
+                <view class="centerimg race_gameStage">
+                    {{item.gameStage}}
+                </view>
+            </view>            
+        </view>
+    </view>
+</template>

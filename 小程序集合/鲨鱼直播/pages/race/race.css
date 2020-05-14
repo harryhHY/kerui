@@ -1,0 +1,171 @@
+.showHttploading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+}
+
+.playtype {
+  color: #87CEFA;
+  background-color: #ffffff;
+  border: 0.01rem #87CEFA solid;
+  display: inline-block;
+  padding: 0.05rem;
+  border-radius: 0.05rem;
+  margin-right: 0.1rem;
+}
+
+.playtype1 {
+  color: #676767;
+  background-color: #ffffff;
+  border: 0.01rem #676767 solid;
+  display: inline-block;
+  padding: 0.05rem;
+  border-radius: 0.05rem;
+  margin-right: 0.1rem;
+}
+
+.balls {
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  width: 3.5em;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.balls view {
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background-color: #fc2f70;
+  transform: translateY(-100%);
+  animation: wave 0.8s ease-in-out alternate infinite;
+}
+
+.balls view:nth-of-type(1) {
+  animation-delay: -0.4s;
+}
+
+.balls view:nth-of-type(2) {
+  animation-delay: -0.2s;
+}
+
+@keyframes wave {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.balls_view {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+#race {
+  font-size: 0.16rem;
+}
+
+.content_today_view {
+  display: flex;
+  background-color: #fff;
+  border-bottom: 5px solid #f7f7f7;
+}
+
+
+.hover {
+  background-color: #87CEFA;
+  color: #fff;
+  border-color: #fff;
+}
+
+.bannerImg>image {
+  width: 100%;
+  height: 100%;
+}
+
+.loading_title {
+  width: 100%;
+  color: #666666;
+  height: 0.38rem;
+  line-height: 0.38rem;
+  font-size: 0.16rem;
+  text-align: center;
+  z-index: 100;
+}
+
+.loading_title>image {
+  width: 0.20rem;
+  height: 0.20rem;
+}
+
+
+.span_view {
+  display: inline-block;
+}
+
+
+
+.gameTimeFormat {
+  color: #000000;
+  font-weight: 600;
+  font-size: 0.2rem;
+  width: 100%;
+  height: 0.37rem;
+}
+
+.lname {
+  color: #666666;
+  height: 0.37rem;
+  font-size: 0.15rem;
+}
+
+.content_left {
+  text-align: center;
+  width: 1rem;
+  height: 0.74rem;
+  border-right: 0.01rem solid #dedede;
+}
+.content_right{
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.gameStage{
+  text-align: center;
+  font-size: 0.15rem;
+  color: #000000;
+}
+.content_today_view:nth-child(2n-1)  .team .name{
+  color: #ffa200;
+}
+.content_today_view:nth-child(2n) .team .name{
+  color: #0058ff;
+}
+.team{
+  display: block;
+}
+.hname{
+  width: 1.46rem;
+  text-align: center;
+}
+.aname{
+  text-align: center;
+  width: 1.4rem;
+}
+.vs{
+  color: #999999;
+  margin: 0 .02rem;
+}
+.TotalScore{
+  color: #dedede;
+  font-size: 0.14rem;
+}

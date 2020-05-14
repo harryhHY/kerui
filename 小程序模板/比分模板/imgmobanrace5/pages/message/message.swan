@@ -1,0 +1,21 @@
+<custom chinaName="输入框" engName="input"></custom>
+<view class="wrap">
+    <form bindsubmit="formSubmit" bindreset="formReset" data-title="success" data-icon="success">
+        <view class="card-area">    
+            <view class="top-description border-bottom">昵称:</view>
+            <input name="nickname" class="ipt" placeholder="请在此输入您的昵称"/>
+        </view>
+        <view class="card-area">    
+            <view class="top-description border-bottom">联系电话:</view>
+            <input name="tel" type="number" value='{=form_info=}' class="ipt" placeholder="请在此输入您的联系方式"/>
+        </view>
+        <view class="card-area">
+            <view class="top-description border-bottom">问题描述:</view>
+            <textarea name="content" focus="flag"  placeholder="请在此输入留言信息"/>
+        </view>
+        <view class="card-area">
+            <button formType="submit" type="primary" bindtap="submit">提交</button>
+            <button formType="reset">清空</button>
+        </view>
+    </form>
+</view>

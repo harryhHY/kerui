@@ -1,0 +1,49 @@
+<template id="race">
+     <tabs 
+        class="race_tab"
+        active-name="{{activeName}}" 
+        bindtabchange="tabsOne">
+        <tab-item s-for="tab in tabs" name="{{tab.name}}" label="{{tab.label}}" />
+    </tabs>
+    <view class="centerimg">
+        <button type="default" size="mini" hover-class="hover" hover-stop-propagation='true' bind:tap="changeday" data-daytype= 0 >
+            今天
+        </button>
+        <button type="default" size="mini" hover-class="hover" hover-stop-propagation='true' bind:tap="changeday" data-daytype= 1 >
+            明天
+        </button>
+        <button type="default" size="mini" hover-class="hover" hover-stop-propagation='true' bind:tap="changeday" data-daytype= 3 >
+            后天
+        </button>
+    </view>
+    <view class="intro">       
+        <view class="content_today_view cl" s-for="item,index in todayList">
+            <view class="team_view left">
+                <view>
+                    <image src="{{item.aicon}}"  class="content_image"></image>
+                </view>
+                <view class="text_name">
+                    {{item.aname}}
+                </view>
+            </view>
+            <view class="left race_message">
+                <view class="score_view" style="margin: 0 0.05rem">
+                    {{item.aTotalScore}}
+                </view>
+                <view class="text_name">
+                    <view>{{item.gameStage}}</view>
+                    <view>{{item.gameTimeFormat}}</view>
+                </view>
+                <view class="score_view" style="margin: 0 0.05rem">
+                    {{item.hTotalScore}}
+                </view>
+            </view>
+            <view class="team_view right">
+                <image src="{{item.hicon}}" class="content_image"></image>
+                <view class="text_name">
+                    {{item.hname}}
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

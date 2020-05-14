@@ -1,0 +1,53 @@
+<!-- index.swan -->
+<view class="container">
+<!-- 轮播图 -->
+    <view class="card-area cl">
+        <view class="logodiv">
+            <image s-for="item,index in logoList" src="{{item.imgsrc}}" class="logoimages {{item.classname}}"></image>
+        </view>
+        <view class='balls_view' s-if='showHttploading'>
+            <view class="balls">
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+        </view>
+        <view>
+            <swiper 
+             indicator-dots="{{indicator_dots}}"
+             indicator-color="{{indicator_color}}"
+             indicator-active-color="{{indicator_active_color}}"
+             autoplay="{{Bannerautoplay}}"
+             interval="{{autoPlayInterval}}"
+             duration="{{switchDuration}}"
+            >
+             <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}"  bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>                           
+                </swiper-item>
+            </block>
+            </swiper >
+        </view>
+        <view  class="content_div cl">
+            <view class='content left' s-for="item,index in items" >
+                <view class='a11' bind:tap="navigateTo" data-id="{{item.id}}">
+                    <image src="{{apimg}}{{item.news_img}}" class='content_image'></image>
+                    <image src="../../images/Player.png" class='playimg'></image>
+                </view>
+                <view class='right news_title w185'>
+                    {{item.news_title}}
+                </view>
+                <view class='w185 colo cl' bind:tap='clickgreat'>
+                    <text class='left'>{{item.news_time}}</text>
+                    <view class='right cl centerimg'>
+                        <text class='red left'>
+                            ❤:
+                        </text>                       
+                        <text class='ggcolo right'>
+                            {{item.news_goods}}
+                        </text>
+                    </view>
+                </view>
+            </view>       
+        </view>
+</view>

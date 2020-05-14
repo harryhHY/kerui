@@ -1,0 +1,25 @@
+{
+    "appid": "19725250",
+    "compilation-args": {
+        "common": {
+            "enhance": true
+        }
+    },
+    "host": "baiduboxapp",
+    "preview": {
+        "packageId": 410869
+    },
+    "projectname": "videotemplate9",
+    "publish": {
+        "version": "1.0.12.0"
+    },
+    "setting": {
+        "urlCheck": false
+    },
+    "swan": {
+        "baiduboxapp": {
+            "extensionJsVersion": "1.11.5",
+            "swanJsVersion": "3.160.8"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<view id="webview">
+    <view class="center">
+        <view class="balls">
+            <view></view>
+            <view></view>
+            <view></view>
+        </view>
+    </view>
+    <view class="loading">
+        加载中...
+    </view>
+    <web-view src="{{currentId}}"></web-view>
+</view>

@@ -1,0 +1,83 @@
+<view id="race" bind:touchmove="handleTap1">
+    <view class="loading_title centerimg" s-if="showlodingtitle">
+        <!-- <image src="../../images/logo.png"></image> -->
+        下拉即可刷新
+    </view>
+    <view class="swiper_view">
+        <swiper 
+            indicator-dots="{{indicator_dots}}"
+            indicator-color="{{indicator_color}}"
+            indicator-active-color="{{indicator_active_color}}"
+            autoplay="{{Bannerautoplay}}"
+            interval="{{autoPlayInterval}}"
+            duration="{{switchDuration}}"
+        >
+            <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>
+                </swiper-item>
+            </block>
+        </swiper >
+    </view>
+     <tabs 
+        class="race_tab"
+        active-name="{{activeName}}" 
+        bindtabchange="tabsOne"
+        tabs-background-color="#25282a"
+        tabs-active-text-color="#ffffff"
+        tabs-inactive-text-color="#767879"
+        tabs-underline-color="#0077c8"
+        >
+        <tab-item s-for="tab in tabs" name="{{tab.name}}" label="{{tab.label}}"  style="color: #fff;" />
+    </tabs>
+    <view class="centerimg bgcl">
+        <tabs 
+            class="border-bottom"
+            active-name="{{activeName1}}"
+            bindtabchange="tabstwo"
+            tabs-background-color="#25282a"
+            tabs-active-text-color="#ffffff"
+            tabs-inactive-text-color="#767879"
+            tabs-underline-color="#0077c8"
+            >
+            
+            <tab-item s-for="item in dateList" name="{{item.name}}" label="{{item.title}}" bind:tap="changeday" data-daytype= "{{item.daytype}}"/>
+        </tabs>
+    </view>
+    <view class="intro">       
+        <view class="content_today_view cl" s-for="item,index in todayList"  bind:tap="gotovideo" data-item = "{{item}}">
+            <view class="team_view left">
+                <view>
+                    <image src="{{item.aicon}}"  class="content_image"></image>
+                </view>
+                <view class="text_name">
+                    {{item.aname}}
+                </view>
+            </view>
+            <view class="left race_message">
+                <view class="score_view" style="margin: 0 0.15rem">
+                    {{item.aTotalScore}}
+                </view>
+                <view class="text_name center_text">
+                    <view>{{item.gameTimeFormat}}</view>
+                    <view>{{item.gameStage}}</view>
+                    <view s-if="{{item.room == '视频直播' && item.aTotalScore != null  && is_video }}">
+                        查看比分
+                    </view>
+                    <view s-if="{{item.room != '视频直播' && item.aTotalScore != null  && is_video }}" class="zhiboing">
+                        直播中
+                    </view>
+                </view>
+                <view class="score_view" style="margin: 0 0.15rem">
+                    {{item.hTotalScore}}
+                </view>
+            </view>
+            <view class="team_view right">
+                <image src="{{item.hicon}}" class="content_image"></image>
+                <view class="text_name">
+                    {{item.hname}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,44 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/race/race",
+        "pages/detail/detail",
+        "pages/newpage/new",
+        "pages/web/web",
+        "pages/message/message",
+        "pages/commodity/commodity"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "智能小程序",
+        "backgroundTextStyle": "light"
+    },
+    "prefetches": ["https://www.y53jc.cn"],
+
+    "tabBar": {
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./images/home.png",
+                "selectedIconPath": "./images/home1.png"
+            },
+            {
+                "pagePath": "pages/commodity/commodity",
+                "text": "全部商品",
+                "iconPath": "./images/commodity.png",
+                "selectedIconPath": "./images/commodity1.png"
+            },
+            {
+                "pagePath": "pages/message/message",
+                "text": "客服咨询",
+                "iconPath": "./images/message.png",
+                "selectedIconPath": "./images/message1.png"
+            }
+        ],
+        "backgroundColor": "#ffffff",
+        "borderStyle": "white",
+        "color": "#666666",
+        "selectedColor": "#7BA6EF"
+    }
+}

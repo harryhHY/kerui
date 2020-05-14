@@ -1,0 +1,79 @@
+<view id="race" bind:touchmove="handleTap1">
+
+    <view class="loading_title centerimg" s-if="showlodingtitle">
+        <image src="../../images/logo.png"></image>
+        下拉即可刷新
+    </view>
+    <view class='balls_view' s-if='showHttploading'>
+        <view class="balls">
+            <view></view>
+            <view></view>
+            <view></view>
+        </view>
+    </view>
+    <view class="swiper_view">
+        <swiper 
+            indicator-dots="{{indicator_dots}}"
+            indicator-color="{{indicator_color}}"
+            indicator-active-color="{{indicator_active_color}}"
+            autoplay="{{Bannerautoplay}}"
+            interval="{{autoPlayInterval}}"
+            duration="{{switchDuration}}"
+        >
+            <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>
+                </swiper-item>
+            </block>
+        </swiper >
+    </view>
+     <tabs 
+        class="race_tab"
+        active-name="{{activeName}}" 
+        bindtabchange="tabsOne"
+        tabs-underline-color="#ffffff"
+        >
+        <tab-item s-for="tab in tabs" name="{{tab.name}}" label="{{tab.label}}" />
+    </tabs>
+    <view class="centerimg">
+        <button s-for="item,index in buttonList" type="{{item.default}}" size="mini" hover-class="hover" hover-stop-propagation='true' bind:tap="changeday" data-daytype= "{{item.value}}" >
+            {{item.text}}
+        </button>
+    </view>
+    <view class="intro">
+        <view class="content_today_view cl" s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
+            <view class='content_left'>
+                <view class='gameTimeFormat'>
+                    {{item.gameTimeFormat}}
+                </view>
+                <view class='lname'>
+                    {{item.lname}}
+                </view>
+            </view>
+            <view class='content_right cl'>
+                <view class='gameStage'>{{item.gameStage}}</view>
+                <view class='team'>
+                    <view class='span_view name hname ov'>
+                        <text class='TotalScore' s-if="{{item.aTotalScore != null}}">[{{item.hTotalScore}}]</text>
+                        {{item.hname}}
+                    </view>
+                    <view class='span_view ov vs'>
+                        VS
+                    </view>
+                    <view class='span_view name ov aname'>
+                        {{item.aname}}
+                        <text class='TotalScore' s-if="{{item.aTotalScore != null}}">[{{item.aTotalScore}}]</text>
+                    </view>                   
+                </view>
+                <view class='cl'>
+                     <view class='playtype right' s-if="{{item.room != '视频直播' && item.aTotalScore != null  && is_video }}">
+                        正在直播
+                    </view>
+                    <view s-if="{{item.room == '视频直播' && item.aTotalScore != null  && is_video }}" class="playtype1 right">
+                        查看比分
+                </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

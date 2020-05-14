@@ -1,0 +1,94 @@
+#race {}
+
+.date_view {
+  align-items: center;
+  padding: 0.1rem 0;
+}
+
+.iconimg {
+  width: 0.16rem;
+  height: 0.16rem;
+}
+
+.date_span {
+  font-size: 0.16rem;
+  margin-left: 0.05rem;
+}
+
+.content_today_view {
+  font-size: 0.14rem;
+  width: 100%;
+  height: 0.8rem;
+  padding: 0.1rem 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 0.01rem solid #dedede;
+}
+
+.time_view {
+  width: 20%;
+  line-height: 100%;
+  padding: 5% 0;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.content_race {
+  width: 80%;
+}
+
+.race_icon {
+  width: 0.2rem;
+  height: 0.2rem;
+}
+
+.centerimg1 {
+  padding: 0.05rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.race_team {
+  width: 55%;
+  padding-left: 5%;
+}
+
+.race_totalscore {
+  color: red;
+  height: 0.28rem;
+  line-height: 0.28rem;
+}
+
+.race_gameStage {
+  flex-direction:column;
+  color: gray;
+  height: 0.56rem;
+}
+
+.score_view {
+  width: 20%;
+  text-align: center;
+}
+.hover {
+  opacity: .2;
+}
+.card-area {
+  background-color: #5B9FFF;
+}
+.clred{
+  color: red;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  font-weight: 600;
+}
+.gamename{
+  color: gray;
+  padding-top:0.05rem ;
+  font-size: 0.12rem;
+}
+.chakanbifen{
+  color: #333333;
+}

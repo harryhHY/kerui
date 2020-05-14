@@ -1,0 +1,100 @@
+<!-- index.swan -->
+<view class="container">
+<!-- 轮播图 -->
+    <view class="card-area">
+        <view class="logodiv">
+            <image s-for="item,index in logoList" src="{{item.imgsrc}}" class="logoimages {{item.classname}}"></image>
+        </view>
+        <!-- <view>
+            <image src="../../images/banner_one.jpg" style="width:100%"></image>
+        </view> -->
+        <view>
+            <swiper 
+             indicator-dots="{{indicator_dots}}"
+             indicator-color="{{indicator_color}}"
+             indicator-active-color="{{indicator_active_color}}"
+             autoplay="{{Bannerautoplay}}"
+             interval="{{autoPlayInterval}}"
+             duration="{{switchDuration}}"
+            >
+             <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>                           
+                </swiper-item>
+            </block>
+            </swiper >
+        </view>
+        <view s-for="item,index in items" bind:tap="navigateTo" data-id="{{item.id}}" class="content_div">
+            <view class='content cl' >            
+                <view class="centerimg" style="position: relative;">
+                    <image src="{{apimg}}{{item.news_img}}" ></image>
+                    <image src="../../images/Player.png" class="player_image"></image>
+                    <span class="content_span">
+                        {{item.news_title}}
+                    </span>
+                    <span class="content_time">
+                        {{item.news_time}}
+                    </span>
+                </view>
+             
+            </view>       
+        </view>
+    <!-- <view class="main-title-top">
+        <image src="{{horn}}" class="horn"></image>
+        <view class="news-con">
+            <view class="swiper-wrap v-swiper">
+                <swiper 
+                    indicator-color="rgba(0,0,0,0.30)"
+                    indicator-active-color="#fff"
+                    duration="{{switchDuration}}"
+                    interval="{{autoPlayInterval}}"
+                    autoplay="{{switchAutoPlayStatus}}"
+                    vertical="true"
+                    circular="true"
+                    current="0"
+                    previous-margin="0px"
+                    next-margin="0px"
+                    display-multiple-items="1"
+                    class="gun"
+                >
+                    <block s-for="item,index in itemNews">
+                        <swiper-item>
+                            <view class="news">{{item}}</view>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+    </view> -->
+    <!-- <view class="changeContent centerimg">
+        <view class="changeNew changeSpan centerimg" bindtap="changeData" data-changeNum = 1>
+            <image src="{{newimg}}" mode="" class="newimg"></image>
+            最新咨询
+        </view>
+        <view class="changeHot changeSpan centerimg" bindtap="changeData" data-changeNum = 2>
+            <image src="{{hotimg}}" mode="" class="newimg"></image>
+            最热咨询
+        </view>
+    </view> -->
+    <!-- <view class="main-container">
+            <view class="main-line"></view>
+            <view class="top-description box border-bottom" s-for="item in items"  bind:tap="navigateTo" data-id="{{item.id}}" hover-stop-propagation="true">
+                <view  class="con-img">
+                    <image class='content_image' src="{{apimg}}{{item.news_img}}"></image>
+                </view>
+                <view class="con-title" bindtap="tapHandle">
+                    <view class="title_one">{{item.news_title}}</view>
+                    <view class="title_two">
+                        <image src="{{riqi}}" class="small-default"></image>
+                        <span>{{item.news_time}}</span>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+   
+    <!-- <img src="../../images/smartapp.png"> -->
+    <!-- <button type="primary" class="btn">
+	    <navigator class="nav" url="/pages/newpage/new?id=新页面" hover-class="navigator-hover">跳转到新页面</navigator>
+    </button> -->
+</view>

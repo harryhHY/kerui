@@ -1,0 +1,54 @@
+<!-- index.swan -->
+<view class="container">
+<!-- 轮播图 -->
+    <view class="card-area">
+        <view>
+            <swiper 
+             indicator-dots="{{indicator_dots}}"
+             indicator-color="{{indicator_color}}"
+             indicator-active-color="{{indicator_active_color}}"
+             autoplay="{{Bannerautoplay}}"
+             interval="{{autoPlayInterval}}"
+             duration="{{switchDuration}}"
+            >
+             <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>
+                </swiper-item>
+            </block>
+            </swiper >
+        </view>
+        <view class="content_view">
+            <view s-for="item,index in items" bind:tap="navigateTo" data-id="{{item.id}}" class="content_fff">
+                <view class="content_news_title">
+                    {{item.news_title}}
+                </view>
+                <view class="cl content_span_view">
+                    <view class="content_span left">
+                        资讯
+                    </view>
+                    <image src="../../images/more.png" style="width:0.16rem;height:0.16rem;margin-left:0.08rem" class="right"></image>
+                    <view class="right">
+                        {{item.news_time}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- <view s-for="item,index in items" bind:tap="navigateTo" data-id="{{item.id}}" class="content_div">
+            <view class='content cl' >            
+                <view class="centerimg" style="position: relative;">
+                    <view class="image_view">                    
+                        <image src="{{apimg}}{{item.news_img}}" ></image>
+                    </view>                    
+                    <view class="content_view">                    
+                        <span class="content_span">
+                            {{item.news_title}}
+                        </span>
+                        <span class="content_time">
+                            {{item.news_time}}
+                        </span>
+                    </view>
+                </view>             
+            </view>       
+        </view> -->
+</view>
