@@ -21,8 +21,7 @@ Page({
     playflag: false,
     item1: [],
     video_Src: "",
-    logoList: [
-      {
+    logoList: [{
         id: 1,
         imgsrc: "../../images/logo.png",
         classname: "img1"
@@ -33,6 +32,20 @@ Page({
         classname: "img2"
       }
     ]
+  },
+  setNavigationBarTitle(e) {
+    let {item1} = this.data
+    console.log(item1[0])
+    let newTitle = `${item1[0].hname} VS ${item1[0].aname}-夜色直播`
+    if (!newTitle) {
+      swan.showToast({
+        title: `${item1[0].hname} VS ${item1[0].aname}-夜色直播`
+      });
+      return;
+    }
+    swan.setNavigationBarTitle({
+      title: newTitle
+    });
   },
   onShow() {
     swan.setPageInfo({
@@ -45,13 +58,11 @@ Page({
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
         "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg"
       ],
-      video: [
-        {
-          url: "https://www.baidu.com/mx/v12.mp4",
-          duration: "100",
-          image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
-        }
-      ],
+      video: [{
+        url: "https://www.baidu.com/mx/v12.mp4",
+        duration: "100",
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
+      }],
       visit: {
         pv: "1000",
         uv: "100",
@@ -71,7 +82,9 @@ Page({
     });
   },
   getdataList() {
-    let { item1 } = this.data;
+    let {
+      item1
+    } = this.data;
     let id = item1[0].matchId;
     swan.request({
       url: `${api}/inter_url`,
@@ -85,8 +98,12 @@ Page({
         id
       },
       success: res => {
-        let { params } = res.data;
-        let { murl } = res.data.params;
+        let {
+          params
+        } = res.data;
+        let {
+          murl
+        } = res.data.params;
         console.log(params);
         if (params != false) {
           console.log();
@@ -103,13 +120,17 @@ Page({
     });
   },
   onLoad(options) {
-    let { item } = options;
+
+    let {
+      item
+    } = options;
     let item1 = [];
     item1.push(JSON.parse(item));
     console.log(item1);
     this.setData({
       item1
     });
+    this.setNavigationBarTitle()
     this.getdataList();
     console.log(this.data.playflag);
   }

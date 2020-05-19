@@ -48,3 +48,7 @@
   height: 0.21rem;
   line-height: 0.79rem;
 }
+.servername{
+  width: 20%;
+  font-size: 0.16rem;
+}

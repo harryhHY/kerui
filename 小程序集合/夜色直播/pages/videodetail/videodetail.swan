@@ -26,6 +26,7 @@
                     {{item.aname}}
                 </view>
             </view>
+
         </view>
     </view>
     <view s-if="{{ playflag == false }}" class="result">
@@ -60,6 +61,7 @@
                     {{item.aname}}
                 </view>
             </view>
+
         </view>
     </view>
 </view>
