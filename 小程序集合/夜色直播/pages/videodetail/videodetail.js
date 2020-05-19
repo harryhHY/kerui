@@ -33,6 +33,7 @@ Page({
       }
     ]
   },
+  //动态设置title
   setNavigationBarTitle(e) {
     let {item1} = this.data
     console.log(item1[0])
