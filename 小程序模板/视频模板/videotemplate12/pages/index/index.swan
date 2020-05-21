@@ -5,13 +5,17 @@
         <!-- <view class="logodiv">
             <image s-for="item,index in logoList" src="{{item.imgsrc}}" class="logoimages {{item.classname}}"></image>
         </view> -->
-        <view class='balls_view' s-if='showHttploading'>
+        <!-- s-if='showHttploading'  -->
+        <view class='loading' s-if='showHttploading'>
+            正在进行网络请求。。。
+        </view>
+        <!-- <view class='balls_view' s-if='showHttploading'>
             <view class="balls">
                 <view></view>
                 <view></view>
                 <view></view>
             </view>
-        </view>
+        </view> -->
         <view>
             <swiper 
              indicator-dots="{{indicator_dots}}"
