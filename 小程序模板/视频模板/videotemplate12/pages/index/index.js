@@ -216,6 +216,7 @@ Page({
         console.log(this.data.itemBanners);
       },
       fail: (err) => {
+        this.showHttploading(false);
         console.log("错误码：" + err.errCode);
         console.log("错误信息：" + err.errMsg);
       },
@@ -354,6 +355,7 @@ Page({
               }
             },
             fail: (err) => {
+              this.showHttploading(false);
               console.log("错误码：" + err.errCode);
               console.log("错误信息：" + err.errMsg);
             },
@@ -381,7 +383,7 @@ Page({
     }
     //请求分页数据
     number += 30;
-    this.showHttploading(true);
+    // this.showHttploading(true);
 
     setTimeout(function () {
       swan.hideLoading();
