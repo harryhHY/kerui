@@ -32,14 +32,36 @@ Page({
         imgsrc: "../../images/logo1.png",
         classname: "img2"
       }
-    ]
+    ],
+    articleTitle:''
   },
+    //动态设置title
+    setNavigationBarTitle(e) {
+      let {
+        item1
+      } = this.data
+      console.log(item1[0])
+      let newTitle = `${item1[0].hname} VS ${item1[0].aname}-夜色直播`
+      if (!newTitle) {
+        swan.showToast({
+          title: `${item1[0].hname} VS ${item1[0].aname}-樱桃直播`
+        });
+        return;
+      }
+      this.setData({
+        articleTitle:newTitle
+      })
+      swan.setNavigationBarTitle({
+        title: newTitle
+      });
+    },
   onShow() {
+    let {articleTitle} = this.data
     swan.setPageInfo({
       title: '樱桃直播，各类赛事直播',
       keywords: '樱桃直播,比分直播,JRS直播',
       description: '樱桃直播，各类赛事直播',
-      articleTitle: '樱桃直播,发各类赛事直播',
+      articleTitle: `${articleTitle}樱桃直播`,
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -103,6 +125,7 @@ Page({
     });
   },
   onLoad(options) {
+
     let { item } = options;
     let item1 = [];
     item1.push(JSON.parse(item));
@@ -110,6 +133,7 @@ Page({
     this.setData({
       item1
     });
+    this.setNavigationBarTitle()
     this.getdataList();
     console.log(this.data.playflag);
   }

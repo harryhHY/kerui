@@ -31,7 +31,8 @@ Page({
         imgsrc: "../../images/logo1.png",
         classname: "img2"
       }
-    ]
+    ],
+    articleTitle:''
   },
   //动态设置title
   setNavigationBarTitle(e) {
@@ -46,6 +47,9 @@ Page({
       });
       return;
     }
+    this.setData({
+      articleTitle:newTitle
+    })
     swan.setNavigationBarTitle({
       title: newTitle
     });
