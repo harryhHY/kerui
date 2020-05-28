@@ -27,6 +27,40 @@ Page({
     apimg: "",
     video_Src: ""
   },
+    //动态设置title
+    setNavigationBarTitle(e) {
+      swan.request({
+        url: api + "/home/listn/m_detail",
+        header: {
+          "content-type": "application/json"
+        },
+        method: "POST",
+        dataType: "json",
+        responseType: "text",
+        data: {
+          id: this.currentId
+        },
+        success: res => {
+          let news_title = res.data.params.news_title
+  
+          let newTitle = `${news_title}-石榴视频`
+          if (!newTitle) {
+            swan.showToast({
+              title: `${news_title}-石榴视频`
+            });
+            return;
+          }
+          swan.setNavigationBarTitle({
+            title: newTitle
+          });
+  
+        },
+        fail: err => {
+          // console.log("错误码：" + err.errCode);
+          // console.log("错误信息：" + err.errMsg);
+        }
+      });
+    },
   onShow() {
     swan.request({
       url: api + "/home/listn/m_detail",
@@ -97,6 +131,7 @@ Page({
     });
     console.log(this.currentId);
     this.getDetail();
+    this.setNavigationBarTitle()
     this.setNavigationBarColor();
     //video
     const videoContext = swan.createVideoContext("myVideo");
