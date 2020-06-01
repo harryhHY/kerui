@@ -1,0 +1,58 @@
+<!-- index.swan -->
+<view class="container">
+<!-- 轮播图 -->
+    <view class="card-area">
+        <!-- <view class="logodiv">
+            <image s-for="item,index in logoList" src="{{item.imgsrc}}" class="logoimages {{item.classname}}"></image>
+        </view> -->
+
+        <view>
+            <swiper 
+             indicator-dots="{{indicator_dots}}"
+             indicator-color="{{indicator_color}}"
+             indicator-active-color="{{indicator_active_color}}"
+             autoplay="{{Bannerautoplay}}"
+             interval="{{autoPlayInterval}}"
+             duration="{{switchDuration}}"
+            >
+             <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>
+                </swiper-item>
+            </block>
+            </swiper >
+        </view>
+        <view class=" cl">
+            <view s-for="item,index in items" bind:tap="navigateTo" data-id="{{item.id}}" class="cl content_view centerimg" >
+                <view class="left content_image">
+                     <image src="{{apimg}}{{item.news_img}}"></image>
+                </view>
+                <view class="right content_text">
+                    <view class="cl content_text_view">
+                        <span class="left content_text_span1">资讯</span>
+                        <span class="right content_text_span2">{{item.news_time}}</span>
+                    </view>
+                    <view class="content_news_title">
+                         {{item.news_title}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- <view s-for="item,index in items" bind:tap="navigateTo" data-id="{{item.id}}" class="content_div">
+            <view class='content cl' >            
+                <view class="centerimg" style="position: relative;">
+                    <view class="image_view">                    
+                        <image src="{{apimg}}{{item.news_img}}" ></image>
+                    </view>
+                    <view class="content_view">                    
+                        <span class="content_span">
+                            {{item.news_title}}
+                        </span>
+                        <span class="content_time">
+                            {{item.news_time}}
+                        </span>
+                    </view>
+                </view>
+            </view>       
+        </view> -->
+</view>

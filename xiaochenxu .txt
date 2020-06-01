@@ -399,4 +399,15 @@ apifrom:'https://6pl04.cn',
 详情页 顶部title 要是 "标题+小仙女直播"
 20093879
 
+mt301235idih9@163.com----aa674211----nucjus 18505101374
+小程序名称:蝴蝶直播
+title: '蝴蝶直播，经典直播。',
+keywords: '蝴蝶直播，体育直播',
+description: '蝴蝶直播，经典直播。',
+articleTitle: '蝴蝶直播',
+比分api: "https://0s0zv.cn",
+apifrom:'https://z5mh2.cn',
+栏目: c=137
+模板类别:比分类
+19655255
 
