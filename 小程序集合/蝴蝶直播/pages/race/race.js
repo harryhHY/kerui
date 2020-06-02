@@ -1,5 +1,8 @@
 const app = getApp();
-let { api, apifrom } = app;
+let {
+  api,
+  apifrom
+} = app;
 Page({
   setNavigationBarColor() {
     swan.setNavigationBarColor({
@@ -31,8 +34,7 @@ Page({
     indicator_color: "#ffffff", //指示点颜色
     indicator_active_color: "#5032b4", //选中的指示点颜色
     Bannerautoplay: true, //自动播放
-    tabs: [
-      {
+    tabs: [{
         name: "1",
         label: "足球",
       },
@@ -45,8 +47,7 @@ Page({
     activeName: "1",
     today: "",
     todayList: [],
-    buttonList: [
-      {
+    buttonList: [{
         value: 0,
         text: "",
         default: "warn",
@@ -94,14 +95,11 @@ Page({
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
         "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg",
       ],
-      video: [
-        {
-          url: "https://www.baidu.com/mx/v12.mp4",
-          duration: "100",
-          image:
-            "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
-        },
-      ],
+      video: [{
+        url: "https://www.baidu.com/mx/v12.mp4",
+        duration: "100",
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
+      }, ],
       visit: {
         pv: "1000",
         uv: "100",
@@ -148,8 +146,12 @@ Page({
     return nowdate;
   },
   gotovideo(e) {
-    let { is_video } = this.data;
-    let { item } = e.currentTarget.dataset;
+    let {
+      is_video
+    } = this.data;
+    let {
+      item
+    } = e.currentTarget.dataset;
     if (is_video) {
       let item1 = JSON.stringify(item);
       swan.navigateTo({
@@ -157,8 +159,13 @@ Page({
       });
     }
   },
+  //下拉加载
   onReachBottom(e) {
-    let { p, today, content } = this.data;
+    let {
+      p,
+      today,
+      content
+    } = this.data;
     let page = ++p;
     this.setData({
       p: page,
@@ -166,9 +173,17 @@ Page({
     this.getList(content, today, page);
   },
   changeday(e) {
-    let { daytype, type } = e.currentTarget.dataset;
+    let {
+      daytype,
+      type
+    } = e.currentTarget.dataset;
     this.getdate(daytype);
-    let { today, content, buttonList, p } = this.data;
+    let {
+      today,
+      content,
+      buttonList,
+      p
+    } = this.data;
     for (let i = 0; i < 3; i++) {
       if (i == daytype) {
         buttonList[i].default = "warn";
@@ -189,7 +204,9 @@ Page({
     });
   },
   changeButtonList() {
-    let { buttonList } = this.data;
+    let {
+      buttonList
+    } = this.data;
     let list = [];
     console.log(this.getdate(1));
     list.push("今天");
@@ -204,10 +221,17 @@ Page({
     console.log(buttonList);
   },
   tabsOne(e) {
-    let { buttonList } = this.data;
+    let {
+      buttonList
+    } = this.data;
     this.getdate(0);
-    let { today, p } = this.data;
-    let { name } = e.detail;
+    let {
+      today,
+      p
+    } = this.data;
+    let {
+      name
+    } = e.detail;
     this.setData({
       content: name,
       activeName: name,
@@ -247,23 +271,29 @@ Page({
         p,
       },
       success: (res) => {
+        let {
+          todayList,
+          p
+        } = this.data;
         this.showHttploading(false);
-        let { data } = res.data.params;
+        let {
+          data
+        } = res.data.params;
         if (data != false) {
           this.setData({
             showdata: true,
           });
-        } else {
+        } else if (data == false && todayList == false) {
           this.setData({
             showdata: false,
           });
         }
-        let { todayList, p } = this.data;
+
         if (p == 1) {
           this.setData({
             todayList: data,
           });
-        } else {
+        } else if (p != 1 && data != false) {
           let datalist = todayList;
           let list = datalist.concat(data);
           this.setData({
@@ -286,7 +316,12 @@ Page({
     }
   },
   handleTap1(e) {
-    let { clientX, clientY, pageX, pageY } = e.changedTouches[0];
+    let {
+      clientX,
+      clientY,
+      pageX,
+      pageY
+    } = e.changedTouches[0];
     if (clientY == pageY) {
       this.setData({
         showlodingtitle: true,
@@ -317,7 +352,10 @@ Page({
       },
       success: (res) => {
         this.showHttploading(false);
-        let { is_banner, is_video } = res.data.params;
+        let {
+          is_banner,
+          is_video
+        } = res.data.params;
         if (is_banner == 1) {
           this.setData({
             is_banner: true,
@@ -340,6 +378,7 @@ Page({
       showHttploading: flag,
     });
   },
+  //下拉刷新
   onPullDownRefresh() {
     this.showHttploading(true);
     swan.showLoading({
@@ -357,7 +396,10 @@ Page({
         console.log("showLoading fail", err);
       },
     });
-    let { content, changdate } = this.data;
+    let {
+      content,
+      changdate
+    } = this.data;
     let date = this.getdate(changdate);
     this.getList(content, date);
     let that = this;
@@ -375,7 +417,11 @@ Page({
     this.setNavigationBarColor();
     this.getdate(0);
     this.geth5host();
-    let { today, content, p } = this.data;
+    let {
+      today,
+      content,
+      p
+    } = this.data;
     this.getList(content, today, p);
   },
 });

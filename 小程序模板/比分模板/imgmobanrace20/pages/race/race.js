@@ -247,23 +247,29 @@ Page({
         p,
       },
       success: (res) => {
+        let {
+          todayList,
+          p
+        } = this.data;
         this.showHttploading(false);
-        let { data } = res.data.params;
+        let {
+          data
+        } = res.data.params;
         if (data != false) {
           this.setData({
             showdata: true,
           });
-        } else {
+        } else if (data == false && todayList == false) {
           this.setData({
             showdata: false,
           });
         }
-        let { todayList, p } = this.data;
+
         if (p == 1) {
           this.setData({
             todayList: data,
           });
-        } else {
+        } else if (p != 1 && data != false) {
           let datalist = todayList;
           let list = datalist.concat(data);
           this.setData({
