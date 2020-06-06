@@ -59,8 +59,10 @@
                 <view class='content_body2 cl'>
                     <view class="{{item.aTotalScore!=null ? 'content_left left cl':'content_left1 left cl'}}">
                         <view class='right hname'>
-                            {{item.hname}}
-                             <image src="{{item.hicon}}"  class='hicon'></image>
+                            <image src="{{item.hicon}}"  class='hicon'></image>
+                            <view class='hanme_view'>
+                                {{item.hname}}
+                            </view>
                         </view>
                     </view>
                     <view class='left hTotalScore' s-if='{{item.aTotalScore!=null}}'>
@@ -72,7 +74,9 @@
                     <view class='content_right left'>
                         <view class='aname left'>
                             <image src="{{item.aicon}}" class='aicon'></image>
-                            {{item.aname}}
+                            <view class='aname_view'>
+                                 {{item.aname}}
+                            </view>
                         </view>
                     </view>
                     <view class='cl'>
