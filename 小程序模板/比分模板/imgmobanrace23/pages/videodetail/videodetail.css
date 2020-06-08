@@ -77,3 +77,22 @@
   margin: 0.15rem;
   border-radius: 0.05rem;
 }
+.span_view{
+  display: inline-block;
+}
+.signals_view_box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signals_view{
+  font-size: 0.21rem;
+  margin-left: 0.2rem;
+  color: rgb(91, 150, 238);
+  border: 0.01rem solid rgb(91, 150, 238);
+  padding: 0.02rem 0.025rem;
+  border-radius: 0.05rem;
+}
+.viewsfor{
+  height: 0.8rem;
+}

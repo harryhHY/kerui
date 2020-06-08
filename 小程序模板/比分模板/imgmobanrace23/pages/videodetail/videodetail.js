@@ -21,8 +21,8 @@ Page({
     playflag: false,
     item1: [],
     video_Src: "",
-    logoList: [
-      {
+    autoplay:true,
+    logoList: [{
         id: 1,
         imgsrc: "../../images/logo.png",
         classname: "img1"
@@ -32,7 +32,8 @@ Page({
         imgsrc: "../../images/logo1.png",
         classname: "img2"
       }
-    ]
+    ],
+    signals: []
   },
   onShow() {
     swan.setPageInfo({
@@ -45,13 +46,11 @@ Page({
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
         "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg"
       ],
-      video: [
-        {
-          url: "https://www.baidu.com/mx/v12.mp4",
-          duration: "100",
-          image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
-        }
-      ],
+      video: [{
+        url: "https://www.baidu.com/mx/v12.mp4",
+        duration: "100",
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
+      }],
       visit: {
         pv: "1000",
         uv: "100",
@@ -70,8 +69,29 @@ Page({
       }
     });
   },
+  //切换播放地址
+  changeurl(e) {
+    let {
+      index
+    } = e.target.dataset
+    let {
+      signals,
+      video_Src
+    } = this.data;
+    let {
+      status,
+      url
+    } = signals[index]
+    if(status){
+      this.setData({
+        video_Src:url
+      })
+    }
+  },
   getdataList() {
-    let { item1 } = this.data;
+    let {
+      item1
+    } = this.data;
     let id = item1[0].matchId;
     swan.request({
       url: `${api}/inter_url`,
@@ -85,14 +105,20 @@ Page({
         id
       },
       success: res => {
-        let { params } = res.data;
-        let { murl } = res.data.params;
-        console.log(params);
+        let {
+          params
+        } = res.data;
+        let {
+          murl,
+          signals
+        } = res.data.params;
+        console.log(signals);
         if (params != false) {
           console.log();
           this.setData({
             playflag: true,
-            video_Src: murl
+            video_Src: murl,
+            signals
           });
         }
       },
@@ -103,7 +129,9 @@ Page({
     });
   },
   onLoad(options) {
-    let { item } = options;
+    let {
+      item
+    } = options;
     let item1 = [];
     item1.push(JSON.parse(item));
     console.log(item1);

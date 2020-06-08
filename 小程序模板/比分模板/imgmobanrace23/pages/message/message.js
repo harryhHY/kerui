@@ -85,7 +85,7 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        // c: 136
+        // c: 147
         // tel: email, //电话号码
         // content: bindInput, //内容
         // nickname: nicknamevalue //昵称
@@ -153,7 +153,7 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 136,
+              c: 147,
               tel: email, //电话号码
               content: bindInput, //内容
               nickname: nicknamevalue //昵称

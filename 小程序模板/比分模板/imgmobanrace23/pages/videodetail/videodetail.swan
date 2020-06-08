@@ -37,9 +37,15 @@
         </view>
 
         <view class="wrap">
-            <video id="myVideo" enable-danmu="true" autoplay="true" src="{{video_Src}}"></video>
+            <video id="myVideo" enable-danmu="true" autoplay="{{autoplay}}" src="{{video_Src}}"></video>
         </view>
-        
+        <view class='signals_view_box'>
+            <view  s-for='item,index in signals' class='viewsfor' >
+                <view s-if='{{item.status == true}}' class='signals_view span_view' bind:tap='changeurl' data-index = '{{index}}'>
+                    {{item.title}}
+                </view>
+            </view>
+        </view>
     </view>
     <view s-if="{{ playflag == false }}" class="result">
         <view class="logodiv">
