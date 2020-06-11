@@ -1,5 +1,5 @@
 {
-    "appid": "19655322",
+    "appid": "20322768",
     "compilation-args": {
         "common": {
             "enhance": true
@@ -7,7 +7,7 @@
     },
     "host": "baiduboxapp",
     "preview": {
-        "packageId": 411412
+        "packageId": 514926
     },
     "projectname": "videotemplate9",
     "publish": {
@@ -18,8 +18,8 @@
     },
     "swan": {
         "baiduboxapp": {
-            "swanJsVersion": "3.180.7",
-            "extensionJsVersion": "1.13.1"
+            "extensionJsVersion": "1.13.1",
+            "swanJsVersion": "3.180.7"
         }
     }
 }

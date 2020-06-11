@@ -4,7 +4,9 @@
  */
 const app = getApp();
 let number = 30;
-let { api } = app;
+let {
+  api
+} = app;
 Page({
   data: {
     id: "",
@@ -26,8 +28,7 @@ Page({
     items: [],
     number: 15,
     apimg: "",
-    logoList: [
-      {
+    logoList: [{
         id: 1,
         imgsrc: "../../images/logo.png",
         classname: "img1",
@@ -102,14 +103,11 @@ Page({
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
         "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg",
       ],
-      video: [
-        {
-          url: "https://www.baidu.com/mx/v12.mp4",
-          duration: "100",
-          image:
-            "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
-        },
-      ],
+      video: [{
+        url: "https://www.baidu.com/mx/v12.mp4",
+        duration: "100",
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
+      }, ],
       visit: {
         pv: "1000",
         uv: "100",
@@ -198,7 +196,11 @@ Page({
 
         console.log(res.data);
         let data = res.data.params;
-        let { is_banner, total, last_page } = data;
+        let {
+          is_banner,
+          total,
+          last_page
+        } = data;
         if (is_banner == 1) {
           // bannerList.push(data.banner);
           this.setData({
@@ -261,9 +263,16 @@ Page({
   },
   //加载更多
   onReachBottom(e) {
-    let { page, last_page, total } = this.data;
+    let {
+      page,
+      last_page,
+      total
+    } = this.data;
     // let page = ++page;
     // console.log(page);
+    //请求分页数据
+    number += 30;
+    this.showHttploading(true);
     this.setData({
       page: page,
     });
@@ -291,8 +300,12 @@ Page({
             success: (res) => {
               this.showHttploading(false);
               if (data != false) {
-                let { items } = this.data;
-                let { data } = res.data.params;
+                let {
+                  items
+                } = this.data;
+                let {
+                  data
+                } = res.data.params;
                 for (let i = 0; i < data.length; i++) {
                   items.push(data[i]);
                 }
@@ -330,9 +343,7 @@ Page({
         },
       });
     }
-    //请求分页数据
-    number += 30;
-    this.showHttploading(true);
+
 
     setTimeout(function () {
       swan.hideLoading();
