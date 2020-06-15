@@ -43,22 +43,24 @@
     </view>
     <view class="main-container cl">
         <view class="main-line"></view>
-        <view class="box border-bottom content_view " s-for="item in items" bind:tap="navigateTo" data-id="{{item.id}}"  hover-stop-propagation="true">
-            <view  bindtap="tapHandle" class='img_view cl'>
-                <image src="../../images/logo.png" class='logoimg1'></image>
+        <view class="box border-bottom content_view cl" s-for="item in items" bind:tap="navigateTo" data-id="{{item.id}}"  hover-stop-propagation="true">
+            <view  bindtap="tapHandle" class='img_view cl left'>
+                <!-- <image src="../../images/logo.png" class='logoimg1'></image>
                 <image class='logoimg' src="../../images/logo1.png"></image>
                 <view class='left left_view'>
                      <view class='news_title'>
                         {{item.news_title}}
                     </view>
 
-                </view>
-                <image class='content_image left' src="{{apimg}}{{item.news_img}}"></image>
+                </view> -->
+                <image class='content_image' src="{{apimg}}{{item.news_img}}"></image>
                 <view class='news_time_view'>
-                    <view class='left tuijian'>
+                    <!-- <view class='left tuijian'>
                         推荐
+                    </view> -->
+                    <view>
+                         {{item.news_title}}
                     </view>
-                   
                     <view class=' centerimg1  right'>
                         <view class='news_time'>
                             {{item.news_time}}
