@@ -42,10 +42,10 @@ Page({
         success: res => {
           console.log(res.data);
           swan.setPageInfo({
-            title: '山猫比分，体育赛事比分。',
-            keywords: '即时比分 足球比分 篮球比分 网球比分',
-            description: '山猫比分，体育赛事比分。',
-            articleTitle: '山猫比分',
+            title: '黑土直播',
+            keywords: '黑土直播，免费直播，体育直播，篮球直播',
+            description: '黑土直播，体育赛事直播。',
+            articleTitle: '黑土直播',
             releaseDate: "2019-01-02 12:01:30",
             image: [
               "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",

@@ -1,5 +1,5 @@
 {
-    "appid": "19643977",
+    "appid": "18617105",
     "compilation-args": {
         "common": {
             "enhance": true
@@ -7,11 +7,11 @@
     },
     "host": "baiduboxapp",
     "preview": {
-        "packageId": 601131
+        "packageId": 760643
     },
     "projectname": "imgmoban3",
     "publish": {
-        "version": "1.0.7.0"
+        "version": "1.0.1"
     },
     "setting": {
         "urlCheck": false

@@ -35,11 +35,13 @@ Page({
     ]
   },
   onShow() {
+    let { item1 } = this.data;
+    let {hname , aname} = item1[0]
     swan.setPageInfo({
-      title: '山猫比分，体育赛事比分。',
-      keywords: '即时比分 足球比分 篮球比分 网球比分',
-      description: '山猫比分，体育赛事比分。',
-      articleTitle: '山猫比分',
+      title: '黑土直播',
+      keywords: '黑土直播，免费直播，体育直播，篮球直播',
+      description: '黑土直播，体育赛事直播。',
+      articleTitle: `${hname}VS${aname}-黑土直播`,
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -102,6 +104,53 @@ Page({
       }
     });
   },
+       //动态设置title
+       setNavigationBarTitle(e) {
+         let {item1} = this.data
+         let {hname , aname} = item1[0]
+         console.log(hname , aname)
+         let newTitle = `${hname}VS${aname}-黑土直播`
+         if (!newTitle) {
+           swan.showToast({
+             title: `${hname}VS${aname}-黑土直播`
+           });
+           return;
+         }
+         swan.setNavigationBarTitle({
+           title: newTitle
+         });
+        // swan.request({
+        //   url: api + "/home/listn/m_detail",
+        //   header: {
+        //     "content-type": "application/json"
+        //   },
+        //   method: "POST",
+        //   dataType: "json",
+        //   responseType: "text",
+        //   data: {
+        //     id: this.currentId
+        //   },
+        //   success: res => {
+        //     let news_title = res.data.params.news_title
+    
+        //     // let newTitle = `${news_title}-黑土直播`
+        //     // if (!newTitle) {
+        //     //   swan.showToast({
+        //     //     title: `${news_title}-黑土直播`
+        //     //   });
+        //     //   return;
+        //     // }
+        //     // swan.setNavigationBarTitle({
+        //     //   title: newTitle
+        //     // });
+    
+        //   },
+        //   fail: err => {
+        //     // console.log("错误码：" + err.errCode);
+        //     // console.log("错误信息：" + err.errMsg);
+        //   }
+        // });
+      },
   onLoad(options) {
     let { item } = options;
     let item1 = [];
@@ -111,6 +160,7 @@ Page({
       item1
     });
     this.getdataList();
+    this.setNavigationBarTitle();
     console.log(this.data.playflag);
   }
 });
