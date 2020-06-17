@@ -332,7 +332,9 @@
     color: #747474;
 }
 .news_title{
+    margin: 0.1rem 0 ;
     color:#000;
+    font-size: 0.19rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .news_goods{
@@ -359,4 +361,10 @@
     margin-left: 1.5rem;
     width: 0.2rem;
     height: 0.2rem;
+}
+.content{
+    border: 0.02rem solid #4e89e1;
+    margin: 0.05rem 0;
+    padding: 0.1rem;
+    border-radius: 0.05rem;
 }

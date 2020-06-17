@@ -37,7 +37,7 @@
                     </view>
                     <view class='content_right left'>
                         <image src="../../images/logo1.png" class='logo1'></image>
-                        <view class='news_time'>{{item.news_time}}</view>
+                        <view class='news_time span_view'>{{item.news_time}}</view>
                         <view class='news_title' bind:tap="navigateTo" data-id="{{item.id}}" >{{item.news_title}}</view>
                         <view class='news_goods cl' bind:tap="praise" data-id="{{item.id}}">
                             <image src="../../images/goodnews.png" class='goodnews'></image>
