@@ -103,9 +103,6 @@
                         <view class='hCornerKick span_view'>
                              {{item.hCornerKick}}
                         </view>
-                        <view class='span_view'>
-                            角
-                        </view>
                         <view class='span_view aCornerKick'>
                             {{item.aCornerKick}}
                         </view>
