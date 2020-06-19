@@ -49,20 +49,49 @@ Page({
     todayList: [],
     buttonList: [{
         value: 0,
-        text: "",
-        default: "warn",
+        text: ""
       },
       {
         value: 1,
-        text: "",
-        default: "default",
-      },
-      {
+        text: ""
+      }, {
         value: 2,
-        text: "",
-        default: "default",
+        text: ""
+      }, {
+        value: 3,
+        text: ""
+      }, {
+        value: 4,
+        text: ""
       },
+      // {
+      //   value: 0,
+      //   text: "",
+      //   default: "warn",
+      // },
+      // {
+      //   value: 1,
+      //   text: "",
+      //   default: "default",
+      // },
+      // {
+      //   value: 2,
+      //   text: "",
+      //   default: "default",
+      // },
+      // {
+      //   value: 3,
+      //   text: "",
+      //   default: "default",
+      // },
+      // {
+      //   value: 4,
+      //   text: "",
+      //   default: "default",
+      // },
     ],
+    contentTwo: 0,
+    activeNameTwo: 0,
     itemBanners: [
       //轮播图片
       {
@@ -117,6 +146,10 @@ Page({
         console.log("setPageInfo fail", err);
       },
     });
+  },
+  //设置日期滚动横条
+  tabsTwo(e) {
+
   },
   //分享
   openShare() {
@@ -173,23 +206,16 @@ Page({
   },
   changeday(e) {
     let {
-      daytype,
+      name,
       type
-    } = e.currentTarget.dataset;
-    this.getdate(daytype);
+    } = e.detail;
+    this.getdate(name);
     let {
       today,
       content,
       buttonList,
       p
     } = this.data;
-    for (let i = 0; i < 3; i++) {
-      if (i == daytype) {
-        buttonList[i].default = "warn";
-      } else {
-        buttonList[i].default = "default";
-      }
-    }
     let pipi = 1;
     if (p != 1) {
       this.setData({
@@ -199,26 +225,29 @@ Page({
     this.getList(content, today, pipi);
     this.setData({
       buttonList,
-      changdate: daytype,
+      changdate: name,
+      contentTwo: name,
+      activeNameTwo: name
     });
   },
   getDate1(num) {
     let myDate = new Date();
-    let m = myDate.getMonth()+1;
+    let m = myDate.getMonth() + 1;
     let r = myDate.getDate() + num;
     return `${m}月${r}日`
   },
+  //循环出日期
   changeButtonList() {
     let {
       buttonList
     } = this.data;
     let list = [];
-    for(let v=0;v<3;v++){
-      let nowdate =  this.getDate1(v)
+    for (let v = 0; v < 5; v++) {
+      let nowdate = this.getDate1(v)
       list.push(nowdate)
     }
     this.getDate1()
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 5; i++) {
       buttonList[i].text = list[i];
     }
     this.setData({
@@ -248,13 +277,13 @@ Page({
         p: pipi,
       });
     }
-    for (let i = 0; i < buttonList.length; i++) {
-      if (i == 0) {
-        buttonList[i].default = "warn";
-      } else {
-        buttonList[i].default = "default";
-      }
-    }
+    // for (let i = 0; i < buttonList.length; i++) {
+    //   if (i == 0) {
+    //     buttonList[i].default = "warn";
+    //   } else {
+    //     buttonList[i].default = "default";
+    //   }
+    // }
     this.setData({
       buttonList,
     });
