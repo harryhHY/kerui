@@ -153,7 +153,7 @@
 
 .gameStage {
   font-weight: 600;
-  color: #7ee9ec;
+  color: #46ce51;
   text-align: center;
 }
 
@@ -258,6 +258,10 @@
 .share_view{
   padding-top: 0.1rem;
 }
+.logo_view{
+  margin-top: 0.05rem;
+  background-color: #fff;
+}
 .logo{
   margin-left: 0.3rem;
   width: 0.22rem;
@@ -281,7 +285,7 @@
 }
 .tuijian{
   font-size: 0.14rem;
-  color: rgb(65, 167, 235);
+  color: rgb(35, 144, 218);
   padding: 0.03rem 0.06rem;
   border: 1px solid #1cf0f0;
   border-radius: 0.05rem;

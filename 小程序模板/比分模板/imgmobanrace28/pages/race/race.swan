@@ -27,6 +27,10 @@
             </block>
         </swiper >
     </view>
+    <view class='logo_view'>
+        <image src="../../images/logo.png" class='logo'></image>
+        <image src="../../images/logo1.png" class='logo1'></image>
+    </view>
      <tabs 
         class="race_tab"
         active-name="{{activeName}}" 
@@ -44,6 +48,9 @@
             active-name="{{activeNameTwo}}"
             max-tab-item-amount="3"
             bindtabchange="changeday"
+            tabs-inactive-text-color='#1cf0f0'
+            tabs-active-text-color='#1c78f0'
+            tabs-underline-color='#1c78f0'
             >
             <tab-item s-for="tab in buttonList" name="{{tab.value}}" label="{{tab.text}}" daytype="{{tab.value}}"/>
         </tabs>
@@ -63,6 +70,9 @@
                 </view>
                 <view class='gameStage ov' s-if="{{item.gameStage == null}}">
                     {{item.gameStage == null?'未':' '}}
+                </view>
+                <view class='gameStage ov' s-if="{{item.gameStage != null}}">
+                    {{item.gameStage}}
                 </view>
                 <view class='content_body2 cl'>
                     <view class="{{item.aTotalScore!=null ? 'content_left left cl':'content_left1 left cl'}}">
@@ -115,9 +125,6 @@
                             {{item.aCornerKick}}
                         </view>
                     </view>
-                </view>
-                <view class='gameStage ov' s-if="{{item.gameStage != null}}">
-                    {{item.gameStage}}
                 </view>
                 <view  s-if="{{item.gameStage == null}}" class='cl tuijian_view'>
                     <view class='left tuijian'>
