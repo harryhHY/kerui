@@ -41,24 +41,22 @@ Page({
       },
       success: res => {
         console.log(res.data);
+        let {title} = this.data
         swan.setPageInfo({
-          title: '王者时刻，有趣的视频。',
-          keywords: '王者时刻，lpl赛程，lol比赛视频，体育视频',
-          description: '王者时刻，有趣的视频。',
-          articleTitle: '王者时刻',
+          title: '蜜桃视频',
+          keywords: '蜜桃视频，榴莲视频，菠萝蜜视频',
+          description: '蜜桃视频，有趣的视频。',
+          articleTitle: `${title}-蜜桃视频`,
           releaseDate: "2019-01-02 12:01:30",
           image: [
             "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
             "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg"
           ],
-          video: [
-            {
-              url: "https://www.baidu.com/mx/v12.mp4",
-              duration: "100",
-              image:
-                "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
-            }
-          ],
+          video: [{
+            url: "https://www.baidu.com/mx/v12.mp4",
+            duration: "100",
+            image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
+          }],
           visit: {
             pv: "1000",
             uv: "100",
@@ -106,10 +104,10 @@ Page({
       success: res => {
         let news_title = res.data.params.news_title
 
-        let newTitle = `${news_title}-石榴视频`
+        let newTitle = `${news_title}-蜜桃视频`
         if (!newTitle) {
           swan.showToast({
-            title: `${news_title}-石榴视频`
+            title: `${news_title}-蜜桃视频`
           });
           return;
         }
