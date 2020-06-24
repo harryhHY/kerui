@@ -309,18 +309,22 @@ Page({
   },
   //加载更多
   onReachBottom(e) {
-    let { page, last_page, total } = this.data;
+    let {
+      page,
+      last_page,
+      total
+    } = this.data;
     // let page = ++page;
     // console.log(page);
-        //请求分页数据
+    //请求分页数据
+    number += 30;
     this.showHttploading(true);
-
-    this.setData({
-      page: page,
-    });
     if (total > 10 && last_page >= 1 && page < last_page) {
       let machpage = ++page;
       let n = total - 10;
+      this.setData({
+        page: page,
+      });
       swan.showLoading({
         title: "正在加载...",
         mask: false, // 一般设置这个值为false
@@ -335,15 +339,19 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 149,
-              n: machpage, //第几页
+              c: 122,
+              p: machpage, //第几页
               n: n, //每页条数
             },
             success: (res) => {
               this.showHttploading(false);
               if (data != false) {
-                let { items } = this.data;
-                let { data } = res.data.params;
+                let {
+                  items
+                } = this.data;
+                let {
+                  data
+                } = res.data.params;
                 for (let i = 0; i < data.length; i++) {
                   items.push(data[i]);
                 }
@@ -381,6 +389,7 @@ Page({
         },
       });
     }
+
 
     setTimeout(function () {
       swan.hideLoading();

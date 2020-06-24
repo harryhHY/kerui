@@ -325,12 +325,12 @@ Page({
     //请求分页数据
     number += 30;
     this.showHttploading(true);
-    this.setData({
-      page: page,
-    });
     if (total > 10 && last_page >= 1 && page < last_page) {
       let machpage = ++page;
       let n = total - 10;
+      this.setData({
+        page: page,
+      });
       swan.showLoading({
         title: "正在加载...",
         mask: false, // 一般设置这个值为false
@@ -345,8 +345,8 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 138,
-              n: machpage, //第几页
+              c: 122,
+              p: machpage, //第几页
               n: n, //每页条数
             },
             success: (res) => {
