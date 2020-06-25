@@ -41,24 +41,22 @@ Page({
       },
       success: res => {
         console.log(res.data);
+        let {title} = this.data
         swan.setPageInfo({
-          title: '王者时刻，有趣的视频。',
-          keywords: '王者时刻，lpl赛程，lol比赛视频，体育视频',
-          description: '王者时刻，有趣的视频。',
-          articleTitle: '王者时刻',
+          title: '奶茶视频',
+          keywords: '奶茶视频,体育视频,水果视频',
+          description: '奶茶视频,小姐姐视频',
+          articleTitle: `${title}-奶茶视频`,
           releaseDate: "2019-01-02 12:01:30",
           image: [
             "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
             "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg"
           ],
-          video: [
-            {
-              url: "https://www.baidu.com/mx/v12.mp4",
-              duration: "100",
-              image:
-                "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
-            }
-          ],
+          video: [{
+            url: "https://www.baidu.com/mx/v12.mp4",
+            duration: "100",
+            image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
+          }],
           visit: {
             pv: "1000",
             uv: "100",
@@ -90,6 +88,40 @@ Page({
       }
     });
   },
+     //动态设置title
+     setNavigationBarTitle(e) {
+      swan.request({
+        url: api + "/home/listn/m_detail",
+        header: {
+          "content-type": "application/json"
+        },
+        method: "POST",
+        dataType: "json",
+        responseType: "text",
+        data: {
+          id: this.currentId
+        },
+        success: res => {
+          let news_title = res.data.params.news_title
+  
+          let newTitle = `${news_title}-奶茶视频`
+          if (!newTitle) {
+            swan.showToast({
+              title: `${news_title}-奶茶视频`
+            });
+            return;
+          }
+          swan.setNavigationBarTitle({
+            title: newTitle
+          });
+  
+        },
+        fail: err => {
+          // console.log("错误码：" + err.errCode);
+          // console.log("错误信息：" + err.errMsg);
+        }
+      });
+    },
   onLoad(options) {
     this.currentId = options.id;
     this.setData({
@@ -97,6 +129,7 @@ Page({
     });
     console.log(this.currentId);
     this.getDetail();
+    this.setNavigationBarTitle();
     this.setNavigationBarColor();
     //video
     const videoContext = swan.createVideoContext("myVideo");

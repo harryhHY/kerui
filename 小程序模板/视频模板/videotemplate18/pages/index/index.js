@@ -74,7 +74,7 @@ Page({
   },
   //点赞
   praise(e) {
-    let id = e.currentTarget.dataset.id;
+    let {id,index} = e.currentTarget.dataset;
     swan.request({
       url: `${api}/home/listn/favourite`,
       header: {
@@ -94,7 +94,15 @@ Page({
             icon: "none",
             mask: false,
             success: (res) => {
-              this.getList();
+              let {items} = this.data;
+              let newitems = items.map((item,index1,items)=>{
+                if(index==index1){
+                  item.news_goods = item.news_goods + 1;
+                  this.setData({
+                    items:items
+                  })
+                }
+              })
             },
             fail: (err) => {
               console.log("showToast fail", err);

@@ -28,10 +28,10 @@ Page({
   },
   onshow() {
     swan.setPageInfo({
-      title: '王者时刻，有趣的视频。',
-      keywords: '王者时刻，lpl赛程，lol比赛视频，体育视频',
-      description: '王者时刻，有趣的视频。',
-      articleTitle: '王者时刻',
+      title: '奶茶视频',
+      keywords: '奶茶视频,体育视频,水果视频',
+      description: '奶茶视频,小姐姐视频',
+      articleTitle: '奶茶视频',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -73,7 +73,7 @@ Page({
       responseType: "text",
       data: {
         host: apifrom,
-        c :138
+        c :120
       },
       success: res => {
         let { menu } = res.data.params;

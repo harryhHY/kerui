@@ -1,5 +1,5 @@
 {
-    "appid": "20322768",
+    "appid": "19084895",
     "compilation-args": {
         "common": {
             "enhance": true
@@ -7,11 +7,11 @@
     },
     "host": "baiduboxapp",
     "preview": {
-        "packageId": 514924
+        "packageId": 508169
     },
     "projectname": "videotemplate9",
     "publish": {
-        "version": "1.0.9.0"
+        "version": "1.0.2"
     },
     "setting": {
         "urlCheck": false

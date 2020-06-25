@@ -41,7 +41,9 @@ Page({
       },
       success: res => {
         console.log(res.data);
-        let {title} = this.data
+        let {
+          title
+        } = this.data
         swan.setPageInfo({
           title: '骚虎视频',
           keywords: '骚虎视频，猛虎视频，比分视频',
@@ -88,40 +90,40 @@ Page({
       }
     });
   },
-     //动态设置title
-     setNavigationBarTitle(e) {
-      swan.request({
-        url: api + "/home/listn/m_detail",
-        header: {
-          "content-type": "application/json"
-        },
-        method: "POST",
-        dataType: "json",
-        responseType: "text",
-        data: {
-          id: this.currentId
-        },
-        success: res => {
-          let news_title = res.data.params.news_title
-  
-          let newTitle = `${news_title}-骚虎视频`
-          if (!newTitle) {
-            swan.showToast({
-              title: `${news_title}-骚虎视频`
-            });
-            return;
-          }
-          swan.setNavigationBarTitle({
-            title: newTitle
+  //动态设置title
+  setNavigationBarTitle(e) {
+    swan.request({
+      url: api + "/home/listn/m_detail",
+      header: {
+        "content-type": "application/json"
+      },
+      method: "POST",
+      dataType: "json",
+      responseType: "text",
+      data: {
+        id: this.currentId
+      },
+      success: res => {
+        let news_title = res.data.params.news_title
+
+        let newTitle = `${news_title}-骚虎视频`
+        if (!newTitle) {
+          swan.showToast({
+            title: `${news_title}-骚虎视频`
           });
-  
-        },
-        fail: err => {
-          // console.log("错误码：" + err.errCode);
-          // console.log("错误信息：" + err.errMsg);
+          return;
         }
-      });
-    },
+        swan.setNavigationBarTitle({
+          title: newTitle
+        });
+
+      },
+      fail: err => {
+        // console.log("错误码：" + err.errCode);
+        // console.log("错误信息：" + err.errMsg);
+      }
+    });
+  },
   onLoad(options) {
     this.currentId = options.id;
     this.setData({

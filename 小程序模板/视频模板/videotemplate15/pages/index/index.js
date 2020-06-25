@@ -75,7 +75,7 @@ Page({
   },
   //点赞
   praise(e) {
-    let id = e.currentTarget.dataset.id;
+    let {id,index} = e.currentTarget.dataset;
     swan.request({
       url: `${api}/home/listn/favourite`,
       header: {
@@ -88,18 +88,22 @@ Page({
         id,
       },
       success: (res) => {
-        let {
-          code,
-          msg,
-          parms
-        } = res.data;
+        let { code, msg, parms } = res.data;
         if (code == 0 && msg == "成功") {
           swan.showToast({
             title: msg,
             icon: "none",
             mask: false,
             success: (res) => {
-              this.getList();
+              let {items} = this.data;
+              let newitems = items.map((item,index1,items)=>{
+                if(index==index1){
+                  item.news_goods = item.news_goods + 1;
+                  this.setData({
+                    items:items
+                  })
+                }
+              })
             },
             fail: (err) => {
               console.log("showToast fail", err);
@@ -146,10 +150,10 @@ Page({
 
   onShow() {
     swan.setPageInfo({
-      title: "王者时刻，有趣的视频。",
-      keywords: "王者时刻，lpl赛程，lol比赛视频，体育视频",
-      description: "王者时刻，有趣的视频。",
-      articleTitle: "王者时刻",
+      title: '奶茶视频',
+      keywords: '奶茶视频,体育视频,水果视频',
+      description: '奶茶视频,小姐姐视频',
+      articleTitle: '奶茶视频',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -233,7 +237,7 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        c: 138,
+        c: 120,
         p: page, //第几页
         n: this.number, //每页条数
       },
@@ -345,28 +349,29 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 122,
+              c: 120,
               p: machpage, //第几页
               n: n, //每页条数
             },
             success: (res) => {
               this.showHttploading(false);
+              let {data} = res.data.params
               if (data != false) {
                 let {
                   items
                 } = this.data;
-                let {
-                  data
-                } = res.data.params;
+               
                 for (let i = 0; i < data.length; i++) {
                   items.push(data[i]);
                 }
                 this.setData({
                   page: machpage,
                   items: items,
-                  itemNews: newsArr,
+                  itemNews: items,
                   apimg: api,
                 });
+              }else{
+                
               }
             },
             fail: (err) => {
