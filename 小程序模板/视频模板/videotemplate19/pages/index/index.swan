@@ -36,15 +36,14 @@
                         <image src="../../images/Player.png" class='player'></image>
                     </view>
                     <view class='content_right left'>
-                        <!-- <image src="../../images/logo.png" class='logo'></image>
-                        <image src="../../images/logo1.png" class='logo1'></image> -->
-                        <view class='news_time span_view'>{{item.news_time}}</view>
                         <view class='news_title' bind:tap="navigateTo" data-id="{{item.id}}" >{{item.news_title}}</view>
-                        <!-- <view class='news_goods cl' bind:tap="praise" data-id="{{item.id}}">
+                        <view class='news_time span_view'>{{item.news_time}}</view>
+                        <view class='news_goods cl'>
                             <image src="../../images/goodnews.png" class='goodnews'></image>
                             {{item.news_goods}}
+                            <view class='tuijian'>推荐</view>
                             <image src="../../images/share3.png" class='share3 right' bindtap='openShare'></image>
-                        </view> -->
+                        </view>
                     </view>
                     <!-- <view class='goodnews_view'>
                         <image src="../../images/goodnews.png" class='goodnews'></image>

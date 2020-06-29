@@ -14,7 +14,9 @@
             <video style="width: 100%;" id="myVideo"  src="{{video_Src}}" autoplay="true"></video>
         </view>
 
-
+        <view class='news_goods' bind:tap="praise">
+            点赞❤
+        </view>
         <view class="collike">
             <!-- <view class="pic">
                 <image src="{{apimg}}{{detailImg}}" />

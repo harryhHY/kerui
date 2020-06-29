@@ -330,6 +330,7 @@
 }
 .news_time{
     color: #747474;
+    margin-left: 1rem;
 }
 .news_title{
     margin: 0.1rem 0 ;
@@ -358,7 +359,7 @@
     margin: auto;
 }
 .share3{
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     width: 0.2rem;
     height: 0.2rem;
 }
@@ -370,4 +371,12 @@
 .logo{
     width: 0.2rem;
     height: 0.2rem;
+}
+.tuijian{
+    display: inline-block;
+    color: #4e89e1;
+    border: 0.01rem solid #4e89e1;
+    padding: 0.01rem  0.03rem;
+    border-radius: 0.05rem;
+    margin-left: 0.1rem;
 }

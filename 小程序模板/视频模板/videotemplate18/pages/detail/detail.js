@@ -90,6 +90,80 @@ Page({
       }
     });
   },
+  //点赞
+  praise(e) {
+    let {
+      currentId
+    } = this.data
+    swan.request({
+      url: `${api}/home/listn/favourite`,
+      header: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      dataType: "json",
+      responseType: "text",
+      data: {
+        id:currentId,
+      },
+      success: (res) => {
+        let {
+          code,
+          msg,
+          parms
+        } = res.data;
+        if (code == 0 && msg == "点赞成功") {
+          swan.showToast({
+            title: msg,
+            icon: "none",
+            mask: false,
+            success: (res) => {
+              // let {
+              //   items
+              // } = this.data;
+              // let newitems = items.map((item, index1, items) => {
+              //   if (index == index1) {
+              //     item.news_goods = item.news_goods + 1;
+              //     this.setData({
+              //       items: items
+              //     })
+              //   }
+              // })
+            },
+            fail: (err) => {
+              console.log("showToast fail", err);
+            },
+          });
+        } else if (code == 0 && msg == "取消成功") {
+          swan.showToast({
+            title: msg,
+            icon: "none",
+            mask: false,
+            success: (res) => {
+              // let {
+              //   items
+              // } = this.data;
+              // let newitems = items.map((item, index1, items) => {
+              //   if (index == index1) {
+              //     item.news_goods = item.news_goods - 1;
+              //     this.setData({
+              //       items: items
+              //     })
+              //   }
+              // })
+            },
+            fail: (err) => {
+              console.log("showToast fail", err);
+            },
+          });
+        }
+      },
+      fail: (err) => {
+        console.log("错误码：" + err.errCode);
+        console.log("错误信息：" + err.errMsg);
+      },
+    });
+  },
   //动态设置title
   setNavigationBarTitle(e) {
     swan.request({
