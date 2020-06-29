@@ -41,7 +41,9 @@ Page({
       },
       success: res => {
         console.log(res.data);
-        let {title} = this.data
+        let {
+          title
+        } = this.data
         swan.setPageInfo({
           title: '奶茶视频',
           keywords: '奶茶视频,体育视频,水果视频',
@@ -88,40 +90,115 @@ Page({
       }
     });
   },
-     //动态设置title
-     setNavigationBarTitle(e) {
-      swan.request({
-        url: api + "/home/listn/m_detail",
-        header: {
-          "content-type": "application/json"
-        },
-        method: "POST",
-        dataType: "json",
-        responseType: "text",
-        data: {
-          id: this.currentId
-        },
-        success: res => {
-          let news_title = res.data.params.news_title
-  
-          let newTitle = `${news_title}-奶茶视频`
-          if (!newTitle) {
-            swan.showToast({
-              title: `${news_title}-奶茶视频`
-            });
-            return;
-          }
-          swan.setNavigationBarTitle({
-            title: newTitle
+  //点赞
+  praise(e) {
+    let {
+      id,
+      index
+    } = e.currentTarget.dataset;
+    swan.request({
+      url: `${api}/home/listn/favourite`,
+      header: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      dataType: "json",
+      responseType: "text",
+      data: {
+        id,
+      },
+      success: (res) => {
+        let {
+          code,
+          msg,
+          parms
+        } = res.data;
+        if (code == 0 && msg == "成功") {
+          swan.showToast({
+            title: msg,
+            icon: "none",
+            mask: false,
+            success: (res) => {
+              let {
+                items
+              } = this.data;
+              let newitems = items.map((item, index1, items) => {
+                if (index == index1) {
+                  item.news_goods = item.news_goods + 1;
+                  this.setData({
+                    items: items
+                  })
+                }
+              })
+            },
+            fail: (err) => {
+              console.log("showToast fail", err);
+            },
           });
-  
-        },
-        fail: err => {
-          // console.log("错误码：" + err.errCode);
-          // console.log("错误信息：" + err.errMsg);
+        } else if (code == 0 && msg == "取消成功") {
+          swan.showToast({
+            title: msg,
+            icon: "none",
+            mask: false,
+            success: (res) => {
+              let {
+                items
+              } = this.data;
+              let newitems = items.map((item, index1, items) => {
+                if (index == index1) {
+                  item.news_goods = item.news_goods - 1;
+                  this.setData({
+                    items: items
+                  })
+                }
+              })
+            },
+            fail: (err) => {
+              console.log("showToast fail", err);
+            },
+          });
         }
-      });
-    },
+      },
+      fail: (err) => {
+        console.log("错误码：" + err.errCode);
+        console.log("错误信息：" + err.errMsg);
+      },
+    });
+  },
+  //动态设置title
+  setNavigationBarTitle(e) {
+    swan.request({
+      url: api + "/home/listn/m_detail",
+      header: {
+        "content-type": "application/json"
+      },
+      method: "POST",
+      dataType: "json",
+      responseType: "text",
+      data: {
+        id: this.currentId
+      },
+      success: res => {
+        let news_title = res.data.params.news_title
+
+        let newTitle = `${news_title}-奶茶视频`
+        if (!newTitle) {
+          swan.showToast({
+            title: `${news_title}-奶茶视频`
+          });
+          return;
+        }
+        swan.setNavigationBarTitle({
+          title: newTitle
+        });
+
+      },
+      fail: err => {
+        // console.log("错误码：" + err.errCode);
+        // console.log("错误信息：" + err.errMsg);
+      }
+    });
+  },
   onLoad(options) {
     this.currentId = options.id;
     this.setData({
@@ -152,7 +229,7 @@ Page({
       success: res => {
         console.log(res.data);
         this.setData({
-          video_Src:res.data.params.news_scontent,
+          video_Src: res.data.params.news_scontent,
           detailImg: res.data.params.news_img,
           title: res.data.params.news_title,
           timer: res.data.params.news_time,

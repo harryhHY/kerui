@@ -43,10 +43,10 @@ Page({
         console.log(res.data);
         let {title} = this.data
         swan.setPageInfo({
-          title: '骚虎视频',
-          keywords: '骚虎视频，猛虎视频，比分视频',
-          description: '骚虎视频，视频中的战斗机。',
-          articleTitle: `${title}-骚虎视频`,
+          title: '草莓视频，好视频都在这。',
+          keywords: '草莓视频污，免费视频，香草视频',
+          description: '草莓视频，好视频都在这。',
+          articleTitle: `${title}-草莓视频`,
           releaseDate: "2019-01-02 12:01:30",
           image: [
             "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -104,10 +104,10 @@ Page({
         success: res => {
           let news_title = res.data.params.news_title
   
-          let newTitle = `${news_title}-骚虎视频`
+          let newTitle = `${news_title}-草莓视频污`
           if (!newTitle) {
             swan.showToast({
-              title: `${news_title}-骚虎视频`
+              title: `${news_title}-草莓视频污`
             });
             return;
           }
