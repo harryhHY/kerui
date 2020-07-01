@@ -488,3 +488,30 @@ apifrom:'https://6pl04.cn',
 模板类别:视频类
 详情页 顶部title 要是 "标题+草莓视频"
 20058443
+
+
+tailongacrylic@163.com----mima1230----MBX456789 
+小程序名称:石榴视频
+title: '石榴视频，在线观看',
+keywords: '石榴视频，夜色直播，美女直播',
+description: ''石榴视频，在线观看',
+articleTitle: '标题+石榴视频',
+api: "https://z5mh2.cn",
+apifrom:'https://z5mh2.cn',
+栏目: c=143
+模板类别:视频类
+详情页 顶部title 要是 "标题+石榴视频"
+19938816
+
+
+Qq20695426@163.com----mima12340--------MBX456789
+小程序名称：猛虎视频
+title: '视频合集大分享。',
+keywords: '猛虎视频，优质视频',
+description: '猛虎视频，视频合集大分享。',
+articleTitle: '视频标题-猛虎视频',
+比分api: "https://1hq61.cn",
+apifrom:'https://1hq61.cn',
+栏目: c=148
+模板类别:视频类
+20200570
