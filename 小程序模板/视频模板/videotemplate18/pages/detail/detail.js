@@ -25,7 +25,8 @@ Page({
     logo1: "../../images/logo1.png",
     htmlSnip: "",
     apimg: "",
-    video_Src: ""
+    video_Src: "",
+    news_goods: ''
   },
   onShow() {
     swan.request({
@@ -45,10 +46,10 @@ Page({
           title
         } = this.data
         swan.setPageInfo({
-          title: '骚虎视频',
-          keywords: '骚虎视频，猛虎视频，比分视频',
-          description: '骚虎视频，视频中的战斗机。',
-          articleTitle: `${title}-骚虎视频`,
+          title: '视频合集大分享。',
+          keywords: '猛虎视频，优质视频',
+          description: '猛虎视频，视频合集大分享。',
+          articleTitle: `${title}-猛虎视频`,
           releaseDate: "2019-01-02 12:01:30",
           image: [
             "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -104,7 +105,7 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        id:currentId,
+        id: currentId,
       },
       success: (res) => {
         let {
@@ -112,12 +113,16 @@ Page({
           msg,
           parms
         } = res.data;
-        if (code == 0 && msg == "点赞成功") {
+        if (code == 0 && msg == "成功") {
+
           swan.showToast({
             title: msg,
             icon: "none",
             mask: false,
             success: (res) => {
+              this.setData({
+                news_goods: true
+              })
               // let {
               //   items
               // } = this.data;
@@ -140,6 +145,9 @@ Page({
             icon: "none",
             mask: false,
             success: (res) => {
+              this.setData({
+                news_goods: false
+              })
               // let {
               //   items
               // } = this.data;
@@ -180,10 +188,10 @@ Page({
       success: res => {
         let news_title = res.data.params.news_title
 
-        let newTitle = `${news_title}-骚虎视频`
+        let newTitle = `${news_title}-猛虎视频`
         if (!newTitle) {
           swan.showToast({
-            title: `${news_title}-骚虎视频`
+            title: `${news_title}-猛虎视频`
           });
           return;
         }
@@ -227,13 +235,15 @@ Page({
       },
       success: res => {
         console.log(res.data);
+        let{news_scontent,news_img,news_title,news_time,news_content,news_user_favourite} = res.data.params
         this.setData({
-          video_Src: res.data.params.news_scontent,
-          detailImg: res.data.params.news_img,
-          title: res.data.params.news_title,
-          timer: res.data.params.news_time,
-          htmlSnip: res.data.params.news_content,
-          apimg: api
+          video_Src: news_scontent,
+          detailImg: news_img,
+          title: news_title,
+          timer: news_time,
+          htmlSnip: news_content,
+          apimg: api,
+          news_goods:news_user_favourite
         });
       },
       fail: err => {

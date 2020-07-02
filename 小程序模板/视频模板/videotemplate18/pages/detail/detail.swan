@@ -15,7 +15,12 @@
         </view>
 
         <view class='news_goods' bind:tap="praise">
-            点赞❤
+            <view class='span_view'>
+                {{news_goods == 1?'已赞':'点赞'}}
+            </view>
+            <view class="{{news_goods == 1 ?'red span_view':'span_view'}}">
+                ❤
+            </view>
         </view>
         <view class="collike">
             <!-- <view class="pic">

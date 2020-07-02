@@ -515,3 +515,18 @@ apifrom:'https://1hq61.cn',
 栏目: c=148
 模板类别:视频类
 20200570
+
+
+
+
+yellowflower44@163.com----aa692009--------MBX456789
+小程序名称:s8视频
+title: 's8视频，游戏体育视频。',
+keywords: 's8视频，黄瓜直播，美女福利',
+description: ''游戏体育视频',
+articleTitle: '标题+s8视频',
+api: "https://l9j0ec.cn",
+apifrom:'https://l9j0ec.cn',
+栏目: c=154
+模板类别:视频类
+详情页 顶部title 要是 "标题+s8视频"
