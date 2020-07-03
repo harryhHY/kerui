@@ -534,3 +534,6 @@ not all {
     text-overflow: ellipsis; 
     white-space: nowrap;
 }
+.span_view{
+    display: inline-block;
+}

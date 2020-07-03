@@ -1,7 +1,7 @@
 <view class='wrap'>
     <view class="card-area">
         <view class="top-description detail-title border-bottom">
-            <view class="title-h">{{title}}</view>
+            <view class="title-h">{{title}}--s8视频</view>
         </view>
         <image src="{{logo}}" class="logo-img"></image>
         <view class="logo-con">
@@ -14,7 +14,14 @@
             <video style="width: 100%;" id="myVideo"  src="{{video_Src}}" autoplay="true"></video>
         </view>
 
-
+        <view class='news_goods' bind:tap="praise">
+            <view class='span_view'>
+                {{news_goods == 1?'已赞':'点赞'}}
+            </view>
+            <view class="{{news_goods == 1 ?'red span_view':'span_view'}}">
+                ❤
+            </view>
+        </view>
         <view class="collike">
             <!-- <view class="pic">
                 <image src="{{apimg}}{{detailImg}}" />
