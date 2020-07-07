@@ -160,11 +160,12 @@
 .hname {
   max-width: 1.45rem;
   color: #000000;
-
   text-align: right;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .hTotalScore {
@@ -200,11 +201,12 @@
 .aname {
   max-width: 1.4rem;
   color: #000000;
-
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .content_left {
@@ -252,8 +254,8 @@
 }
 
 .hicon,.aicon{
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.32rem;
+  height: 0.32rem;
 }
 .share_view{
   padding-top: 0.1rem;
