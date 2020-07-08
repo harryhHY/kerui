@@ -5,7 +5,6 @@
         "pages/videodetail/videodetail",
         "pages/index/index",
         "pages/detail/detail",
-        "pages/newpage/new",
         "pages/web/web",
         "pages/bannerweb/bannerweb"
     ],
