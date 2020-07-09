@@ -327,7 +327,10 @@
     height: 0.15rem;
 }
 .news_time{
-    color: #747474;
+    color: #fff;
+    position: absolute;
+    bottom: 0.02rem;
+    right: 0.05rem;
 }
 .news_title{
     margin: 0.1rem 0 ;
@@ -361,7 +364,7 @@
     margin: auto;
 }
 .share3{
-    margin-left: .5rem;
+    margin-left: 1rem;
     width: 0.2rem;
     height: 0.2rem;
 }
