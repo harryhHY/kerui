@@ -523,10 +523,22 @@ yellowflower44@163.com----aa692009--------MBX456789
 小程序名称:s8视频
 title: 's8视频，游戏体育视频。',
 keywords: 's8视频，黄瓜直播，美女福利',
-description: ''游戏体育视频',
+description: '游戏体育视频',
 articleTitle: '标题+s8视频',
 api: "https://l9j0ec.cn",
 apifrom:'https://l9j0ec.cn',
 栏目: c=154
 模板类别:视频类
 详情页 顶部title 要是 "标题+s8视频"
+
+babyequalsinking@163.com----aa769794----MBX456789
+小程序名称:香蕉在线视频
+title: '香蕉在线视频，香蕉视频，草莓视频',
+keywords: '香蕉在线视频，草莓视频，香蕉视频',
+description: ''香蕉在线视频在线观看',
+articleTitle: '香蕉视频',
+api: "https://z5mh2.cn",
+apifrom:'https://z5mh2.cn',
+栏目: c=142
+模板类别:视频类
+19861231

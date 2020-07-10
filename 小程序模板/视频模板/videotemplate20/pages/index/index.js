@@ -149,10 +149,10 @@ Page({
 
   onShow() {
     swan.setPageInfo({
-      title: '石榴视频，在线观看',
-      keywords: '石榴视频，夜色直播，美女直播',
-      description: '石榴视频，在线观看',
-      articleTitle: '石榴视频',
+      title: '香蕉在线视频，香蕉视频，草莓视频',
+      keywords: '香蕉在线视频，草莓视频，香蕉视频',
+      description: '香蕉在线视频在线观看',
+      articleTitle: '香蕉视频',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -239,7 +239,7 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        c: 143,
+        c: 142,
         p: page, //第几页
         n: this.number, //每页条数
       },
@@ -347,7 +347,7 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 143,
+              c: 142,
               p: machpage, //第几页
               n: n, //每页条数
             },
