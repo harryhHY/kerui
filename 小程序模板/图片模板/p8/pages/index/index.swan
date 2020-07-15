@@ -54,17 +54,15 @@
 
                 </view> -->
                 <image class='content_image' src="{{apimg}}{{item.news_img}}"></image>
+                <view class='news_time'>
+                    {{item.news_time}}
+                </view>
                 <view class='news_time_view'>
                     <!-- <view class='left tuijian'>
                         推荐
                     </view> -->
-                    <view>
+                    <view class=' centerimg1'>
                          {{item.news_title}}
-                    </view>
-                    <view class=' centerimg1  right'>
-                        <view class='news_time'>
-                            {{item.news_time}}
-                        </view>
                         <image class='like' src="{{like}}"></image>
                         <view class='news_goods'>
                             {{item.news_goods}}

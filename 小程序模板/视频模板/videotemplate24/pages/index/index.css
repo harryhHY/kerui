@@ -18,6 +18,41 @@
     flex-direction: column;
 }
 
+.balls_view {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+
+.balls {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    width: 3.5em;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.balls view {
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    background-color: #fc2f70;
+    transform: translateY(-100%);
+    animation: wave 0.8s ease-in-out alternate infinite;
+}
+
+.balls view:nth-of-type(1) {
+    animation-delay: -0.4s;
+}
+
+.balls view:nth-of-type(2) {
+    animation-delay: -0.2s;
+}
+
 .collike view {
     height: 1.07rem;
     width: 2.5rem;
@@ -93,8 +128,10 @@
     border-left: 1px solid #ddd;
 }
 
+
+
 .main-container {
-    margin: .01rem .01rem 0 .01rem;
+    margin: .05rem .1rem 0 .1rem;
 }
 
 .main-title {
@@ -110,7 +147,7 @@
     /* margin: 0.1rem 0 ; */
     height: 21px;
     /* border-left: 3px solid #5091C7; */
-    padding-left: 0.1rem;
+    padding-left: 0.05rem;
     color: #5C8AF5;
     font-weight: 700;
     font-size: 0.2rem;
@@ -125,7 +162,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    /* color: #f70709; */
+    color: #f70709;
     font-size: 0.12rem;
     text-align: inherit;
 }
@@ -157,9 +194,26 @@
     line-height: 21px;
 }
 
-
-.content_view {
+.main-line {
     width: 100%;
+    height: 1px;
+    background-color: #DBDBDB;
+    margin: 0 auto;
+    margin-top: 0.1rem;
+}
+
+.top-description {
+    width: 50%;
+    float: left;
+    padding: 0;
+}
+
+
+
+.con-img {
+    width: 100%;
+    height: 70%;
+    /* float: left; */
 }
 
 
@@ -168,36 +222,41 @@
     height: 100%;
 }
 
+.con-title {
+    /* float: left; */
+    width: 100%;
+    height: 30%;
+}
 
-/* .title_one {
-    color: black;
-    margin-top: 0.05rem;
-    font-weight: 600;
-    font-style: italic;
+.title_one {
+    font-weight: 500;
+    font-family: Microsoft JhengHei;
+    /* color: #f70709; */
+    line-height: 0.25rem;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    font-size: 0.14rem;
-} */
+    font-family: PingFangSC-Regular;
+    font-size: 0.16rem;
+}
 
-/* .title_two {
-    width:100%;
+.title_two {
     position: absolute;
-    bottom: 0.05rem;
-    right: 0.05rem;
-    display: flex;
+    bottom: 0.1rem;
     color: #C4B8BD;
     font-size: 0.15rem;
-} */
-/* .time_con{
-    padding-left: 0.05rem;
-    flex: 1;
-} */
+}
+
 .small-default {
     margin-right: 0.05rem;
     width: 0.15rem;
     height: 0.16rem;
     float: left;
+}
+
+.bannerImages {
+    width: 100%;
 }
 
 .bannerImg>image {
@@ -208,23 +267,12 @@
 .bannertext {
     margin: 0.1rem 0;
     padding: 0.05rem;
-    font-family: KaiTi;
+    font-family: STXinwei;
     border: 2px solid;
     border-radius: 0.10rem;
     color: #f70709;
 }
 
-.logodiv {
-    width: 100%;
-    height: 0.38rem;
-    display: flex;
-    align-items: center;
-}
-
-.logoimages {
-    width: 0.39rem;
-    height: 100%;
-}
 
 .img2 {
     width: 0.79rem;
@@ -232,119 +280,107 @@
     line-height: 0.79rem;
 }
 
-.loading_title {
-    width: 100%;
-    color: #666666;
-    height: 0.38rem;
-    line-height: 0.38rem;
-    font-size: 0.16rem;
-    text-align: center;
-    z-index: 100;
+.newimg {
+    width: 0.32rem;
+    height: 0.32rem;
 }
 
-.loading_title>image {
-    width: 0.20rem;
-    height: 0.20rem;
+.changeContent {
+    padding: 0.1rem 0.1rem 0 0.1rem;
 }
 
-.tab_nav {
-    width: 100%;
-    height: 0.4rem;
+
+.changeNew {
+    color: #4e89e1;
 }
 
-.nav_logo {
-    width: 20%;
-    margin-left: 0.05rem;
-    margin-top: 0.1rem;
-    height: 50%;
+.changeHot {
+    color: #d81e06;
 }
 
-.race_tab {
-    width: 50%;
-    height: 60%;
-    float: right;
-    margin-top: 0.06rem;
-}
-
-/* .tab_child{
-    padding: 0.05rem 0;
-    text-align: left;
-    border-right: 1px solid #CACACA;
-}
-.tab_child:nth-child(3){
-    border-right: none;
-} */
-/* .like{
-    flex: 1;
-    width: 0.14rem;
-    height: 0.14rem;
-    position: relative;
-    top: 0.02rem;
-} */
-.content_image {
-    width: 100%;
-    height: 1.4rem;
-    border-radius: 0.05rem;
-}
-.left_view{
-    width: 60%;
-    padding-left: 0.05rem;
-}
-.like {
-    width: 0.2rem;
-    height: 0.2rem;
-    margin-left: 0.2rem;
-}
-
-.news_time_view {
-    margin: 0.1rem 0.1rem;
-    /* position: absolute;
-
-    bottom: 0.02rem; */
-    color: #000;
-}
-.box:nth-child(2n+1) .img_view{
-    margin-left: 2%;
-}
-.img_view {
-    width: 49%;
-    margin-top: 0.1rem;
-    position: relative;
-}
-
-.logoimg {
-    position: absolute;
-    top: 0.05rem;
-    left: 0.27rem;
-    width: 0.6rem !important;
-    height: 0.2rem;
-}
-.logoimg1{
-    position: absolute;
-    top: 0.05rem;
-    left: 0.05rem;
-    height: 0.2rem;
-    width: 0.2rem;
-}
-.news_goods{
-    color: #f70709;
-}
-.news_title {
-    padding-top: 0.4rem;
-    font-size: 0.21rem;
-    font-family: '楷体';
+.changeSpan {
     font-weight: 600;
+    padding: 0 0.05rem;
 }
-.tuijian{
-    color: #5091C7;
-    border: 0.01rem solid #5091C7;
-    padding: 0.02rem 0.03rem;
+
+.span_view {
+    display: inline-block;
+}
+
+/* videotemplate */
+.content_div{
+    margin-top: 0.15rem;
+}
+.content_left{
+    position: relative;
+}
+.content_image{
     border-radius: 0.05rem;
+    width: 100%;
+    height: 1.3rem;
+}
+.content_right{
+    padding:2%;
+}
+.logo1{
+    width: 0.6rem;
+    height: 0.15rem;
 }
 .news_time{
-    margin-left:0.1rem ;
+    color: #747474;
+    margin-left: 0.2rem;
+}
+.news_title{
+    margin: 0.1rem 0 ;
+    color:rgb(47, 139, 226);
+    font-size: 0.16rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.news_goods{
+    display: flex;
+    align-items: center;
+    margin-top: 0.1rem;
+}
+
+.goodnews{
+    width: 0.2rem;
+    height: 0.2rem;
+}
+.player{
+    width: 0.32rem;
+    height: 0.32rem;
     position: absolute;
-    right: 0.05rem;
-    bottom: 0.5rem;
-    color:#fff;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.share3{
+    margin-left: 1rem;
+    width: 0.2rem;
+    height: 0.2rem;
+}
+.content{
+    margin: 0.05rem 0;
+    padding: 0.05rem;
+    width: 50%;
+    border-radius: 0.05rem;
+}
+.logo{
+    width: 0.2rem;
+    height: 0.2rem;
+}
+.tuijian{
+    display: inline-block;
+    color: #4e89e1;
+    border: 0.01rem solid #4e89e1;
+    padding: 0.01rem  0.03rem;
+    border-radius: 0.05rem;
+    margin-left: 0.1rem;
 }
