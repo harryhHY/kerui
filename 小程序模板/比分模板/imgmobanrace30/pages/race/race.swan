@@ -106,6 +106,9 @@
                         <view class='hYellowCard right' s-if='{{item.hYellowCard!=null}}'>
                             {{item.hYellowCard}}
                         </view>
+                        <view class='hCornerKick span_view right'>
+                            {{item.hCornerKick}}
+                        </view>
                     </view>
                     <view class='hcardright right cl'>
                         <view class='aRedCard left' s-if='{{item.aRedCard!=null}}'>
@@ -114,18 +117,17 @@
                         <view class='aYellowCard left' s-if='{{item.aYellowCard!=null}}'>
                             {{item.aYellowCard}} 
                         </view>
-                    </view>
-                </view>
-                <view>
-                    <view class='content_bottom ov' s-if="{{item.hCornerKick!=null}}">
-                        <view class='hCornerKick span_view'>
-                             {{item.hCornerKick}}
-                        </view>
-                        <view class='span_view aCornerKick'>
+                        <view class='span_view aCornerKick left'>
                             {{item.aCornerKick}}
                         </view>
                     </view>
                 </view>
+                <!-- <view>
+                    <view class='content_bottom ov' s-if="{{item.hCornerKick!=null}}">
+                        
+
+                    </view>
+                </view> -->
                 <view  s-if="{{item.gameStage == null}}" class='cl tuijian_view'>
                     <view class='left tuijian'>
                         推荐
