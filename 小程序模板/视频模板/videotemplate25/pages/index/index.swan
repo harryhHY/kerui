@@ -1,0 +1,55 @@
+<!-- index.swan -->
+<view class="container">
+<!-- 轮播图 -->
+    <view class="card-area cl">
+        <!-- <view class="logodiv">
+            <image s-for="item,index in logoList" src="{{item.imgsrc}}" class="logoimages {{item.classname}}"></image>
+        </view> -->
+        <view class='balls_view' s-if='showHttploading'>
+            <view class="balls">
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+        </view>
+        <view>
+            <swiper 
+             indicator-dots="{{indicator_dots}}"
+             indicator-color="{{indicator_color}}"
+             indicator-active-color="{{indicator_active_color}}"
+             autoplay="{{Bannerautoplay}}"
+             interval="{{autoPlayInterval}}"
+             duration="{{switchDuration}}"
+            >
+             <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}"  bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>                           
+                </swiper-item>
+            </block>
+            </swiper >
+        </view>
+        <view  class="content_div cl">
+            <view class='content cl left' s-for="item,index in items" >
+                <view class='a11 cl' >
+                    <view class='content_left' bind:tap="navigateTo" data-id="{{item.id}}">
+                        <image src="{{apimg}}{{item.news_img}}" class='content_image '></image>
+                        <!-- <image src="../../images/Player.png" class='player'></image> -->
+                    </view>
+                    <view class='content_right left'>
+                        <!-- <image src="../../images/logo.png" class='logo'></image>
+                        <image src="../../images/logo1.png" class='logo1'></image>
+                        <view class='news_time span_view'>{{item.news_time}}</view> -->
+                        <view class='news_title' bind:tap="navigateTo" data-id="{{item.id}}" >
+                            {{item.news_title}}
+                        </view>
+                        <view class='news_goods cl'>
+                            <image src="../../images/goodnews.png" class='goodnews'></image>
+                            {{item.news_goods}}
+                            <!-- <view class='tuijian'>推荐</view> -->
+                            <image src="../../images/share3.png" class='share3 right' bindtap='openShare'></image>
+                        </view>
+                    </view>
+                </view>
+            </view>       
+        </view>
+</view>
