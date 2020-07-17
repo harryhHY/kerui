@@ -33,12 +33,15 @@
                 <view class='a11 cl' >
                     <view class='content_left' bind:tap="navigateTo" data-id="{{item.id}}">
                         <image src="{{apimg}}{{item.news_img}}" class='content_image '></image>
+                        <view class='logo_view'>
+                            <image src="../../images/logo.png" class='logo'></image>
+                            <image src="../../images/logo1.png" class='logo1'></image>
+                        </view>
+                        <view class='news_time span_view'>{{item.news_time}}</view>
                         <!-- <image src="../../images/Player.png" class='player'></image> -->
                     </view>
                     <view class='content_right left'>
-                        <!-- <image src="../../images/logo.png" class='logo'></image>
-                        <image src="../../images/logo1.png" class='logo1'></image>
-                        <view class='news_time span_view'>{{item.news_time}}</view> -->
+
                         <view class='news_title' bind:tap="navigateTo" data-id="{{item.id}}" >
                             {{item.news_title}}
                         </view>
