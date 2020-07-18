@@ -8,8 +8,7 @@ textarea{resize:none;}
 .cl:after{content: "";display: block;clear: both;height: 0;overflow: hidden;visibility: hidden;}
 .cl{zoom:1;}
 html,body{height: 100%;}
-html{font-size:calc(100vw/10);}
-
+html{font-size:calc(100vw/7.5);}
 body{display: flex;flex-direction:column;font-size: .24rem}
 .left{
     float: left;
@@ -26,4 +25,40 @@ body{display: flex;flex-direction:column;font-size: .24rem}
     overflow: hidden; /*超出部分隐藏*/
     text-overflow: ellipsis; /* 超出部分显示省略号 */
     white-space: nowrap;
+}
+#web{
+    background: url('../iamge/web/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 16.24rem;
+    height: 16.24rem;
+}
+.ios1{
+    background: url('../iamge/web/ios.png');
+    background-size: 100%;
+    width: 4.94rem;
+    height: 0.94rem;
+    position: absolute;
+    bottom: 15%;
+    left: 18%;
+}
+.ios:hover{
+    background: url('../iamge/web/ios1.png');
+}
+.andr:hover{
+    background: url('../iamge/web/and1.png');
+}
+.andr1{
+    width: 4.94rem;
+    height: 0.94rem;
+    background: url('../iamge/web/and.png');
+    background-size: 100%;
+    position: absolute;
+    bottom: 7%;
+    left: 18%;
+}
+#pc{
+    display: none;
 }

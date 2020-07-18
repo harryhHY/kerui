@@ -11,6 +11,7 @@
 
 <body>
     <div id="pc">
+        <img src="./iamge/bg.jpg" alt="" class="bgimg">
         <a href="https://apps.apple.com/us/app/%E5%98%BF%E5%97%A8/id1504827585?l=zh&ls=1" target='_blank'>
             <div class="ios">
 
@@ -21,20 +22,14 @@
 
             </div>
         </a>
-
-    </div>
-    <div id="web">
-        <a href="https://apps.apple.com/us/app/%E5%98%BF%E5%97%A8/id1504827585?l=zh&ls=1" target='_blank'>
-            <div class="ios1">
-
-            </div>
-        </a>
-        <a href="https://hzxzyl.net/software/1.1.5.apk">
-            <div class="andr1">
-
-            </div>
-        </a>
     </div>
 </body>
+<script>
+    var is_mobile = navigator.userAgent.toLowerCase().match(/(ipod|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null;   
+    if(is_mobile){
+        window.location.href = "./index2.html";
+    }
+</script>
+
 
 </html>
