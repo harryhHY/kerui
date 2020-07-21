@@ -27,9 +27,8 @@ Page({
     items: [],
     number: 15,
     apimg: "",
-    p:1,
-    tabs: [
-      {
+    p: 1,
+    tabs: [{
         name: "1",
         label: "推荐"
       },
@@ -43,10 +42,9 @@ Page({
       }
     ],
     activeName: "1",
-    order:"1",
-    count:"",//点赞数
-    logoList: [
-      {
+    order: "1",
+    count: "", //点赞数
+    logoList: [{
         id: 1,
         imgsrc: "../../images/logo.png",
         classname: "img1"
@@ -82,7 +80,7 @@ Page({
   goWebView(e) {
     let src = e.currentTarget.dataset.src;
     console.log(src);
-    
+
     if (this.data.is_banner == true) {
       swan.navigateTo({
         url: `/pages/bannerweb/bannerweb?src=${src}`
@@ -98,10 +96,14 @@ Page({
   },
   tabsOne(e) {
     // this.getdate(0);
-    let { p } = this.data;
-    let { name } = e.detail;
+    let {
+      p
+    } = this.data;
+    let {
+      name
+    } = e.detail;
     console.log(name);
-    
+
     this.setData({
       order: name,
       activeName: name,
@@ -114,7 +116,7 @@ Page({
         p: pipi
       });
     }
-    this.getList(name , pipi);
+    this.getList(name, pipi);
   },
   onShow() {
     swan.setPageInfo({
@@ -126,13 +128,11 @@ Page({
       image: [
         "https://mbs1.bdstatic.com/searchbox/mappconsole/image/20200331/b259c343-84d6-44fb-8472-a3bbc3dcd1c1.png",
       ],
-      video: [
-        {
-          url: "https://www.baidu.com/mx/v12.mp4",
-          duration: "100",
-          image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
-        }
-      ],
+      video: [{
+        url: "https://www.baidu.com/mx/v12.mp4",
+        duration: "100",
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
+      }],
       visit: {
         pv: "1000",
         uv: "100",
@@ -160,13 +160,18 @@ Page({
   },
   ///下拉刷新
   handleTap1(e) {
-    let { clientX, clientY, pageX, pageY } = e.changedTouches[0];
+    let {
+      clientX,
+      clientY,
+      pageX,
+      pageY
+    } = e.changedTouches[0];
     if (clientY == pageY) {
       this.setData({
         showlodingtitle: true
       });
       let that = this;
-      setTimeout(function() {
+      setTimeout(function () {
         swan.stopPullDownRefresh();
         swan.hideLoading();
         that.setData({
@@ -176,13 +181,31 @@ Page({
     }
   },
   //点赞
-    // dianzan(e) {
-    //   let currentId = e.currentTarget.dataset.id;
-    //   this.favourite(currentId);
-    //   this.getFavourite();
-    // },
+  // dianzan(e) {
+  //   let currentId = e.currentTarget.dataset.id;
+  //   this.favourite(currentId);
+  //   this.getFavourite();
+  // },
+  //分享
+  openShare() {
+    swan.openShare({
+      title: "智能小程序示例",
+      content: "世界很复杂，百度更懂你",
+      path: "/pages/openShare/openShare?key=value",
+      imageUrl: "../../images/logo.png",
+      success: (res) => {
+        swan.showToast({
+          title: "分享成功",
+        });
+        console.log("openShare success", res);
+      },
+      fail: (err) => {
+        console.log("openShare fail", err);
+      },
+    });
+  },
   // 首页数据列表
-  getList(order , p = 1) {
+  getList(order, p = 1) {
     swan.showLoading({
       title: "页面数据加载中...",
       mask: false, // 一般设置这个值为false
@@ -208,11 +231,14 @@ Page({
       },
       success: res => {
         console.log(res.data);
-        
-        number =  res.data.params.total;
+
+        number = res.data.params.total;
         console.log(number);
         let data = res.data.params.data;
-        let { items, p } = this.data;
+        let {
+          items,
+          p
+        } = this.data;
         if (p == 1) {
           this.setData({
             items: res.data.params.data,
@@ -227,7 +253,9 @@ Page({
           });
         }
         //轮播图注释掉
-        let { is_banner } = data;
+        let {
+          is_banner
+        } = data;
         if (is_banner == 1) {
           // bannerList.push(data.banner);
           this.setData({
@@ -245,24 +273,29 @@ Page({
     });
   },
   onReachBottom(e) {
-    let { p , order} = this.data;
+    let {
+      p,
+      order
+    } = this.data;
     let page = ++p;
     // if(page >= number/10){
     //   page = Math.ceil(number/10)
     //   this
     // }
     console.log(page);
-    
+
     this.setData({
       p: page
     });
-    this.getList(order,page);
+    this.getList(order, page);
   },
   //下拉刷新
   onPullDownRefresh() {
-    let {order} = this.data;
+    let {
+      order
+    } = this.data;
     this.setData({
-      p:1
+      p: 1
     });
     let p = 1;
     swan.showLoading({
@@ -290,18 +323,18 @@ Page({
       },
       success: res => {
         console.log(res.data);
-          this.setData({
-            items: res.data.params.data,
-            // itemNews: newsArr,
-            apimg: api
-          });
+        this.setData({
+          items: res.data.params.data,
+          // itemNews: newsArr,
+          apimg: api
+        });
       },
       fail: err => {
         console.log("错误码：" + err.errCode);
         console.log("错误信息：" + err.errMsg);
       }
     });
-    setTimeout(function() {
+    setTimeout(function () {
       swan.stopPullDownRefresh();
       swan.hideLoading();
     }, 1000);

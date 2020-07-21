@@ -67,6 +67,10 @@
                         <view class='news_goods'>
                             {{item.news_goods}}
                         </view>
+                        
+                    </view>
+                    <view class='share3_view'>
+                        查看并分享<image src="../../images/share3.png" class='share3 right' bindtap='openShare'></image>
                     </view>
                 </view>
                                     
