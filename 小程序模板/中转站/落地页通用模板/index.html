@@ -5,10 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/pc.css">
     <title>pc</title>
 </head>
 
 <body>
+    pc
 </body>
 <script src="./js/pc.js"></script>
+<script>
+    (function (n, e) {
+        var t = n.documentElement,
+            i = "orientationchange" in window ? "orientationchange" : "resize",
+            d = function () {
+                var n = t.clientWidth;
+                n && (t.style.fontSize = n / 9.6 + "px")
+            };
+        n.addEventListener && (e.addEventListener(i, d, !1), n.addEventListener("DOMContentLoaded", d, !1))
+    })(document, window);
+</script>
+
 </html>
