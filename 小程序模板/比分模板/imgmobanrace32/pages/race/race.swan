@@ -58,10 +58,6 @@
     <view class="intro" s-if="{{showdata}}">
         <view class="content_today_view cl" s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
             <view class='content_body'>
-                <view class='logo_view'>
-                    <image src="../../images/logo.png" class='logo'></image>
-                    <image src="../../images/logo1.png" class='logo1'></image>
-                </view>
                 <view class='content_top cl'>
                     <image src="{{item.licon}}" s-if='{{item.licon}}' class='licon'></image>
                     <view class="{{item.licon? 'lname1  span_view':'lname span_view'}}" >
@@ -70,6 +66,7 @@
                     <view class='gameTimeFormat span_view ov'>
                         {{item.gameTimeFormat}}
                     </view>
+                    <image src="../../images/share2.png" class='share share_view' bindtap="openShare"></image>
                     <!-- <image src="../../images/court.png" class='court'  s-if="{{item.gameStage == null}}"></image> -->
                 </view>
                 <view class='gameStage ov' s-if="{{item.gameStage == null}}">
@@ -132,14 +129,14 @@
 
                     </view>
                 </view> -->
-                <view  s-if="{{item.gameStage == null}}" class='cl tuijian_view'>
+                <!-- <view  s-if="{{item.gameStage == null}}" class='cl tuijian_view'>
                     <view class='left tuijian'>
                         推荐
                     </view>
                     <view class='right' bindtap="openShare">
                         <image src="../../images/share2.png" class='share'></image>
                     </view>
-                </view>
+                </view> -->
             </view>
             <view class='content_right cl'>
                 <view class='cl'>

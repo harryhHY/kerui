@@ -258,7 +258,8 @@
   height: 0.32rem;
 }
 .share_view{
-  padding-top: 0.1rem;
+  position: absolute;
+  right: 0.05rem;
 }
 .logo_view{
   margin-top: 0.05rem;
@@ -282,6 +283,7 @@
   width: 0.22rem;
   height: 0.22rem;
 }
+
 .tuijian_view{
   margin: 0.1rem 0.1rem 0;
 }
