@@ -542,3 +542,17 @@ apifrom:'https://z5mh2.cn',
 栏目: c=142
 模板类别:视频类
 19861231
+
+
+
+jiangshanlook1@163.com----aa186268--------MBX456789
+小程序名称:球探比分即时足球比分
+title: '球探比分即时足球比分。',
+keywords: '球探比分即时足球比分，足球比分直播，足球比赛直播',
+description: '球探比分即时足球比分。',
+articleTitle: '球探比分',
+比分api: "https://u0q94.cn",
+apifrom:'https://1hq61.cn',
+栏目: c=158
+模板类别:比分类
+21536609
