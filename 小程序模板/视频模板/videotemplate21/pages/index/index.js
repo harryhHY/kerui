@@ -149,10 +149,10 @@ Page({
 
   onShow() {
     swan.setPageInfo({
-      title: '石榴视频，在线观看',
-      keywords: '石榴视频，夜色直播，美女直播',
-      description: '石榴视频，在线观看',
-      articleTitle: '石榴视频',
+      title: '污污视频，在线观看。',
+      keywords: '污污视频,成人性视频,体育视频,迷人美女',
+      description: '污污视频，在线观看。',
+      articleTitle: '污污视频',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -239,18 +239,18 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        c: 143,
+        c:160,
         p: page, //第几页
         n: this.number, //每页条数
       },
       success: (res) => {
         this.showHttploading(false);
         let newsArr = [];
-        newsArr.push(res.data.params.data[0].news_title);
-        newsArr.push(res.data.params.data[1].news_title);
-        newsArr.push(res.data.params.data[2].news_title);
-        newsArr.push(res.data.params.data[3].news_title);
-        newsArr.push(res.data.params.data[4].news_title);
+        // newsArr.push(res.data.params.data[0].news_title);
+        // newsArr.push(res.data.params.data[1].news_title);
+        // newsArr.push(res.data.params.data[2].news_title);
+        // newsArr.push(res.data.params.data[3].news_title);
+        // newsArr.push(res.data.params.data[4].news_title);
 
         console.log(res.data);
         let data = res.data.params;
@@ -347,7 +347,7 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 143,
+              c: 160,
               p: machpage, //第几页
               n: n, //每页条数
             },
