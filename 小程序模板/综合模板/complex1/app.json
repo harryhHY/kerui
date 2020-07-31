@@ -23,6 +23,12 @@
                 "selectedIconPath": "./images/race.png"
             },
             {
+                "pagePath": "pages/index/index",
+                "text": "视频",
+                "iconPath": "./images/home.png",
+                "selectedIconPath": "./images/home1.png"
+            },
+            {
                 "pagePath": "pages/web/web",
                 "text": "咨询",
                 "iconPath": "./images/message.png",
