@@ -42,7 +42,7 @@
          <tabs 
             class="border-bottom" 
             active-name="{{activeNameTwo}}"
-            max-tab-item-amount="4"
+            max-tab-item-amount="3"
             bindtabchange="changeday"
             tabs-inactive-text-color='#1cf0f0'
             tabs-active-text-color='#1c78f0'
