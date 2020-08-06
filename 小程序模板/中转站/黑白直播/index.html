@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑白直播</title>
+    <link rel="stylesheet" href="./body.css">
+    <!-- <script src="https://hm.baidu.com/hm.js?e90129434294ad9171da0c38a7b74f80"></script> -->
+    <script type="text/javascript" src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body class="bg">
+    <div id="app">
+        <!---->
+        <div class="down-banner">
+            <div class="logo"><img src="img/logo.png"></div>
+            <div class="downLoad" v-if='platform==2'><a href="./ios.html"><img src="img/tf.png"></a></div>
+            <div class="downLoad" v-if='platform==2'><a
+                    href="./ios2.html"><img src="img/wep.png"></a>
+            </div>
+            <div class="downLoad" v-if='platform==1'><a
+                    href="./and.html"><img src="img/app.png"></a></div>
+            <!---->
+        </div>
+    </div>
+    <script type="text/javascript">
+        var vum = new Vue({
+            el: '#app',
+            data: {
+                yindao: false,
+                storeUrl: 'https://pichb2.ymlykj.com/nuxt/static',
+                config: {
+                    androidUrl: "https://pichb2.ymlykj.com/apk/latest/app_hh_release.apk",
+                    iosUrl: "https://appapi.heibaizhibo.com/h5/tfdown/downLoad.html",
+                    webApp: "https://pichb2.ymlykj.com/ipa/heibaizhiboWebApp.mobileconfig"
+                },
+                platform: 1, // 1:安卓，2：iOS
+                site: 'PC',
+                from: '1',
+                pos: '',
+                channelCode: '',
+                list: {
+                    'M18': 11,
+                    'M16': 13,
+                    'M1': 10,
+                    'PC18': 12,
+                    'PC16': 16,
+                    'PC1': 9
+                }
+            },
+            created: function () {
+                this.site = this.getUrlParam('site')
+                this.from = this.getUrlParam('from')
+                this.pos = this.getUrlParam('pos')
+                this.channelCode = this.getUrlParam('channelCode')
+                this.getUrl()
+            },
+            mounted: function () {},
+            methods: {
+                getUrl: function () {
+                    var links = ''
+                    var u = navigator.userAgent;
+                    var ua = u.toLowerCase();
+                    var isWeixin = ua.indexOf("micromessenger") != -1;
+                    if (isWeixin) {
+                        this.yindao = true;
+                    }
+                    if (u.indexOf("Android") > -1) {
+                        this.platform = 1
+                        if (location.search == '') {
+                            this.url =
+                                'https://pichb3.oss-cn-hongkong.aliyuncs.com/apk/latest/app_hh_release.apk'
+                        } else {
+                            this.url =
+                                'https://pichb3.oss-cn-hongkong.aliyuncs.com/apk/latest/app_heibai' +
+                                this.from + this.site + '_release.apk'
+                        }
+                    } else if (u.includes("iPhone") || u.includes("iPad")) {
+                        this.platform = 2
+                        if (location.search == '') {
+                            this.url = 'downLoad.html'
+                        } else if (this.channelCode == '') {
+                            var code = this.list[this.site + this.from] == undefined ? 0 : this.list[
+                                this.site + this.from]
+                            this.url = 'downLoad.html' + location.search + '&channelCode=' + code
+                        } else {
+                            this.url = 'downLoad.html' + location.search
+                        }
+                    }
+                },
+                goPush: function (k, url) {
+                    _hmt.push(["_trackEvent", this.site, this.from, this.pos]);
+                    if (k == 1) {
+                        location.href = this.url
+                    } else {
+                        location.href = url
+                    }
+                },
+                getUrlParam: function (k) {
+                    var regExp = new RegExp('([?]|&)' + k + '=([^&]*)(&|$)')
+                    var result = window.location.href.match(regExp)
+                    if (result) {
+                        return decodeURIComponent(result[2])
+                    } else {
+                        return ''
+                    }
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

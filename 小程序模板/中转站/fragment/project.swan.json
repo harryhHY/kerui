@@ -1,0 +1,17 @@
+{
+    "appid": "",
+    "host": "baiduboxapp",
+    "preview": {
+        "packageId": 725769
+    },
+    "projectname": "fragment",
+    "setting": {
+        "urlCheck": true
+    },
+    "swan": {
+        "baiduboxapp": {
+            "swanJsVersion": "3.180.255-rc",
+            "extensionJsVersion": "1.13.1"
+        }
+    }
+}

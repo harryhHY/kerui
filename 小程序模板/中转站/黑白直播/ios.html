@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑白直播—NBA直播|足球直播|英超|中超|360直播|JRS体育|直播吧</title>
+    <link rel="stylesheet" href="./ios.css">
+    <script src="https://hm.baidu.com/hm.js?e90129434294ad9171da0c38a7b74f80"></script>
+    <script type="text/javascript" src="https://cdn.xinstall.com/xinstall.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!---->
+        <div id="downloadButton" class="load" style="visibility: visible;">
+            <div class="header"><img src="img/header.png"></div>
+            <div class="other"><img src="img/1.png"></div>
+            <div class="other"><img src="img/2.jpg"></div>
+            <div class="other3"><img src="img/3.png"></div>
+            <div class="btn"  @click="goPush">安装黑白直播APP</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var vum = new Vue({
+            el: '#app',
+            data: {
+                yindao: false,
+                storeUrl: 'https://pichb2.ymlykj.com/nuxt/static',
+                tf_url: "https://testflight.apple.com/join/OlbjagGP",
+                site: 'PC',
+                from: '1',
+                pos: ''
+            },
+            created: function () {
+                this.site = this.getUrlParam('site')
+                this.from = this.getUrlParam('from')
+                this.pos = this.getUrlParam('pos')
+                this.tfListen()
+            },
+            mounted: function () {
+                var u = navigator.userAgent;
+                var ua = u.toLowerCase();
+                var isWeixin = ua.indexOf("micromessenger") != -1;
+                if (isWeixin) {
+                    this.yindao = true;
+                }
+            },
+            methods: {
+                goPush: function () {
+                    _hmt.push(["_trackEvent", this.site, this.from, this.pos]);
+                    window.open(this.tf_url)
+                },
+                getUrlParam: function (k) {
+                    var regExp = new RegExp('([?]|&)' + k + '=([^&]*)(&|$)')
+                    var result = window.location.href.match(regExp)
+                    if (result) {
+                        return decodeURIComponent(result[2])
+                    } else {
+                        return ''
+                    }
+                },
+                tfListen: function () {
+                    var _this = this
+                    var data = XInstall.parseUrlParams();
+                    new XInstall({
+                        appKey: "cstin8x",
+                        onready: function () {
+                            var m = this,
+                                button = document.getElementById("downloadButton");
+                            button.style.visibility = "visible";
+                            button.onclick = function () {
+                                m.wakeupOrInstall();
+                            }
+                        }
+                    }, data);
+                }
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>
