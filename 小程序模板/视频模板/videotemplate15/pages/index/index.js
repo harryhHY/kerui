@@ -5,7 +5,8 @@
 const app = getApp();
 let number = 30;
 let {
-  api
+  api,
+  apifrom
 } = app;
 Page({
   data: {
@@ -75,7 +76,10 @@ Page({
   },
   //点赞
   praise(e) {
-    let {id,index} = e.currentTarget.dataset;
+    let {
+      id,
+      index
+    } = e.currentTarget.dataset;
     swan.request({
       url: `${api}/home/listn/favourite`,
       header: {
@@ -88,19 +92,25 @@ Page({
         id,
       },
       success: (res) => {
-        let { code, msg, parms } = res.data;
+        let {
+          code,
+          msg,
+          parms
+        } = res.data;
         if (code == 0 && msg == "成功") {
           swan.showToast({
             title: msg,
             icon: "none",
             mask: false,
             success: (res) => {
-              let {items} = this.data;
-              let newitems = items.map((item,index1,items)=>{
-                if(index==index1){
+              let {
+                items
+              } = this.data;
+              let newitems = items.map((item, index1, items) => {
+                if (index == index1) {
                   item.news_goods = item.news_goods + 1;
                   this.setData({
-                    items:items
+                    items: items
                   })
                 }
               })
@@ -115,15 +125,7 @@ Page({
             icon: "none",
             mask: false,
             success: (res) => {
-              let {items} = this.data;
-              let newitems = items.map((item,index1,items)=>{
-                if(index==index1){
-                  item.news_goods = item.news_goods - 1 ;
-                  this.setData({
-                    items:items
-                  })
-                }
-              })
+              this.getList();
             },
             fail: (err) => {
               console.log("showToast fail", err);
@@ -140,8 +142,9 @@ Page({
   goWebView(e) {
     let src = e.currentTarget.dataset.src;
     if (this.data.is_banner == true) {
+      console.log(src)
       swan.navigateTo({
-        url: `/pages/web/web?src=${src}`,
+        url: `/pages/bannerweb/bannerweb?src=${src}`,
       });
     }
   },
@@ -158,10 +161,10 @@ Page({
 
   onShow() {
     swan.setPageInfo({
-      title: '奶茶视频',
-      keywords: '奶茶视频,体育视频,水果视频',
-      description: '奶茶视频,小姐姐视频',
-      articleTitle: '奶茶视频',
+      title: '蘑菇视频，免费视频观看。',
+      keywords: '蘑菇视频，性感视频，石榴视频',
+      description: '蘑菇视频，免费视频观看。',
+      articleTitle: '蘑菇视频',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -194,6 +197,7 @@ Page({
     // 监听页面加载的生命周期函数
     console.log("页面即将渲染", this);
     console.log(getCurrentPages());
+    this.geth5host();
     this.getList();
   },
   onTabClick(e) {
@@ -233,6 +237,46 @@ Page({
       },
     });
   },
+  geth5host() {
+    this.showHttploading(true);
+    swan.request({
+      url: `${apifrom}/home/listn/settings`,
+      header: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      dataType: "json",
+      responseType: "text",
+      data: {
+        host: apifrom,
+        c: 166,
+      },
+      success: (res) => {
+        this.showHttploading(false);
+        let {
+          is_banner,
+          is_video,
+          banners
+        } = res.data.params;
+        console.log(banners.h5_url)
+        if (is_banner == 1) {
+          this.setData({
+            is_banner: true,
+            itemBanners: banners
+          });
+        }
+        if (is_video == 1) {
+          this.setData({
+            is_video: true,
+          });
+        }
+      },
+      fail: (err) => {
+        console.log("错误码：" + err.errCode);
+        console.log("错误信息：" + err.errMsg);
+      },
+    });
+  },
   // 首页数据列表
   getList(page = 1) {
     this.showHttploading(true);
@@ -245,33 +289,25 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        c: 120,
+        c: 166,
         p: page, //第几页
         n: this.number, //每页条数
       },
       success: (res) => {
         this.showHttploading(false);
         let newsArr = [];
-        newsArr.push(res.data.params.data[0].news_title);
-        newsArr.push(res.data.params.data[1].news_title);
-        newsArr.push(res.data.params.data[2].news_title);
-        newsArr.push(res.data.params.data[3].news_title);
-        newsArr.push(res.data.params.data[4].news_title);
+        // newsArr.push(res.data.params.data[0].news_title);
+        // newsArr.push(res.data.params.data[1].news_title);
+        // newsArr.push(res.data.params.data[2].news_title);
+        // newsArr.push(res.data.params.data[3].news_title);
+        // newsArr.push(res.data.params.data[4].news_title);
 
         console.log(res.data);
         let data = res.data.params;
         let {
-          is_banner,
           total,
           last_page
         } = data;
-        if (is_banner == 1) {
-          // bannerList.push(data.banner);
-          this.setData({
-            itemBanners: res.data.params.banner,
-            is_banner: true,
-          });
-        }
         this.setData({
           last_page,
           total: total,
@@ -357,29 +393,28 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 120,
+              c: 166,
               p: machpage, //第几页
               n: n, //每页条数
             },
             success: (res) => {
               this.showHttploading(false);
-              let {data} = res.data.params
               if (data != false) {
                 let {
                   items
                 } = this.data;
-               
+                let {
+                  data
+                } = res.data.params;
                 for (let i = 0; i < data.length; i++) {
                   items.push(data[i]);
                 }
                 this.setData({
                   page: machpage,
                   items: items,
-                  itemNews: items,
+                  itemNews: newsArr,
                   apimg: api,
                 });
-              }else{
-                
               }
             },
             fail: (err) => {

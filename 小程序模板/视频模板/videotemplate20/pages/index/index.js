@@ -4,7 +4,10 @@
  */
 const app = getApp();
 let number = 30;
-let { api } = app;
+let {
+  api,
+  apifrom
+} = app;
 Page({
   data: {
     id: "",
@@ -26,8 +29,7 @@ Page({
     items: [],
     number: 15,
     apimg: "",
-    logoList: [
-      {
+    logoList: [{
         id: 1,
         imgsrc: "../../images/logo.png",
         classname: "img1",
@@ -74,7 +76,10 @@ Page({
   },
   //点赞
   praise(e) {
-    let {id,index} = e.currentTarget.dataset;
+    let {
+      id,
+      index
+    } = e.currentTarget.dataset;
     swan.request({
       url: `${api}/home/listn/favourite`,
       header: {
@@ -87,19 +92,25 @@ Page({
         id,
       },
       success: (res) => {
-        let { code, msg, parms } = res.data;
+        let {
+          code,
+          msg,
+          parms
+        } = res.data;
         if (code == 0 && msg == "成功") {
           swan.showToast({
             title: msg,
             icon: "none",
             mask: false,
             success: (res) => {
-              let {items} = this.data;
-              let newitems = items.map((item,index1,items)=>{
-                if(index==index1){
+              let {
+                items
+              } = this.data;
+              let newitems = items.map((item, index1, items) => {
+                if (index == index1) {
                   item.news_goods = item.news_goods + 1;
                   this.setData({
-                    items:items
+                    items: items
                   })
                 }
               })
@@ -131,8 +142,9 @@ Page({
   goWebView(e) {
     let src = e.currentTarget.dataset.src;
     if (this.data.is_banner == true) {
+      console.log(src)
       swan.navigateTo({
-        url: `/pages/web/web?src=${src}`,
+        url: `/pages/bannerweb/bannerweb?src=${src}`,
       });
     }
   },
@@ -149,23 +161,20 @@ Page({
 
   onShow() {
     swan.setPageInfo({
-      title: '香蕉在线视频，香蕉视频，草莓视频',
-      keywords: '香蕉在线视频，草莓视频，香蕉视频',
-      description: '香蕉在线视频在线观看',
-      articleTitle: '香蕉视频',
+      title: '蘑菇视频，免费视频观看。',
+      keywords: '蘑菇视频，性感视频，石榴视频',
+      description: '蘑菇视频，免费视频观看。',
+      articleTitle: '蘑菇视频',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
         "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg",
       ],
-      video: [
-        {
-          url: "https://www.baidu.com/mx/v12.mp4",
-          duration: "100",
-          image:
-            "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
-        },
-      ],
+      video: [{
+        url: "https://www.baidu.com/mx/v12.mp4",
+        duration: "100",
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
+      }, ],
       visit: {
         pv: "1000",
         uv: "100",
@@ -188,6 +197,7 @@ Page({
     // 监听页面加载的生命周期函数
     console.log("页面即将渲染", this);
     console.log(getCurrentPages());
+    this.geth5host();
     this.getList();
   },
   onTabClick(e) {
@@ -227,6 +237,46 @@ Page({
       },
     });
   },
+  geth5host() {
+    this.showHttploading(true);
+    swan.request({
+      url: `${apifrom}/home/listn/settings`,
+      header: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      dataType: "json",
+      responseType: "text",
+      data: {
+        host: apifrom,
+        c: 166,
+      },
+      success: (res) => {
+        this.showHttploading(false);
+        let {
+          is_banner,
+          is_video,
+          banners
+        } = res.data.params;
+        console.log(banners.h5_url)
+        if (is_banner == 1) {
+          this.setData({
+            is_banner: true,
+            itemBanners: banners
+          });
+        }
+        if (is_video == 1) {
+          this.setData({
+            is_video: true,
+          });
+        }
+      },
+      fail: (err) => {
+        console.log("错误码：" + err.errCode);
+        console.log("错误信息：" + err.errMsg);
+      },
+    });
+  },
   // 首页数据列表
   getList(page = 1) {
     this.showHttploading(true);
@@ -239,29 +289,25 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        c: 142,
+        c: 166,
         p: page, //第几页
         n: this.number, //每页条数
       },
       success: (res) => {
         this.showHttploading(false);
         let newsArr = [];
-        newsArr.push(res.data.params.data[0].news_title);
-        newsArr.push(res.data.params.data[1].news_title);
-        newsArr.push(res.data.params.data[2].news_title);
-        newsArr.push(res.data.params.data[3].news_title);
-        newsArr.push(res.data.params.data[4].news_title);
+        // newsArr.push(res.data.params.data[0].news_title);
+        // newsArr.push(res.data.params.data[1].news_title);
+        // newsArr.push(res.data.params.data[2].news_title);
+        // newsArr.push(res.data.params.data[3].news_title);
+        // newsArr.push(res.data.params.data[4].news_title);
 
         console.log(res.data);
         let data = res.data.params;
-        let { is_banner, total, last_page } = data;
-        if (is_banner == 1) {
-          // bannerList.push(data.banner);
-          this.setData({
-            itemBanners: res.data.params.banner,
-            is_banner: true,
-          });
-        }
+        let {
+          total,
+          last_page
+        } = data;
         this.setData({
           last_page,
           total: total,
@@ -347,7 +393,7 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 142,
+              c: 166,
               p: machpage, //第几页
               n: n, //每页条数
             },

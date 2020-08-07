@@ -4,7 +4,10 @@
  */
 const app = getApp();
 let number = 30;
-let { api } = app;
+let {
+  api,
+  apifrom
+} = app;
 Page({
   data: {
     id: "",
@@ -26,8 +29,7 @@ Page({
     items: [],
     number: 15,
     apimg: "",
-    logoList: [
-      {
+    logoList: [{
         id: 1,
         imgsrc: "../../images/logo.png",
         classname: "img1",
@@ -72,11 +74,77 @@ Page({
       });
     }
   },
+  //点赞
+  praise(e) {
+    let {
+      id,
+      index
+    } = e.currentTarget.dataset;
+    swan.request({
+      url: `${api}/home/listn/favourite`,
+      header: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      dataType: "json",
+      responseType: "text",
+      data: {
+        id,
+      },
+      success: (res) => {
+        let {
+          code,
+          msg,
+          parms
+        } = res.data;
+        if (code == 0 && msg == "成功") {
+          swan.showToast({
+            title: msg,
+            icon: "none",
+            mask: false,
+            success: (res) => {
+              let {
+                items
+              } = this.data;
+              let newitems = items.map((item, index1, items) => {
+                if (index == index1) {
+                  item.news_goods = item.news_goods + 1;
+                  this.setData({
+                    items: items
+                  })
+                }
+              })
+            },
+            fail: (err) => {
+              console.log("showToast fail", err);
+            },
+          });
+        } else if (code == 0 && msg == "取消成功") {
+          swan.showToast({
+            title: msg,
+            icon: "none",
+            mask: false,
+            success: (res) => {
+              this.getList();
+            },
+            fail: (err) => {
+              console.log("showToast fail", err);
+            },
+          });
+        }
+      },
+      fail: (err) => {
+        console.log("错误码：" + err.errCode);
+        console.log("错误信息：" + err.errMsg);
+      },
+    });
+  },
   goWebView(e) {
     let src = e.currentTarget.dataset.src;
     if (this.data.is_banner == true) {
+      console.log(src)
       swan.navigateTo({
-        url: `/pages/web/web?src=${src}`,
+        url: `/pages/bannerweb/bannerweb?src=${src}`,
       });
     }
   },
@@ -93,23 +161,20 @@ Page({
 
   onShow() {
     swan.setPageInfo({
-      title: '王者时刻，有趣的视频。',
-      keywords: '王者时刻，lpl赛程，lol比赛视频，体育视频',
-      description: '王者时刻，有趣的视频。',
-      articleTitle: '王者时刻',
+      title: '蘑菇视频，免费视频观看。',
+      keywords: '蘑菇视频，性感视频，石榴视频',
+      description: '蘑菇视频，免费视频观看。',
+      articleTitle: '蘑菇视频',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
         "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg",
       ],
-      video: [
-        {
-          url: "https://www.baidu.com/mx/v12.mp4",
-          duration: "100",
-          image:
-            "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
-        },
-      ],
+      video: [{
+        url: "https://www.baidu.com/mx/v12.mp4",
+        duration: "100",
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
+      }, ],
       visit: {
         pv: "1000",
         uv: "100",
@@ -132,6 +197,7 @@ Page({
     // 监听页面加载的生命周期函数
     console.log("页面即将渲染", this);
     console.log(getCurrentPages());
+    this.geth5host();
     this.getList();
   },
   onTabClick(e) {
@@ -171,6 +237,46 @@ Page({
       },
     });
   },
+  geth5host() {
+    this.showHttploading(true);
+    swan.request({
+      url: `${apifrom}/home/listn/settings`,
+      header: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      dataType: "json",
+      responseType: "text",
+      data: {
+        host: apifrom,
+        c: 166,
+      },
+      success: (res) => {
+        this.showHttploading(false);
+        let {
+          is_banner,
+          is_video,
+          banners
+        } = res.data.params;
+        console.log(banners.h5_url)
+        if (is_banner == 1) {
+          this.setData({
+            is_banner: true,
+            itemBanners: banners
+          });
+        }
+        if (is_video == 1) {
+          this.setData({
+            is_video: true,
+          });
+        }
+      },
+      fail: (err) => {
+        console.log("错误码：" + err.errCode);
+        console.log("错误信息：" + err.errMsg);
+      },
+    });
+  },
   // 首页数据列表
   getList(page = 1) {
     this.showHttploading(true);
@@ -183,29 +289,25 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        c: 138,
+        c: 166,
         p: page, //第几页
         n: this.number, //每页条数
       },
       success: (res) => {
         this.showHttploading(false);
         let newsArr = [];
-        newsArr.push(res.data.params.data[0].news_title);
-        newsArr.push(res.data.params.data[1].news_title);
-        newsArr.push(res.data.params.data[2].news_title);
-        newsArr.push(res.data.params.data[3].news_title);
-        newsArr.push(res.data.params.data[4].news_title);
+        // newsArr.push(res.data.params.data[0].news_title);
+        // newsArr.push(res.data.params.data[1].news_title);
+        // newsArr.push(res.data.params.data[2].news_title);
+        // newsArr.push(res.data.params.data[3].news_title);
+        // newsArr.push(res.data.params.data[4].news_title);
 
         console.log(res.data);
         let data = res.data.params;
-        let { is_banner,total, last_page } = data;
-        if (is_banner == 1) {
-          // bannerList.push(data.banner);
-          this.setData({
-            itemBanners: res.data.params.banner,
-            is_banner: true,
-          });
-        }
+        let {
+          total,
+          last_page
+        } = data;
         this.setData({
           last_page,
           total: total,
@@ -241,17 +343,42 @@ Page({
       swan.hideLoading();
     }, 1000);
   },
+  //分享
+  openShare() {
+    swan.openShare({
+      title: "智能小程序示例",
+      content: "世界很复杂，百度更懂你",
+      path: "/pages/openShare/openShare?key=value",
+      imageUrl: "../../images/logo.png",
+      success: (res) => {
+        swan.showToast({
+          title: "分享成功",
+        });
+        console.log("openShare success", res);
+      },
+      fail: (err) => {
+        console.log("openShare fail", err);
+      },
+    });
+  },
   //加载更多
   onReachBottom(e) {
-    let { page,last_page ,total } = this.data;
+    let {
+      page,
+      last_page,
+      total
+    } = this.data;
     // let page = ++page;
     // console.log(page);
-    this.setData({
-      page: page,
-    });
-    if(total > 10 && last_page >= 1 && page < last_page){
+    //请求分页数据
+    number += 30;
+    this.showHttploading(true);
+    if (total > 10 && last_page >= 1 && page < last_page) {
       let machpage = ++page;
       let n = total - 10;
+      this.setData({
+        page: page,
+      });
       swan.showLoading({
         title: "正在加载...",
         mask: false, // 一般设置这个值为false
@@ -266,20 +393,24 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 138,
-              n: machpage, //第几页
+              c: 166,
+              p: machpage, //第几页
               n: n, //每页条数
             },
             success: (res) => {
               this.showHttploading(false);
               if (data != false) {
-                let {items} = this.data;
-                let { data } = res.data.params;
+                let {
+                  items
+                } = this.data;
+                let {
+                  data
+                } = res.data.params;
                 for (let i = 0; i < data.length; i++) {
                   items.push(data[i]);
                 }
                 this.setData({
-                  page:machpage,
+                  page: machpage,
                   items: items,
                   itemNews: newsArr,
                   apimg: api,
@@ -296,22 +427,23 @@ Page({
           console.log("showLoading fail", err);
         },
       });
-    }else{
+    } else {
+      this.showHttploading(false);
       swan.showToast({
-        title: '已经到底了',
-        icon: 'none',
+        title: "已经到底了",
+        icon: "none",
         mask: false,
-        success: res => {
-            // this.setData({'disabled': false});
+        success: (res) => {
+          this.showHttploading(false);
+          // this.setData({'disabled': false});
         },
-        fail: err => {
-            console.log('showToast fail', err);
-        }
-    });
+        fail: (err) => {
+          this.showHttploading(false);
+          console.log("showToast fail", err);
+        },
+      });
     }
-    //请求分页数据
-    number += 30;
-    this.showHttploading(true);
+
 
     setTimeout(function () {
       swan.hideLoading();
