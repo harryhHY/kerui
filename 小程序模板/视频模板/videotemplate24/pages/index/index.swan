@@ -13,7 +13,7 @@
             </view>
         </view>
         <view>
-            <swiper 
+            <swiper
              indicator-dots="{{indicator_dots}}"
              indicator-color="{{indicator_color}}"
              indicator-active-color="{{indicator_active_color}}"
@@ -23,7 +23,7 @@
             >
              <block s-for="item,index in itemBanners">
                 <swiper-item class="bannerImg">                    
-                    <image src="{{item.pic}}"  bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>                           
+                    <image src="{{item.pic||item.image_url}}"  bind:tap="goWebView" data-src="{{item.url||item.h5_url}}" hover-stop-propagation="true"></image>                           
                 </swiper-item>
             </block>
             </swiper >

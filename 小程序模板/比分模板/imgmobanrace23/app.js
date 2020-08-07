@@ -6,7 +6,7 @@
 /* globals swan */
 App({
   apifrom: "https://z5mh2.cn",
-  api: "https://0s0zv.cn",
+  api: "https://f9f7t.cn",
   onLaunch(options) {
     // do something when launch
     // 引导添加，参见文档： http://smartprogram.baidu.com/docs/design/component/guide_add/
