@@ -5,7 +5,8 @@
 const app = getApp();
 let number = 30;
 let {
-  api
+  api,
+  apifrom
 } = app;
 Page({
   data: {
@@ -138,6 +139,104 @@ Page({
       },
     });
   },
+  goWebView(e) {
+    let src = e.currentTarget.dataset.src;
+    if (this.data.is_banner == true) {
+      console.log(src)
+      swan.navigateTo({
+        url: `/pages/bannerweb/bannerweb?src=${src}`,
+      });
+    }
+  },
+  navigateTo(e) {
+    this.id = e.currentTarget.dataset.id;
+    console.log(this.id);
+    swan.navigateTo({
+      url: `/pages/detail/detail?id=${this.id}`,
+    });
+  },
+  tapHandle(e) {
+    // console.log(id);
+  },
+
+  onShow() {
+    swan.setPageInfo({
+      title: '蘑菇视频，免费视频观看。',
+      keywords: '蘑菇视频，性感视频，石榴视频',
+      description: '蘑菇视频，免费视频观看。',
+      articleTitle: '蘑菇视频',
+      releaseDate: "2019-01-02 12:01:30",
+      image: [
+        "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
+        "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg",
+      ],
+      video: [{
+        url: "https://www.baidu.com/mx/v12.mp4",
+        duration: "100",
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
+      }, ],
+      visit: {
+        pv: "1000",
+        uv: "100",
+        sessionDuration: "130",
+      },
+      likes: "75",
+      comments: "13",
+      collects: "23",
+      shares: "8",
+      followers: "35",
+      success: (res) => {
+        console.log("setPageInfo success");
+      },
+      fail: (err) => {
+        console.log("setPageInfo fail", err);
+      },
+    });
+  },
+  onLoad() {
+    // 监听页面加载的生命周期函数
+    console.log("页面即将渲染", this);
+    console.log(getCurrentPages());
+    this.geth5host();
+    this.getList();
+  },
+  onTabClick(e) {
+    console.log(e.detail.name);
+    // this.setData({
+    //   activeName: e.detail.name,
+    // });
+  },
+  showHttploading(flag) {
+    this.setData({
+      showHttploading: flag,
+    });
+  },
+  //点赞
+  clickgreat() {
+    swan.request({
+      url: api + "/news_goods",
+      header: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      dataType: "json",
+      responseType: "text",
+      success: (res) => {
+        this.showHttploading(false);
+        console.log(res);
+
+        // this.setData({
+        //   items: res.data.params.data,
+        //   itemNews: newsArr,
+        //   apimg: api
+        // });
+      },
+      fail: (err) => {
+        console.log("错误码：" + err.errCode);
+        console.log("错误信息：" + err.errMsg);
+      },
+    });
+  },
   geth5host() {
     this.showHttploading(true);
     swan.request({
@@ -178,103 +277,6 @@ Page({
       },
     });
   },
-  goWebView(e) {
-    let src = e.currentTarget.dataset.src;
-    if (this.data.is_banner == true) {
-      console.log(src)
-      swan.navigateTo({
-        url: `/pages/bannerweb/bannerweb?src=${src}`,
-      });
-    }
-  },
-  navigateTo(e) {
-    this.id = e.currentTarget.dataset.id;
-    console.log(this.id);
-    swan.navigateTo({
-      url: `/pages/detail/detail?id=${this.id}`,
-    });
-  },
-  tapHandle(e) {
-    // console.log(id);
-  },
-
-  onShow() {
-    swan.setPageInfo({
-      title: '石榴视频，在线观看',
-      keywords: '石榴视频，夜色直播，美女直播',
-      description: '石榴视频，在线观看',
-      articleTitle: '石榴视频',
-      releaseDate: "2019-01-02 12:01:30",
-      image: [
-        "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
-        "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg",
-      ],
-      video: [{
-        url: "https://www.baidu.com/mx/v12.mp4",
-        duration: "100",
-        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
-      }, ],
-      visit: {
-        pv: "1000",
-        uv: "100",
-        sessionDuration: "130",
-      },
-      likes: "75",
-      comments: "13",
-      collects: "23",
-      shares: "8",
-      followers: "35",
-      success: (res) => {
-        console.log("setPageInfo success");
-      },
-      fail: (err) => {
-        console.log("setPageInfo fail", err);
-      },
-    });
-  },
-  onLoad() {
-    // 监听页面加载的生命周期函数
-    console.log("页面即将渲染", this);
-    console.log(getCurrentPages());
-    this.getList();
-  },
-  onTabClick(e) {
-    console.log(e.detail.name);
-    // this.setData({
-    //   activeName: e.detail.name,
-    // });
-  },
-  showHttploading(flag) {
-    this.setData({
-      showHttploading: flag,
-    });
-  },
-  //点赞
-  clickgreat() {
-    swan.request({
-      url: api + "/news_goods",
-      header: {
-        "content-type": "application/json",
-      },
-      method: "POST",
-      dataType: "json",
-      responseType: "text",
-      success: (res) => {
-        this.showHttploading(false);
-        console.log(res);
-
-        // this.setData({
-        //   items: res.data.params.data,
-        //   itemNews: newsArr,
-        //   apimg: api
-        // });
-      },
-      fail: (err) => {
-        console.log("错误码：" + err.errCode);
-        console.log("错误信息：" + err.errMsg);
-      },
-    });
-  },
   // 首页数据列表
   getList(page = 1) {
     this.showHttploading(true);
@@ -287,7 +289,7 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        c: 143,
+        c: 166,
         p: page, //第几页
         n: this.number, //每页条数
       },
@@ -303,7 +305,6 @@ Page({
         console.log(res.data);
         let data = res.data.params;
         let {
-          is_banner,
           total,
           last_page
         } = data;
@@ -392,7 +393,7 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 143,
+              c: 166,
               p: machpage, //第几页
               n: n, //每页条数
             },
