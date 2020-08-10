@@ -13,7 +13,7 @@
             </view>
         </view>
         <!-- <view>
-            <swiper 
+            <swiper
              indicator-dots="{{indicator_dots}}"
              indicator-color="{{indicator_color}}"
              indicator-active-color="{{indicator_active_color}}"
@@ -23,7 +23,7 @@
             >
              <block s-for="item,index in itemBanners">
                 <swiper-item class="bannerImg">                    
-                    <image src="{{item.pic}}"  bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>                           
+                    <image src="{{item.pic||item.image_url}}"  bind:tap="goWebView" data-src="{{item.url||item.h5_url}}" hover-stop-propagation="true"></image>                           
                 </swiper-item>
             </block>
             </swiper >
@@ -33,12 +33,12 @@
                 <view class='a11 cl' >
                     <view class='content_left' bind:tap="navigateTo" data-id="{{item.id}}">
                         <image src="{{apimg}}{{item.news_img}}" class='content_image '></image>
-                        <image src="../../images/Player.png" class='player'></image>
+                        <!-- <image src="../../images/Player.png" class='player'></image> -->
                     </view>
                     <view class='content_right left'>
-                        <image src="../../images/logo.png" class='logo'></image>
+                        <!-- <image src="../../images/logo.png" class='logo'></image>
                         <image src="../../images/logo1.png" class='logo1'></image>
-                        <view class='news_time span_view'>{{item.news_time}}</view>
+                        <view class='news_time span_view'>{{item.news_time}}</view> -->
                         <view class='news_title' bind:tap="navigateTo" data-id="{{item.id}}" >
                             {{item.news_title}}
                         </view>

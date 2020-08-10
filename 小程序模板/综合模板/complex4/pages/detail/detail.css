@@ -12,7 +12,9 @@
     height: 1.22rem;
     line-height: 1.22rem;
 }
-
+.span_view{
+    display: inline-block;
+}
 .collike {
     margin: .1rem .1rem;
     flex-direction: column;

@@ -12,7 +12,9 @@ body {
     color: #333;
     background-color: #f5f5f5
 }
-
+.span_view{
+    display: inline-block;
+}
 .left{
     float: left;
 }

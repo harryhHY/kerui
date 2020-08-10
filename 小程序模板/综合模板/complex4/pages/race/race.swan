@@ -22,7 +22,7 @@
         >
             <block s-for="item,index in itemBanners">
                 <swiper-item class="bannerImg">                    
-                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url||item.h5_url}}" hover-stop-propagation="true"></image>
                 </swiper-item>
             </block>
         </swiper >
@@ -42,7 +42,7 @@
          <tabs 
             class="border-bottom" 
             active-name="{{activeNameTwo}}"
-            max-tab-item-amount="3"
+            max-tab-item-amount="4"
             bindtabchange="changeday"
             tabs-inactive-text-color='#1cf0f0'
             tabs-active-text-color='#1c78f0'
@@ -55,23 +55,33 @@
         <view class="content_today_view cl" s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
             <view class='content_body'>
                 <view class='content_top cl'>
+                    <view class='logo_view'>
+                        <image src="../../images/logo.png" class='logo'></image>
+                        <image src="../../images/logo1.png" class='logo1'></image>
+                    </view>
                     <image src="{{item.licon}}" s-if='{{item.licon}}' class='licon'></image>
-                    <view class="{{item.licon? 'lname1 ov span_view':'lname ov span_view'}}" >
+                    <view class="{{item.licon? 'lname1  span_view':'lname span_view'}}" >
                         {{item.lname}}
                     </view>
                     <view class='gameTimeFormat span_view ov'>
                         {{item.gameTimeFormat}}
                     </view>
-                    <view class='gameStage span_view ov' s-if="{{item.gameStage == null}}">
-                        {{item.gameStage == null?'未':' '}}
-                    </view>
+                    <image src="../../images/share2.png" class='share share_view' bindtap="openShare"></image>
                     <!-- <image src="../../images/court.png" class='court'  s-if="{{item.gameStage == null}}"></image> -->
+                </view>
+                <view class='gameStage ov' s-if="{{item.gameStage == null}}">
+                    {{item.gameStage == null?'未':' '}}
+                </view>
+                <view class='gameStage ov' s-if="{{item.gameStage != null}}">
+                    {{item.gameStage}}
                 </view>
                 <view class='content_body2 cl'>
                     <view class="{{item.aTotalScore!=null ? 'content_left left cl':'content_left1 left cl'}}">
                         <view class='right hname'>
-                            {{item.hname}}
-                             <image src="{{item.hicon}}"  class='hicon'></image>
+                            <view class='hanme_view'>
+                                {{item.hname}}
+                            </view>
+                            <image src="{{item.hicon}}"  class='hicon'></image>
                         </view>
                     </view>
                     <view class='left hTotalScore' s-if='{{item.aTotalScore!=null}}'>
@@ -83,56 +93,49 @@
                     <view class='content_right left'>
                         <view class='aname left'>
                             <image src="{{item.aicon}}" class='aicon'></image>
-                            {{item.aname}}
-                        </view>
-                    </view>
-                    <view class='cl'>
-                        <view class='cl hcardleft left'>
-                            <view class='hRedCard right' s-if='{{item.hRedCard!=null}}'>
-                                {{item.hRedCard}}
-                            </view>
-                            <view class='hYellowCard right' s-if='{{item.hYellowCard!=null}}'>
-                                {{item.hYellowCard}}
-                            </view>
-                        </view>
-                        <view class='hcardright right cl'>
-                            <view class='aRedCard left' s-if='{{item.aRedCard!=null}}'>
-                                {{item.aRedCard}}
-                            </view>
-                            <view class='aYellowCard left' s-if='{{item.aYellowCard!=null}}'>
-                                {{item.aYellowCard}} 
+                            <view class='aname_view'>
+                                 {{item.aname}}
                             </view>
                         </view>
                     </view>
                 </view>
-                <view>
-                    <view class='content_bottom ov' s-if="{{item.hCornerKick!=null}}">
-                        <view class='hCornerKick span_view'>
-                             {{item.hCornerKick}}
+                <view class='cl'>
+                    <view class='cl hcardleft left'>
+                        <view class='hRedCard right' s-if='{{item.hRedCard!=null}}'>
+                            {{item.hRedCard}}
                         </view>
-                        <view class='span_view'>
-                            角
+                        <view class='hYellowCard right' s-if='{{item.hYellowCard!=null}}'>
+                            {{item.hYellowCard}}
                         </view>
-                        <view class='span_view aCornerKick'>
+                        <view class='hCornerKick span_view right'>
+                            {{item.hCornerKick}}
+                        </view>
+                    </view>
+                    <view class='hcardright right cl'>
+                        <view class='aRedCard left' s-if='{{item.aRedCard!=null}}'>
+                            {{item.aRedCard}}
+                        </view>
+                        <view class='aYellowCard left' s-if='{{item.aYellowCard!=null}}'>
+                            {{item.aYellowCard}} 
+                        </view>
+                        <view class='span_view aCornerKick left'>
                             {{item.aCornerKick}}
                         </view>
                     </view>
                 </view>
-                <view class='gameStage span_view ov' s-if="{{item.gameStage != null}}">
-                    {{item.gameStage}}
-                </view>
-                <view  s-if="{{item.gameStage == null}}" class='cl tuijian_view'>
+                <!-- <view>
+                    <view class='content_bottom ov' s-if="{{item.hCornerKick!=null}}">
+                        
+
+                    </view>
+                </view> -->
+                <!-- <view  s-if="{{item.gameStage == null}}" class='cl tuijian_view'>
                     <view class='left tuijian'>
                         推荐
                     </view>
                     <view class='right' bindtap="openShare">
                         <image src="../../images/share2.png" class='share'></image>
                     </view>
-                </view>
-                <!-- <view class='share_view cl'>
-                    <image src="../../images/share2.png" bindtap="openShare" class='share right'></image>
-                    <image src="../../images/logo1.png" class='logo1 right'></image>
-                    <image src="../../images/logo.png" class='logo right'></image>
                 </view> -->
             </view>
             <view class='content_right cl'>
