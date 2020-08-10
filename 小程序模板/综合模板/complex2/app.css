@@ -16,6 +16,9 @@ body {
 .left{
     float: left;
 }
+.span_view{
+    display: inline-block;
+}
 .right{
     float: right;
 }

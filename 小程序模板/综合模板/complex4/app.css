@@ -21,6 +21,9 @@ body {
 .right{
     float: right;
 }
+.span_view{
+    display: inline-block;
+}
 .centerimg{
     display: flex;
     justify-content: center;
