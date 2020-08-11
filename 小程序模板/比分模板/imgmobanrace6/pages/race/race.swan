@@ -14,7 +14,7 @@
         >
             <block s-for="item,index in itemBanners">
                 <swiper-item class="bannerImg">                    
-                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url||item.h5_url}}" hover-stop-propagation="true"></image>
                 </swiper-item>
             </block>
         </swiper >

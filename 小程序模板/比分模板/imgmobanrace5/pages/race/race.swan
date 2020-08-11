@@ -1,5 +1,5 @@
 <template id="race">
-    <view>
+    <view class="swiper_view">
         <swiper 
             indicator-dots="{{indicator_dots}}"
             indicator-color="{{indicator_color}}"
@@ -9,10 +9,10 @@
             duration="{{switchDuration}}"
         >
             <block s-for="item,index in itemBanners">
-            <swiper-item class="bannerImg">                    
-                <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>
-            </swiper-item>
-        </block>
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url||item.h5_url}}" hover-stop-propagation="true"></image>
+                </swiper-item>
+            </block>
         </swiper >
     </view>
      <tabs 
