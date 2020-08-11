@@ -27,6 +27,10 @@
             </block>
         </swiper >
     </view>
+    <!-- <view class='logo_view'>
+        <image src="../../images/logo.png" class='logo'></image>
+        <image src="../../images/logo1.png" class='logo1'></image>
+    </view> -->
      <tabs 
         class="race_tab"
         active-name="{{activeName}}" 
@@ -55,10 +59,6 @@
         <view class="content_today_view cl" s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
             <view class='content_body'>
                 <view class='content_top cl'>
-                    <view class='logo_view'>
-                        <image src="../../images/logo.png" class='logo'></image>
-                        <image src="../../images/logo1.png" class='logo1'></image>
-                    </view>
                     <image src="{{item.licon}}" s-if='{{item.licon}}' class='licon'></image>
                     <view class="{{item.licon? 'lname1  span_view':'lname span_view'}}" >
                         {{item.lname}}
