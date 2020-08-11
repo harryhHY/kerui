@@ -49,20 +49,24 @@ Page({
     todayList: [],
     buttonList: [{
         value: 0,
-        text: "",
-        default: "warn",
+        text: ""
       },
       {
         value: 1,
-        text: "",
-        default: "default",
-      },
-      {
+        text: ""
+      }, {
         value: 2,
-        text: "",
-        default: "default",
+        text: ""
+      }, {
+        value: 3,
+        text: ""
+      }, {
+        value: 4,
+        text: ""
       },
     ],
+    contentTwo: 0,
+    activeNameTwo: 0,
     itemBanners: [
       //轮播图片
       {
@@ -118,6 +122,10 @@ Page({
       },
     });
   },
+  //设置日期滚动横条
+  tabsTwo(e) {
+
+  },
   //分享
   openShare() {
     swan.openShare({
@@ -171,25 +179,20 @@ Page({
     });
     this.getList(content, today, page);
   },
+  //切换日期
   changeday(e) {
     let {
-      daytype,
+      name,
       type
-    } = e.currentTarget.dataset;
-    this.getdate(daytype);
+    } = e.detail;
+    this.getdate(name);
     let {
       today,
       content,
       buttonList,
-      p
+      p,
+      todayList
     } = this.data;
-    for (let i = 0; i < 3; i++) {
-      if (i == daytype) {
-        buttonList[i].default = "warn";
-      } else {
-        buttonList[i].default = "default";
-      }
-    }
     let pipi = 1;
     if (p != 1) {
       this.setData({
@@ -199,26 +202,29 @@ Page({
     this.getList(content, today, pipi);
     this.setData({
       buttonList,
-      changdate: daytype,
+      changdate: name,
+      contentTwo: name,
+      activeNameTwo: name
     });
   },
   getDate1(num) {
     let myDate = new Date();
-    let m = myDate.getMonth()+1;
+    let m = myDate.getMonth() + 1;
     let r = myDate.getDate() + num;
     return `${m}月${r}日`
   },
+  //循环出日期
   changeButtonList() {
     let {
       buttonList
     } = this.data;
     let list = [];
-    for(let v=0;v<3;v++){
-      let nowdate =  this.getDate1(v)
+    for (let v = 0; v < 5; v++) {
+      let nowdate = this.getDate1(v)
       list.push(nowdate)
     }
     this.getDate1()
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 5; i++) {
       buttonList[i].text = list[i];
     }
     this.setData({
@@ -247,13 +253,6 @@ Page({
       this.setData({
         p: pipi,
       });
-    }
-    for (let i = 0; i < buttonList.length; i++) {
-      if (i == 0) {
-        buttonList[i].default = "warn";
-      } else {
-        buttonList[i].default = "default";
-      }
     }
     this.setData({
       buttonList,
@@ -290,6 +289,11 @@ Page({
             showdata: true,
           });
         } else if (data == false && todayList == false) {
+          this.setData({
+            showdata: false,
+          });
+        } else if (p == 1 && data == false) {
+          console.log(todayList)
           this.setData({
             showdata: false,
           });
@@ -360,11 +364,14 @@ Page({
         this.showHttploading(false);
         let {
           is_banner,
-          is_video
+          is_video,
+          banners
         } = res.data.params;
+        console.log(banners.h5_url)
         if (is_banner == 1) {
           this.setData({
             is_banner: true,
+            itemBanners: banners
           });
         }
         if (is_video == 1) {

@@ -1,5 +1,8 @@
 const app = getApp();
-let { api, apifrom } = app;
+let {
+  api,
+  apifrom
+} = app;
 Page({
   setNavigationBarColor() {
     swan.setNavigationBarColor({
@@ -31,8 +34,7 @@ Page({
     indicator_color: "#ffffff", //指示点颜色
     indicator_active_color: "#5032b4", //选中的指示点颜色
     Bannerautoplay: true, //自动播放
-    tabs: [
-      {
+    tabs: [{
         name: "1",
         label: "足球",
       },
@@ -45,23 +47,26 @@ Page({
     activeName: "1",
     today: "",
     todayList: [],
-    buttonList: [
-      {
+    buttonList: [{
         value: 0,
-        text: "",
-        default: "warn",
+        text: ""
       },
       {
         value: 1,
-        text: "",
-        default: "default",
-      },
-      {
+        text: ""
+      }, {
         value: 2,
-        text: "",
-        default: "default",
+        text: ""
+      }, {
+        value: 3,
+        text: ""
+      }, {
+        value: 4,
+        text: ""
       },
     ],
+    contentTwo: 0,
+    activeNameTwo: 0,
     itemBanners: [
       //轮播图片
       {
@@ -85,23 +90,20 @@ Page({
   },
   onShow() {
     swan.setPageInfo({
-      title: '黑土直播',
-      keywords: '黑土直播，免费直播，体育直播，篮球直播',
-      description: '黑土直播，体育赛事直播。',
-      articleTitle: '黑土直播',
+      title: "山猫比分，体育赛事比分。",
+      keywords: "即时比分 足球比分 篮球比分 网球比分",
+      description: "山猫比分，体育赛事比分。",
+      articleTitle: "山猫比分",
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
         "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg",
       ],
-      video: [
-        {
-          url: "https://www.baidu.com/mx/v12.mp4",
-          duration: "100",
-          image:
-            "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
-        },
-      ],
+      video: [{
+        url: "https://www.baidu.com/mx/v12.mp4",
+        duration: "100",
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
+      }, ],
       visit: {
         pv: "1000",
         uv: "100",
@@ -120,10 +122,14 @@ Page({
       },
     });
   },
+  //设置日期滚动横条
+  tabsTwo(e) {
+
+  },
   //分享
   openShare() {
     swan.openShare({
-      title: "黑土直播",
+      title: "智能小程序示例",
       content: "世界很复杂，百度更懂你",
       path: "/pages/openShare/openShare?key=value",
       imageUrl: "../../images/logo.png",
@@ -148,8 +154,12 @@ Page({
     return nowdate;
   },
   gotovideo(e) {
-    let { is_video } = this.data;
-    let { item } = e.currentTarget.dataset;
+    let {
+      is_video
+    } = this.data;
+    let {
+      item
+    } = e.currentTarget.dataset;
     if (is_video) {
       let item1 = JSON.stringify(item);
       swan.navigateTo({
@@ -158,24 +168,31 @@ Page({
     }
   },
   onReachBottom(e) {
-    let { p, today, content } = this.data;
+    let {
+      p,
+      today,
+      content
+    } = this.data;
     let page = ++p;
     this.setData({
       p: page,
     });
     this.getList(content, today, page);
   },
+  //切换日期
   changeday(e) {
-    let { daytype, type } = e.currentTarget.dataset;
-    this.getdate(daytype);
-    let { today, content, buttonList, p } = this.data;
-    for (let i = 0; i < 3; i++) {
-      if (i == daytype) {
-        buttonList[i].default = "warn";
-      } else {
-        buttonList[i].default = "default";
-      }
-    }
+    let {
+      name,
+      type
+    } = e.detail;
+    this.getdate(name);
+    let {
+      today,
+      content,
+      buttonList,
+      p,
+      todayList
+    } = this.data;
     let pipi = 1;
     if (p != 1) {
       this.setData({
@@ -185,17 +202,29 @@ Page({
     this.getList(content, today, pipi);
     this.setData({
       buttonList,
-      changdate: daytype,
+      changdate: name,
+      contentTwo: name,
+      activeNameTwo: name
     });
   },
+  getDate1(num) {
+    let myDate = new Date();
+    let m = myDate.getMonth() + 1;
+    let r = myDate.getDate() + num;
+    return `${m}月${r}日`
+  },
+  //循环出日期
   changeButtonList() {
-    let { buttonList } = this.data;
+    let {
+      buttonList
+    } = this.data;
     let list = [];
-    console.log(this.getdate(1));
-    list.push("今天");
-    list.push("明天");
-    list.push("后天");
-    for (let i = 0; i < 3; i++) {
+    for (let v = 0; v < 5; v++) {
+      let nowdate = this.getDate1(v)
+      list.push(nowdate)
+    }
+    this.getDate1()
+    for (let i = 0; i < 5; i++) {
       buttonList[i].text = list[i];
     }
     this.setData({
@@ -204,10 +233,17 @@ Page({
     console.log(buttonList);
   },
   tabsOne(e) {
-    let { buttonList } = this.data;
+    let {
+      buttonList
+    } = this.data;
     this.getdate(0);
-    let { today, p } = this.data;
-    let { name } = e.detail;
+    let {
+      today,
+      p
+    } = this.data;
+    let {
+      name
+    } = e.detail;
     this.setData({
       content: name,
       activeName: name,
@@ -217,13 +253,6 @@ Page({
       this.setData({
         p: pipi,
       });
-    }
-    for (let i = 0; i < buttonList.length; i++) {
-      if (i == 0) {
-        buttonList[i].default = "warn";
-      } else {
-        buttonList[i].default = "default";
-      }
     }
     this.setData({
       buttonList,
@@ -263,6 +292,11 @@ Page({
           this.setData({
             showdata: false,
           });
+        } else if (p == 1 && data == false) {
+          console.log(todayList)
+          this.setData({
+            showdata: false,
+          });
         }
 
         if (p == 1) {
@@ -292,7 +326,12 @@ Page({
     }
   },
   handleTap1(e) {
-    let { clientX, clientY, pageX, pageY } = e.changedTouches[0];
+    let {
+      clientX,
+      clientY,
+      pageX,
+      pageY
+    } = e.changedTouches[0];
     if (clientY == pageY) {
       this.setData({
         showlodingtitle: true,
@@ -319,14 +358,20 @@ Page({
       responseType: "text",
       data: {
         host: apifrom,
-        c: 150,
+        c: 136,
       },
       success: (res) => {
         this.showHttploading(false);
-        let { is_banner, is_video } = res.data.params;
+        let {
+          is_banner,
+          is_video,
+          banners
+        } = res.data.params;
+        console.log(banners.h5_url)
         if (is_banner == 1) {
           this.setData({
             is_banner: true,
+            itemBanners: banners
           });
         }
         if (is_video == 1) {
@@ -363,7 +408,10 @@ Page({
         console.log("showLoading fail", err);
       },
     });
-    let { content, changdate } = this.data;
+    let {
+      content,
+      changdate
+    } = this.data;
     let date = this.getdate(changdate);
     this.getList(content, date);
     let that = this;
@@ -381,7 +429,11 @@ Page({
     this.setNavigationBarColor();
     this.getdate(0);
     this.geth5host();
-    let { today, content, p } = this.data;
+    let {
+      today,
+      content,
+      p
+    } = this.data;
     this.getList(content, today, p);
   },
 });

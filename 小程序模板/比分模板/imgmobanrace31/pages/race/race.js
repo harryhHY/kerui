@@ -292,7 +292,7 @@ Page({
           this.setData({
             showdata: false,
           });
-        }else if (p == 1 && data == false){
+        } else if (p == 1 && data == false) {
           console.log(todayList)
           this.setData({
             showdata: false,
@@ -364,11 +364,14 @@ Page({
         this.showHttploading(false);
         let {
           is_banner,
-          is_video
+          is_video,
+          banners
         } = res.data.params;
+        console.log(banners.h5_url)
         if (is_banner == 1) {
           this.setData({
             is_banner: true,
+            itemBanners: banners
           });
         }
         if (is_video == 1) {

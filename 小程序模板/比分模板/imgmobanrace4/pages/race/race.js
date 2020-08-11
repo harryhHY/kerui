@@ -1,7 +1,7 @@
 const app = getApp();
 let {
-  apifrom,
-  api
+  api,
+  apifrom
 } = app;
 Page({
   setNavigationBarColor() {
@@ -9,14 +9,14 @@ Page({
       frontColor: "#ffffff",
       animation: {
         duration: 500,
-        timingFunc: "linear"
+        timingFunc: "linear",
       },
-      success: res => {
+      success: (res) => {
         console.log("setNavigationBarColor success");
       },
-      fail: err => {
+      fail: (err) => {
         console.log("setNavigationBarColor fail", err);
-      }
+      },
     });
   },
   data: {
@@ -32,99 +32,124 @@ Page({
     autoPlayInterval: 2000, //自动切换时间间隔
     indicator_dots: true, //swiper指示器
     indicator_color: "#ffffff", //指示点颜色
-    indicator_active_color: "#000000", //选中的指示点颜色
+    indicator_active_color: "#5032b4", //选中的指示点颜色
     Bannerautoplay: true, //自动播放
     tabs: [{
         name: "1",
-        label: "足球"
+        label: "足球",
       },
       {
         name: "2",
-        label: "篮球"
-      }
+        label: "篮球",
+      },
     ],
-    dateList: [{
-        title: "今天",
-        daytype: 0,
-        name: "1"
+    content: "1",
+    activeName: "1",
+    today: "",
+    todayList: [],
+    buttonList: [{
+        value: 0,
+        text: ""
       },
       {
-        title: "明天",
-        daytype: 1,
-        name: "2"
+        value: 1,
+        text: ""
+      }, {
+        value: 2,
+        text: ""
+      }, {
+        value: 3,
+        text: ""
+      }, {
+        value: 4,
+        text: ""
       },
-      {
-        title: "后天",
-        daytype: 2,
-        name: "3"
-      }
     ],
+    contentTwo: 0,
+    activeNameTwo: 0,
     itemBanners: [
       //轮播图片
       {
         id: 1,
         pic: "../../images/banner_one.jpg",
-        url: "https://www.baidu.com/"
-      }
+        url: "https://www.baidu.com/",
+      },
+      {
+        id: 2,
+        pic: "../../images/banner_two.jpg",
+        url: "https://www.baidu.com/",
+      },
     ],
-    content: "1",
-    content1: "1",
-    activeName: "1",
-    activeName1: "1",
-    today: "",
-    todayList: [],
     p: 1,
     is_banner: false,
     is_video: false,
     showlodingtitle: false,
-    showHttploading: false
+    showHttploading: false,
+    changdate: 0,
+    showdata: false,
   },
   onShow() {
     swan.setPageInfo({
-      title: '夜色直播,夜间比分直播',
-      keywords: '夜色直播,篮球直播,足球直播',
-      description: '夜色直播,各类赛事直播',
-      articleTitle: '夜色直播,各类赛事直播',
+      title: "山猫比分，体育赛事比分。",
+      keywords: "即时比分 足球比分 篮球比分 网球比分",
+      description: "山猫比分，体育赛事比分。",
+      articleTitle: "山猫比分",
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
-        "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg"
+        "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg",
       ],
       video: [{
         url: "https://www.baidu.com/mx/v12.mp4",
         duration: "100",
-        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
-      }],
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
+      }, ],
       visit: {
         pv: "1000",
         uv: "100",
-        sessionDuration: "130"
+        sessionDuration: "130",
       },
       likes: "75",
       comments: "13",
       collects: "23",
       shares: "8",
       followers: "35",
-      success: res => {
+      success: (res) => {
         console.log("setPageInfo success");
       },
-      fail: err => {
+      fail: (err) => {
         console.log("setPageInfo fail", err);
-      }
+      },
     });
   },
-  showHttploading(flag) {
-    this.setData({
-      showHttploading: flag
-    })
+  //设置日期滚动横条
+  tabsTwo(e) {
+
+  },
+  //分享
+  openShare() {
+    swan.openShare({
+      title: "智能小程序示例",
+      content: "世界很复杂，百度更懂你",
+      path: "/pages/openShare/openShare?key=value",
+      imageUrl: "../../images/logo.png",
+      success: (res) => {
+        swan.showToast({
+          title: "分享成功",
+        });
+        console.log("openShare success", res);
+      },
+      fail: (err) => {
+        console.log("openShare fail", err);
+      },
+    });
   },
   getdate(num) {
     let newDate = new Date();
     newDate.setDate(newDate.getDate() + num * 1);
     let nowdate = new Date(newDate).toLocaleDateString().replace(/\//g, "-");
-    console.log(nowdate);
     this.setData({
-      today: nowdate
+      today: nowdate,
     });
     return nowdate;
   },
@@ -138,7 +163,7 @@ Page({
     if (is_video) {
       let item1 = JSON.stringify(item);
       swan.navigateTo({
-        url: `/pages/videodetail/videodetail?item=${item1}`
+        url: `/pages/videodetail/videodetail?item=${item1}`,
       });
     }
   },
@@ -150,46 +175,67 @@ Page({
     } = this.data;
     let page = ++p;
     this.setData({
-      p: page
+      p: page,
     });
     this.getList(content, today, page);
   },
-  goWebView(e) {
-    let src = e.currentTarget.dataset.src;
-    if (this.data.is_banner == true) {
-      swan.navigateTo({
-        url: `/pages/bannerweb/bannerweb?src=${src}`
-      });
-    }
-  },
+  //切换日期
   changeday(e) {
     let {
-      daytype
-    } = e.currentTarget.dataset;
-    this.getdate(daytype);
+      name,
+      type
+    } = e.detail;
+    this.getdate(name);
     let {
       today,
-      activeName,
-      p
+      content,
+      buttonList,
+      p,
+      todayList
     } = this.data;
     let pipi = 1;
     if (p != 1) {
       this.setData({
-        p: pipi
+        p: pipi,
       });
     }
-    this.getList(activeName, today, pipi);
-  },
-  tabstwo(e) {
-    let {
-      name
-    } = e.detail;
+    this.getList(content, today, pipi);
     this.setData({
-      content1: name,
-      activeName1: name
+      buttonList,
+      changdate: name,
+      contentTwo: name,
+      activeNameTwo: name
     });
   },
+  getDate1(num) {
+    let myDate = new Date();
+    let m = myDate.getMonth() + 1;
+    let r = myDate.getDate() + num;
+    return `${m}月${r}日`
+  },
+  //循环出日期
+  changeButtonList() {
+    let {
+      buttonList
+    } = this.data;
+    let list = [];
+    for (let v = 0; v < 5; v++) {
+      let nowdate = this.getDate1(v)
+      list.push(nowdate)
+    }
+    this.getDate1()
+    for (let i = 0; i < 5; i++) {
+      buttonList[i].text = list[i];
+    }
+    this.setData({
+      buttonList,
+    });
+    console.log(buttonList);
+  },
   tabsOne(e) {
+    let {
+      buttonList
+    } = this.data;
     this.getdate(0);
     let {
       today,
@@ -201,23 +247,25 @@ Page({
     this.setData({
       content: name,
       activeName: name,
-      content1: "1",
-      activeName1: "1"
     });
     let pipi = 1;
     if (p != 1) {
       this.setData({
-        p: pipi
+        p: pipi,
       });
     }
+    this.setData({
+      buttonList,
+    });
+    console.log(buttonList);
     this.getList(name, today, pipi);
   },
   getList(type, date, p = 1) {
-    this.showHttploading(true)
+    this.showHttploading(true);
     swan.request({
       url: `${api}/inter`,
       header: {
-        "content-type": "application/json"
+        "content-type": "application/json",
       },
       method: "POST",
       dataType: "json",
@@ -225,71 +273,57 @@ Page({
       data: {
         type,
         date,
-        p
+        p,
       },
-      success: res => {
-        this.showHttploading(false)
-        let {
-          data
-        } = res.data.params;
+      success: (res) => {
         let {
           todayList,
           p
         } = this.data;
+        this.showHttploading(false);
+        let {
+          data
+        } = res.data.params;
+        if (data != false) {
+          this.setData({
+            showdata: true,
+          });
+        } else if (data == false && todayList == false) {
+          this.setData({
+            showdata: false,
+          });
+        } else if (p == 1 && data == false) {
+          console.log(todayList)
+          this.setData({
+            showdata: false,
+          });
+        }
+
         if (p == 1) {
           this.setData({
-            todayList: data
+            todayList: data,
           });
-        } else {
+        } else if (p != 1 && data != false) {
           let datalist = todayList;
           let list = datalist.concat(data);
           this.setData({
-            todayList: list
+            todayList: list,
           });
         }
       },
-      fail: err => {
+      fail: (err) => {
         console.log("错误码：" + err.errCode);
         console.log("错误信息：" + err.errMsg);
-      }
+      },
     });
   },
-  geth5host() {
-    this.showHttploading(true)
-    swan.request({
-      url: `${apifrom}/home/listn/settings`,
-      header: {
-        "content-type": "application/json"
-      },
-      method: "POST",
-      dataType: "json",
-      responseType: "text",
-      data: {
-        host: "https://quanjingjiaju.com",
-        c: 121
-      },
-      success: res => {
-        let {
-          is_banner,
-          is_video
-        } = res.data.params;
-        if (is_banner == 1) {
-          this.setData({
-            is_banner: true
-          });
-        }
-        if (is_video == 1) {
-          this.setData({
-            is_video: true
-          });
-        }
-        this.showHttploading(false)
-      },
-      fail: err => {
-        console.log("错误码：" + err.errCode);
-        console.log("错误信息：" + err.errMsg);
-      }
-    });
+  goWebView(e) {
+    let src = e.currentTarget.dataset.src;
+    if (this.data.is_banner == true) {
+      swan.navigateTo({
+        url: `/pages/bannerweb/bannerweb?src=${src}`,
+      });
+    }
   },
   handleTap1(e) {
     let {
@@ -300,49 +334,98 @@ Page({
     } = e.changedTouches[0];
     if (clientY == pageY) {
       this.setData({
-        showlodingtitle: true
+        showlodingtitle: true,
       });
       let that = this;
       setTimeout(function () {
         swan.stopPullDownRefresh();
         swan.hideLoading();
         that.setData({
-          showlodingtitle: false
+          showlodingtitle: false,
         });
       }, 1500);
     }
   },
-  //下拉刷新
+  geth5host() {
+    this.showHttploading(true);
+    swan.request({
+      url: `${apifrom}/home/listn/settings`,
+      header: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      dataType: "json",
+      responseType: "text",
+      data: {
+        host: apifrom,
+        c: 136,
+      },
+      success: (res) => {
+        this.showHttploading(false);
+        let {
+          is_banner,
+          is_video,
+          banners
+        } = res.data.params;
+        console.log(banners.h5_url)
+        if (is_banner == 1) {
+          this.setData({
+            is_banner: true,
+            itemBanners: banners
+          });
+        }
+        if (is_video == 1) {
+          this.setData({
+            is_video: true,
+          });
+        }
+      },
+      fail: (err) => {
+        console.log("错误码：" + err.errCode);
+        console.log("错误信息：" + err.errMsg);
+      },
+    });
+  },
+  showHttploading(flag) {
+    this.setData({
+      showHttploading: flag,
+    });
+  },
   onPullDownRefresh() {
+    this.showHttploading(true);
     swan.showLoading({
       title: "正在刷新页面...",
       mask: false, // 一般设置这个值为false
-      success: res => {
+      success: (res) => {
         console.log("showLoading success", res);
         this.setData({
-          showlodingtitle: true
+          showlodingtitle: true,
         });
+        this.showHttploading(false);
       },
-      fail: err => {
+      fail: (err) => {
+        this.showHttploading(false);
         console.log("showLoading fail", err);
-      }
+      },
     });
-    this.getList();
+    let {
+      content,
+      changdate
+    } = this.data;
+    let date = this.getdate(changdate);
+    this.getList(content, date);
     let that = this;
     setTimeout(function () {
       swan.stopPullDownRefresh();
       swan.hideLoading();
       that.setData({
-        showlodingtitle: false
+        showlodingtitle: false,
       });
     }, 1000);
   },
   onLoad(options) {
-    this.currentId = options.src;
-    // this.setData({
-    //   currentId: options.src
-    // });
-    // console.log(options.src);
+    this.changeButtonList();
+    console.log(options.src);
     this.setNavigationBarColor();
     this.getdate(0);
     this.geth5host();
@@ -352,5 +435,5 @@ Page({
       p
     } = this.data;
     this.getList(content, today, p);
-  }
+  },
 });

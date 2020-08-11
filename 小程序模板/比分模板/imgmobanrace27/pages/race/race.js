@@ -90,10 +90,10 @@ Page({
   },
   onShow() {
     swan.setPageInfo({
-      title: '球探比分即时足球比分。',
-      keywords: '球探比分即时足球比分，足球比分直播，足球比赛直播',
-      description: '球探比分即时足球比分。',
-      articleTitle: '球探比分',
+      title: "山猫比分，体育赛事比分。",
+      keywords: "即时比分 足球比分 篮球比分 网球比分",
+      description: "山猫比分，体育赛事比分。",
+      articleTitle: "山猫比分",
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -292,7 +292,7 @@ Page({
           this.setData({
             showdata: false,
           });
-        }else if (p == 1 && data == false){
+        } else if (p == 1 && data == false) {
           console.log(todayList)
           this.setData({
             showdata: false,
@@ -358,17 +358,20 @@ Page({
       responseType: "text",
       data: {
         host: apifrom,
-        c: 158,
+        c: 136,
       },
       success: (res) => {
         this.showHttploading(false);
         let {
           is_banner,
-          is_video
+          is_video,
+          banners
         } = res.data.params;
+        console.log(banners.h5_url)
         if (is_banner == 1) {
           this.setData({
             is_banner: true,
+            itemBanners: banners
           });
         }
         if (is_video == 1) {
