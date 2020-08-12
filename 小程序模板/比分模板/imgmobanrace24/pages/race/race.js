@@ -90,10 +90,10 @@ Page({
   },
   onShow() {
     swan.setPageInfo({
-      title: "山猫比分，体育赛事比分。",
-      keywords: "即时比分 足球比分 篮球比分 网球比分",
-      description: "山猫比分，体育赛事比分。",
-      articleTitle: "山猫比分",
+      title: '006直播，体育直播。',
+      keywords: '体育直播、篮球赛事、即时比分、006直播',
+      description: '006直播，体育直播。',
+      articleTitle: '006直播',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -358,7 +358,7 @@ Page({
       responseType: "text",
       data: {
         host: apifrom,
-        c: 136,
+        c: 163,
       },
       success: (res) => {
         this.showHttploading(false);

@@ -35,10 +35,21 @@
         >
         <tab-item s-for="tab in tabs" name="{{tab.name}}" label="{{tab.label}}" />
     </tabs>
-    <view class="centerimg">
-        <button s-for="item,index in buttonList" type="{{item.default}}" size="mini" hover-class="hover" hover-stop-propagation='true' bind:tap="changeday" data-daytype= "{{item.value}}" >
+    <view class="centerimg button_view">
+        <!-- <button s-for="item,index in buttonList" type="{{item.default}}" size="mini" hover-class="hover" hover-stop-propagation='true' bind:tap="changeday" data-daytype= "{{item.value}}" >
             {{item.text}}
-        </button>
+        </button> -->
+         <tabs 
+            class="border-bottom" 
+            active-name="{{activeNameTwo}}"
+            max-tab-item-amount="4"
+            bindtabchange="changeday"
+            tabs-inactive-text-color='#1cf0f0'
+            tabs-active-text-color='#1c78f0'
+            tabs-underline-color='#1c78f0'
+            >
+            <tab-item s-for="tab in buttonList" name="{{tab.value}}" label="{{tab.text}}" daytype="{{tab.value}}"/>
+        </tabs>
     </view>
     <view class="intro" s-if="{{showdata}}">
         <view class="content_today_view cl" s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
