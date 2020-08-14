@@ -73,7 +73,7 @@ Page({
       responseType: "text",
       data: {
         host: apifrom,
-        c: 166
+        c: 171
       },
       success: res => {
         let { menu } = res.data.params;

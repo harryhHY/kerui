@@ -161,10 +161,10 @@ Page({
 
   onShow() {
     swan.setPageInfo({
-      title: '蘑菇视频，免费视频观看。',
-      keywords: '蘑菇视频，性感视频，石榴视频',
-      description: '蘑菇视频，免费视频观看。',
-      articleTitle: '蘑菇视频',
+      title: '桃色视频，免费视频观看。',
+      keywords: '桃色视频，黄瓜直播，美女福利',
+      description: '桃色视频，免费视频观看。',
+      articleTitle: '桃色视频',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -249,7 +249,7 @@ Page({
       responseType: "text",
       data: {
         host: apifrom,
-        c: 166,
+        c: 171,
       },
       success: (res) => {
         this.showHttploading(false);
@@ -289,7 +289,7 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        c: 166,
+        c: 171,
         p: page, //第几页
         n: this.number, //每页条数
       },
@@ -393,7 +393,7 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 166,
+              c: 171,
               p: machpage, //第几页
               n: n, //每页条数
             },
