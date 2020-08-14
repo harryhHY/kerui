@@ -11,15 +11,15 @@
     },
     "projectname": "006直播",
     "publish": {
-        "version": "1.0.2"
+        "version": "1.0.3"
     },
     "setting": {
         "urlCheck": false
     },
     "swan": {
         "baiduboxapp": {
-            "extensionJsVersion": "1.13.1",
-            "swanJsVersion": "3.180.255-rc"
+            "swanJsVersion": "3.180.255-rc",
+            "extensionJsVersion": "1.13.1"
         }
     }
 }
