@@ -1,0 +1,14 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/web/web",
+        "pages/detail/detail",
+        "pages/bannerweb/bannerweb"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "智能小程序",
+        "backgroundTextStyle": "light"
+    }
+}
