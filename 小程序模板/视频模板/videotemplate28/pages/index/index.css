@@ -388,9 +388,10 @@
     border-radius: 0.05rem;
     margin-left: 0.1rem;
 }
-.logo_view{
-    /* position: absolute;
+.newimage{
+    width: 0.32rem;
+    height: 0.32rem;
+    position: absolute;
     top: 0.01rem;
-    left: 0.05rem; */
-
+    left: 0.05rem;
 }
