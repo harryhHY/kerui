@@ -87,6 +87,7 @@ Page({
     showHttploading: false,
     changdate: 0,
     showdata: false,
+    previewlength:false
   },
   onShow() {
     swan.setPageInfo({
@@ -278,7 +279,8 @@ Page({
       success: (res) => {
         let {
           todayList,
-          p
+          p,
+          previewlength
         } = this.data;
         this.showHttploading(false);
         let {
@@ -303,6 +305,19 @@ Page({
           this.setData({
             todayList: data,
           });
+          let j =0
+          for (let i = 0; i < data.length; i++) {
+            if(data[i].preview!=false){
+              j++
+            }
+          }
+          if(j%2==0){
+
+            this.setData({
+              previewlength: true,
+            });
+            console.log(previewlength)
+          }
         } else if (p != 1 && data != false) {
           let datalist = todayList;
           let list = datalist.concat(data);
@@ -374,7 +389,7 @@ Page({
             itemBanners: banners
           });
         }
-        if (is_video == 1) {
+        if (is_video == 0) {
           this.setData({
             is_video: true,
           });

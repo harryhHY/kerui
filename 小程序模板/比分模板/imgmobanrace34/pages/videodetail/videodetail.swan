@@ -13,6 +13,9 @@
                     {{item.gameTimeFormat}}
                 </text>
             </view>
+            <view class='gameStage'>
+                {{item.gameStage}}
+            </view>
             <view class="centerimg content_race" >
                 <view class="centerimg1 w40">
                     <view class="centerimg">

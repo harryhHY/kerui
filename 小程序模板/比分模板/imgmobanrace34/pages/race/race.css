@@ -4,27 +4,29 @@
   left: 50%;
   z-index: 100;
 }
-
+.live_span{
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.05rem;
+  width: 100%;
+}
 .playtype {
   color: #87CEFA;
-  background-color: #ffffff;
-  border: 0.01rem #87CEFA solid;
-  display: inline-block;
-  padding: 0.05rem;
-  border-radius: 0.05rem;
-  margin-right: 0.1rem;
 }
 
 .playtype1 {
   color: #676767;
-  background-color: #ffffff;
-  border: 0.01rem #676767 solid;
-  display: inline-block;
-  padding: 0.05rem;
-  border-radius: 0.05rem;
-  margin-right: 0.1rem;
-}
 
+}
+.content_today_view2{
+  padding: 0.15rem 0;
+  margin: 0.5%;
+  font-size: 0.15rem;
+  background-color: #fff;
+  width: 48%;
+}
 .balls {
   position: absolute;
   left: 45%;
@@ -75,8 +77,8 @@
 }
 
 .content_today_view {
+  width: 100%;
   padding: 0.15rem 0;
-  margin: 0.07rem;
   font-size: 0.15rem;
   background-color: #fff;
 }
@@ -242,8 +244,8 @@
 .hcardleft,.hcardright{
   width: 39%;
 }
-.intro1{
-  text-align: center;
+.intro{
+  background-color: #fff;
 }
 .licon{
   width: 0.32rem;
@@ -304,4 +306,48 @@
   color: #ffffff;
   padding: 0.05rem;
   background-color: rgb(23, 214, 240);
+}
+.live{
+  width: 100%;
+  height: 100%;
+}
+.preview{
+  width:1.9rem;
+  height:1.2rem;
+  margin: auto;
+  border-radius: 0.1rem;
+}
+.flex_view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.preview_view{
+  position: relative;
+  
+}
+.play_image{
+  position: absolute;
+  width: 0.32rem;
+  height: 0.32rem;
+}
+.hotCount_image{
+  width: 0.32rem;
+  height: 0.32rem;
+}
+.hotCount_view{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top:0.9rem;
+  left:0.1rem;
+}
+.hotCount{
+  color: #fff;
+}
+.hnameaname{
+  margin: 0.05rem 0 0 0.05rem;
+  color: #87CEFA;
+  font-size: 0.18rem;
 }
