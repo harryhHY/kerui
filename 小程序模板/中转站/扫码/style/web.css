@@ -1,0 +1,30 @@
+html{font-size:calc(100vw/7.5);}
+
+.img{
+    width: 5.16rem;
+    height: 5.16rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.img_div{
+    position: relative;
+    height: 100%;
+}
+.box{
+    text-align: center;
+    font-size:21px;
+    color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2.5rem;
+    margin: auto;
+}
+.red{
+    
+    color: red;
+}

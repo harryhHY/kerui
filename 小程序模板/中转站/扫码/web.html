@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/web.css">
+</head>
+
+<body>
+    <div class="img_div">
+        <img src="./image/WhatsApp Image 2020-08-18 at 4.13.34 PM.jpeg" alt="" class="img">
+        <div class="box">
+            <span>公众号搜索：</span>
+            <span class="red">爱扣</span>
+        </div>
+    </div>
+</body>
+<!-- <script src="./js/pc.js"></script> -->
+<script>
+   
+    (function (n, e) {
+        var t = n.documentElement,
+            i = "orientationchange" in window ? "orientationchange" : "resize",
+            d = function () {
+                var n = t.clientWidth;
+                n && (t.style.fontSize = n / 7.5 + "px")
+            };
+        n.addEventListener && (e.addEventListener(i, d, !1), n.addEventListener("DOMContentLoaded", d, !1))
+    })(document, window);
+</script>
+
+</html>
