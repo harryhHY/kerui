@@ -1,0 +1,88 @@
+.result_view {
+  margin-top: 0.5rem;
+}
+
+.iconname {
+  font-size: 0.16rem;
+  text-align: center;
+}
+
+.iconname2 {
+  font-size: 0.25rem;
+  color: deepskyblue;
+}
+
+.iconimg {
+  width: 0.22rem;
+  height: 0.22rem;
+}
+
+.iconimg2 {
+  width: 0.44rem;
+  height: 0.44rem;
+}
+
+.centerimg1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.w40 {
+  width: 40%;
+}
+
+.w20 {
+  width: 20%;
+}
+
+.w20_r {
+  width: 20%;
+  flex-direction: column;
+}
+
+.vs_view {
+  font-size: 0.3rem;
+}
+
+.logodiv {
+  width: 100%;
+  height: 0.38rem;
+  display: flex;
+  align-items: center;
+}
+
+.logoimages {
+  width: 0.39rem;
+  height: 100%;
+}
+
+.img2 {
+  width: 0.79rem;
+  height: 0.21rem;
+  line-height: 0.79rem;
+}
+
+.content_top {
+  margin: 0.15rem;
+  background-color: #fff;
+  padding: 0.15rem 0;
+  border-radius: 0.05rem;
+}
+
+.content_race {
+  background-color: #fff;
+  padding: 0.15rem 0;
+  margin: 0.15rem;
+  border-radius: 0.05rem;
+}
+.gameStage{
+  font-size: 0.21rem;
+  color: deepskyblue;
+  text-align: center;
+  width: 92%;
+  line-height: 0.5rem;
+  margin: auto;
+  background-color: #fff;
+}

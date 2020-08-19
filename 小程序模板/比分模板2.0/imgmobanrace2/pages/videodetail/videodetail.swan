@@ -1,0 +1,80 @@
+<template id="videodetail">
+    <view s-if="{{ playflag == true }}" class="pipixi">
+        <view class="logodiv">
+            <image s-for="item,index in logoList" src="{{item.imgsrc}}" class="logoimages {{item.classname}}"></image>
+        </view>
+        <view s-for="item,index in item1">
+            <view class='centerimg content_top'>
+                <image src="{{item.licon}}" class='iconimg2'></image>
+                <text class='iconname2'>
+                    {{item.lname}}
+                </text>
+                <text class='iconname2'>
+                    {{item.gameTimeFormat}}
+                </text>
+            </view>
+            <view class='gameStage'>
+                {{item.gameStage}}
+            </view>
+            <view class="centerimg content_race" >
+                <view class="centerimg1 w40">
+                    <view class="centerimg">
+                        <image src="{{item.hicon}}" class="iconimg"></image>
+                    </view>
+                    <view class="iconname">
+                        {{item.hname}}
+                    </view>
+                </view>
+                <view class="centerimg w20 vs_view" s-if="{{item.gameStage !='完场'}}">
+                    VS
+                </view>
+                <view class="centerimg1 w40">
+                    <view class="centerimg">
+                        <image src="{{item.aicon}}" class="iconimg"></image>
+                    </view>
+                    <view class="iconname">
+                        {{item.aname}}
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="wrap">
+            <video id="myVideo" enable-danmu="true" autoplay="true" src="{{video_Src}}"></video>
+        </view>
+        
+    </view>
+    <view s-if="{{ playflag == false }}" class="result">
+        <view class="logodiv">
+            <image s-for="item,index in logoList" src="{{item.imgsrc}}" class="logoimages {{item.classname}}"></image>
+        </view>
+        <view class="result_view centerimg" s-for="item,index in item1">
+            <view class="centerimg1 w40">
+                <view class="centerimg">
+                    <image src="{{item.hicon}}" class="iconimg"></image>
+                </view>
+                <view class="iconname">
+                    {{item.hname}}
+                </view>
+            </view>
+            <view class="centerimg w20_r">
+                <view>
+                    <view class="iconname">
+                        {{item.hTotalScore}} : {{item.aTotalScore}}
+                    </view>
+                </view>
+                <view class="iconname">
+                    {{item.gameStage}}
+                </view>
+            </view>
+            <view class="centerimg1 w40">
+                <view class="centerimg">
+                    <image src="{{item.aicon}}" class="iconimg"></image>
+                </view>
+                <view class="iconname">
+                    {{item.aname}}
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
