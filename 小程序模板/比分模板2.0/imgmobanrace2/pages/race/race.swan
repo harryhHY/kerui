@@ -52,7 +52,7 @@
         </tabs>
     </view>
     <view class="intro cl" s-if="{{showdata}}">
-        <view class='{{item.preview==false? "left content_today_view":(previewlength!=false) ? "content_today_view2 cl left":"content_today_view2 cl"}}' s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
+        <view class='{{item.preview==false? "left content_today_view":(previewlength!=false) ? "content_today_view2 cl left":"content_today_view2 left cl"}}' s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
             <view class='content_body cl'>
                 <view class='content_top cl'  s-if='{{item.preview==false}}' >
                     <!-- <view class='logo_view'>
@@ -82,7 +82,7 @@
                         <image src="{{item.preview}}" class='preview'></image>
                         <image src="../../images/play.png" class='play_image'></image>
                     </view>
-
+                    <image src="../../images/news.png" class='news_iamge'></image>
                     <view class='hotCount_view'>
                         <image src="../../images/hot.png" class='hotCount_image'></image>
                         <view class='span_view hotCount'>
@@ -115,7 +115,7 @@
                             <view class='hanme_view'>
                                 {{item.hname}}
                             </view>
-                            <image src="{{item.hicon}}"  class='hicon'></image>
+                            <!-- <image src="{{item.hicon}}"  class='hicon'></image> -->
                         </view>
                     </view>
                     <view class='left hTotalScore' s-if='{{item.aTotalScore!=null}}'>
@@ -126,7 +126,7 @@
                     </view>
                     <view class='content_right left'>
                         <view class='aname left'>
-                            <image src="{{item.aicon}}" class='aicon'></image>
+                            <!-- <image src="{{item.aicon}}" class='aicon'></image> -->
                             <view class='aname_view'>
                                  {{item.aname}}
                             </view>

@@ -233,6 +233,7 @@ Page({
     });
     console.log(buttonList);
   },
+  //切换种类
   tabsOne(e) {
     let {
       buttonList
@@ -257,6 +258,8 @@ Page({
     }
     this.setData({
       buttonList,
+      contentTwo: 0,
+      activeNameTwo:0
     });
     console.log(buttonList);
     this.getList(name, today, pipi);

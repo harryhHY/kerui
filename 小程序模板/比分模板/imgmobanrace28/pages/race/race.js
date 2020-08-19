@@ -232,7 +232,7 @@ Page({
     });
     console.log(buttonList);
   },
-  tabsOne(e) {
+ tabsOne(e) {
     let {
       buttonList
     } = this.data;
@@ -256,6 +256,8 @@ Page({
     }
     this.setData({
       buttonList,
+      contentTwo: 0,
+      activeNameTwo:0
     });
     console.log(buttonList);
     this.getList(name, today, pipi);

@@ -21,8 +21,7 @@ Page({
     playflag: false,
     item1: [],
     video_Src: "",
-    logoList: [
-      {
+    logoList: [{
         id: 1,
         imgsrc: "../../images/logo.png",
         classname: "img1"
@@ -32,7 +31,8 @@ Page({
         imgsrc: "../../images/logo1.png",
         classname: "img2"
       }
-    ]
+    ],
+    stage: ""
   },
   onShow() {
     swan.setPageInfo({
@@ -45,13 +45,11 @@ Page({
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
         "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg"
       ],
-      video: [
-        {
-          url: "https://www.baidu.com/mx/v12.mp4",
-          duration: "100",
-          image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
-        }
-      ],
+      video: [{
+        url: "https://www.baidu.com/mx/v12.mp4",
+        duration: "100",
+        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png"
+      }],
       visit: {
         pv: "1000",
         uv: "100",
@@ -70,8 +68,42 @@ Page({
       }
     });
   },
+  changestage() {
+    let {
+      gameStage
+    } = this.data.item1[0];
+    switch (gameStage) {
+      case null:
+        this.setData({
+          stage: "直播已取消"
+        })
+        break;
+      case "延迟":
+        this.setData({
+          stage: "直播已延迟"
+        })
+        break;
+      case "未开始":
+        this.setData({
+          stage: "直播未开始"
+        })
+        break;
+      case "完场":
+        this.setData({
+          stage: "直播已结束"
+        })
+        break;
+      default:
+        this.setData({
+          stage: "进行中的比赛"
+        })
+        break;
+    }
+  },
   getdataList() {
-    let { item1 } = this.data;
+    let {
+      item1
+    } = this.data;
     let id = item1[0].matchId;
     swan.request({
       url: `${api}/inter_url`,
@@ -85,8 +117,12 @@ Page({
         id
       },
       success: res => {
-        let { params } = res.data;
-        let { murl } = res.data.params;
+        let {
+          params
+        } = res.data;
+        let {
+          murl
+        } = res.data.params;
         console.log(params);
         if (params != false) {
           console.log();
@@ -103,13 +139,15 @@ Page({
     });
   },
   onLoad(options) {
-    let { item } = options;
+    let {
+      item
+    } = options;
     let item1 = [];
     item1.push(JSON.parse(item));
-    console.log(item1);
     this.setData({
       item1
     });
+    this.changestage();
     this.getdataList();
     console.log(this.data.playflag);
   }

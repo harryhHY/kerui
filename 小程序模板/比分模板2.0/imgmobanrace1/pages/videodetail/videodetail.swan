@@ -13,8 +13,8 @@
                     {{item.gameTimeFormat}}
                 </text>
             </view>
-            <view class='gameStage'>
-                {{item.gameStage}}
+            <view class='{{stage=="进行中的比赛"? "gameStage red" :"gameStage"}}'>
+                {{stage}}
             </view>
             <view class="centerimg content_race" >
                 <view class="centerimg1 w40">
@@ -64,7 +64,7 @@
                     </view>
                 </view>
                 <view class="iconname">
-                    {{item.gameStage}}
+                    {{stage}}
                 </view>
             </view>
             <view class="centerimg1 w40">
