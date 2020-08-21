@@ -83,13 +83,16 @@
                         <image src="../../images/play.png" class='play_image'></image>
                     </view>
                     <image src="../../images/news.png" class='news_iamge'></image>
+                    <view class='live_gameTimeFormat'>
+                       {{item.lname}} {{item.gameTimeFormat}}
+                    </view>
                     <view class='hotCount_view'>
                         <image src="../../images/hot.png" class='hotCount_image'></image>
                         <view class='span_view hotCount'>
                             热度：{{item.hotCount}}
                         </view>
                     </view>
-                    <view class='hnameaname'>
+                    <view class='hnameaname ov'>
                         {{item.hname}} VS {{item.aname}}
                     </view>
                 </view>
