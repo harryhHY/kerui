@@ -1,0 +1,82 @@
+<!-- index.swan -->
+<view class="container" bind:touchmove="handleTap1">
+<!-- 轮播图 -->
+    <view class="card-area">
+    <view class="loading_title centerimg" s-if="showlodingtitle">
+        <image src="../../images/logo.png"></image>
+        下拉即可刷新
+    </view>
+        <!-- <view class="logodiv">
+            <image s-for="item,index in logoList" src="{{item.imgsrc}}" class="logoimages {{item.classname}}"></image>
+        </view> -->
+        <view>
+            <swiper 
+             indicator-dots="{{indicator_dots}}"
+             indicator-color="{{indicator_color}}"
+             indicator-active-color="{{indicator_active_color}}"
+             autoplay="{{Bannerautoplay}}"
+             interval="{{autoPlayInterval}}"
+             duration="{{switchDuration}}"
+            >
+             <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}"  bind:tap="goWebView" data-src="{{item.url}}" hover-stop-propagation="true"></image>                           
+                </swiper-item>
+            </block>
+            </swiper >
+        </view>
+        <!-- <view class="bannertext">
+            精彩，由我创造
+        </view> -->
+    <view class="tab_nav">
+        <image class='nav_logo' src="{{logo}}"></image>
+        <tabs 
+            class="race_tab"
+            active-name="{{activeName}}" 
+            bindtabchange="tabsOne"
+            tabs-active-text-color="#F82E48"
+            tabs-inactive-text-color="#767879"
+            tabs-underline-color="none"
+            >
+            <tab-item s-for="tab in tabs" name="{{tab.name}}" label="{{tab.label}}" class="tab_child" />
+        </tabs>
+    </view>
+    <view class="main-container cl">
+        <view class="main-line"></view>
+        <view class="box border-bottom content_view cl" s-for="item in items" bind:tap="navigateTo" data-id="{{item.id}}"  hover-stop-propagation="true">
+            <view  bindtap="tapHandle" class='img_view cl left'>
+                <!-- <image src="../../images/logo.png" class='logoimg1'></image>
+                <image class='logoimg' src="../../images/logo1.png"></image>
+                <view class='left left_view'>
+                     <view class='news_title'>
+                        {{item.news_title}}
+                    </view>
+
+                </view> -->
+                <image class='content_image' src="{{apimg}}{{item.news_img}}"></image>
+                <view class='news_time_view'>
+                    <!-- <view class='left tuijian'>
+                        推荐
+                    </view> -->
+                    <view>
+                         {{item.news_title}}
+                    </view>
+                    <view class=' centerimg1  right'>
+                        <view class='news_time'>
+                            {{item.news_time}}
+                        </view>
+                        <image class='like' src="{{like}}"></image>
+                        <view class='news_goods'>
+                            {{item.news_goods}}
+                        </view>
+                    </view>
+                </view>
+                                    
+            </view>
+            <view class=''>
+               
+            </view>
+        </view>
+    </view>
+</view>
+</view>

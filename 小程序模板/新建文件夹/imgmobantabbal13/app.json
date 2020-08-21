@@ -1,0 +1,35 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/web/web",
+        "pages/detail/detail",
+        "pages/newpage/new",
+        "pages/message/message"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "智能小程序",
+        "backgroundTextStyle": "light"
+    },
+
+    "tabBar": {
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./images/home.png",
+                "selectedIconPath": "./images/home1.png"
+            },
+            {
+                "pagePath": "pages/web/web",
+                "text": "留言",
+                "iconPath": "./images/message.png",
+                "selectedIconPath": "./images/message1.png"
+            }
+        ],
+        "backgroundColor": "#ffffff",
+        "borderStyle": "white",
+        "color": "#666666",
+        "selectedColor": "#7BA6EF"
+    }
+}

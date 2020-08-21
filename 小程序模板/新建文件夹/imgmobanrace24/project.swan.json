@@ -1,0 +1,25 @@
+{
+    "appid": "21912138",
+    "compilation-args": {
+        "common": {
+            "enhance": true
+        }
+    },
+    "host": "baiduboxapp",
+    "preview": {
+        "packageId": 516079
+    },
+    "projectname": "006直播",
+    "publish": {
+        "version": "1.0.3"
+    },
+    "setting": {
+        "urlCheck": false
+    },
+    "swan": {
+        "baiduboxapp": {
+            "swanJsVersion": "3.180.255-rc",
+            "extensionJsVersion": "1.13.1"
+        }
+    }
+}

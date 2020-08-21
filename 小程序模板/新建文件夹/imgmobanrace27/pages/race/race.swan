@@ -1,0 +1,146 @@
+<view id="race" bind:touchmove="handleTap1">
+
+    <view class="loading_title centerimg" s-if="showlodingtitle">
+        <image src="../../images/logo.png"></image>
+        下拉即可刷新
+    </view>
+    <view class='balls_view' s-if='showHttploading'>
+        <view class="balls">
+            <view></view>
+            <view></view>
+            <view></view>
+        </view>
+    </view>
+    <view class="swiper_view">
+        <swiper 
+            indicator-dots="{{indicator_dots}}"
+            indicator-color="{{indicator_color}}"
+            indicator-active-color="{{indicator_active_color}}"
+            autoplay="{{Bannerautoplay}}"
+            interval="{{autoPlayInterval}}"
+            duration="{{switchDuration}}"
+        >
+            <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url||item.h5_url}}" hover-stop-propagation="true"></image>
+                </swiper-item>
+            </block>
+        </swiper >
+    </view>
+     <tabs 
+        class="race_tab"
+        active-name="{{activeName}}" 
+        bindtabchange="tabsOne"
+        tabs-underline-color="#ffffff"
+        >
+        <tab-item s-for="tab in tabs" name="{{tab.name}}" label="{{tab.label}}" />
+    </tabs>
+    <view class="centerimg button_view">
+        <!-- <button s-for="item,index in buttonList" type="{{item.default}}" size="mini" hover-class="hover" hover-stop-propagation='true' bind:tap="changeday" data-daytype= "{{item.value}}" >
+            {{item.text}}
+        </button> -->
+         <tabs 
+            class="border-bottom" 
+            active-name="{{activeNameTwo}}"
+            max-tab-item-amount="3"
+            bindtabchange="changeday"
+            >
+            <tab-item s-for="tab in buttonList" name="{{tab.value}}" label="{{tab.text}}" daytype="{{tab.value}}"/>
+        </tabs>
+    </view>
+    <view class="intro" s-if="{{showdata}}">
+        <view class="content_today_view cl" s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
+            <view class='content_body'>
+                <view class='content_top cl'>
+                    <image src="{{item.licon}}" s-if='{{item.licon}}' class='licon'></image>
+                    <view class="{{item.licon? 'lname1  span_view':'lname span_view'}}" >
+                        {{item.lname}}
+                    </view>
+                    <view class='gameTimeFormat span_view ov'>
+                        {{item.gameTimeFormat}}
+                    </view>
+                    <!-- <image src="../../images/court.png" class='court'  s-if="{{item.gameStage == null}}"></image> -->
+                </view>
+                <view class='gameStage ov' s-if="{{item.gameStage == null}}">
+                    {{item.gameStage == null?'未':' '}}
+                </view>
+                <view class='content_body2 cl'>
+                    <view class="{{item.aTotalScore!=null ? 'content_left left cl':'content_left1 left cl'}}">
+                        <view class='right hname'>
+                            <image src="{{item.hicon}}"  class='hicon'></image>
+                            <view class='hanme_view'>
+                                {{item.hname}}
+                            </view>
+                        </view>
+                    </view>
+                    <view class='left hTotalScore' s-if='{{item.aTotalScore!=null}}'>
+                        {{item.hTotalScore}}-{{item.aTotalScore}}
+                    </view>
+                    <view class='left aTotalScore' s-if='{{item.aTotalScore==null}}'>
+                        VS
+                    </view>
+                    <view class='content_right left'>
+                        <view class='aname left'>
+                            <image src="{{item.aicon}}" class='aicon'></image>
+                            <view class='aname_view'>
+                                 {{item.aname}}
+                            </view>
+                        </view>
+                    </view>
+                    <view class='cl'>
+                        <view class='cl hcardleft left'>
+                            <view class='hRedCard right' s-if='{{item.hRedCard!=null}}'>
+                                {{item.hRedCard}}
+                            </view>
+                            <view class='hYellowCard right' s-if='{{item.hYellowCard!=null}}'>
+                                {{item.hYellowCard}}
+                            </view>
+                        </view>
+                        <view class='hcardright right cl'>
+                            <view class='aRedCard left' s-if='{{item.aRedCard!=null}}'>
+                                {{item.aRedCard}}
+                            </view>
+                            <view class='aYellowCard left' s-if='{{item.aYellowCard!=null}}'>
+                                {{item.aYellowCard}} 
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view>
+                    <view class='content_bottom ov' s-if="{{item.hCornerKick!=null}}">
+                        <view class='hCornerKick span_view'>
+                             {{item.hCornerKick}}
+                        </view>
+                        <view class='span_view aCornerKick'>
+                            {{item.aCornerKick}}
+                        </view>
+                    </view>
+                </view>
+                <view class='gameStage ov' s-if="{{item.gameStage != null}}">
+                    {{item.gameStage}}
+                </view>
+                <view  s-if="{{item.gameStage == null}}" class='cl tuijian_view'>
+                    <view class='left tuijian'>
+                        推荐
+                    </view>
+                    <view class='right' bindtap="openShare">
+                        <image src="../../images/share2.png" class='share'></image>
+                    </view>
+                </view>
+            </view>
+            <view class='content_right cl'>
+                <view class='cl'>
+                     <view class='playtype right' s-if="{{item.room != '视频直播' && item.aTotalScore != null  && is_video }}">
+                        正在直播
+                    </view>
+                    <view s-if="{{item.room == '视频直播' && item.aTotalScore != null  && is_video }}" class="playtype1 right">
+                        查看比分
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='intro1' s-if="{{!showdata}}">
+        暂无数据
+    </view>
+</view>
