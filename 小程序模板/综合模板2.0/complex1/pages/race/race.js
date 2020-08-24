@@ -87,6 +87,7 @@ Page({
     showHttploading: false,
     changdate: 0,
     showdata: false,
+    previewlength:false
   },
   onShow() {
     swan.setPageInfo({
@@ -232,6 +233,7 @@ Page({
     });
     console.log(buttonList);
   },
+  //切换种类
   tabsOne(e) {
     let {
       buttonList
@@ -256,6 +258,8 @@ Page({
     }
     this.setData({
       buttonList,
+      contentTwo: 0,
+      activeNameTwo:0
     });
     console.log(buttonList);
     this.getList(name, today, pipi);
@@ -278,7 +282,8 @@ Page({
       success: (res) => {
         let {
           todayList,
-          p
+          p,
+          previewlength
         } = this.data;
         this.showHttploading(false);
         let {
@@ -292,7 +297,7 @@ Page({
           this.setData({
             showdata: false,
           });
-        }else if (p == 1 && data == false){
+        } else if (p == 1 && data == false) {
           console.log(todayList)
           this.setData({
             showdata: false,
@@ -303,6 +308,19 @@ Page({
           this.setData({
             todayList: data,
           });
+          let j =0
+          for (let i = 0; i < data.length; i++) {
+            if(data[i].preview!=false){
+              j++
+            }
+          }
+          if(j%2==0){
+
+            this.setData({
+              previewlength: true,
+            });
+            console.log(previewlength)
+          }
         } else if (p != 1 && data != false) {
           let datalist = todayList;
           let list = datalist.concat(data);
@@ -364,14 +382,17 @@ Page({
         this.showHttploading(false);
         let {
           is_banner,
-          is_video
+          is_video,
+          banners
         } = res.data.params;
+        console.log(banners.h5_url)
         if (is_banner == 1) {
           this.setData({
             is_banner: true,
+            itemBanners: banners
           });
         }
-        if (is_video == 1) {
+        if (is_video == 0) {
           this.setData({
             is_video: true,
           });
