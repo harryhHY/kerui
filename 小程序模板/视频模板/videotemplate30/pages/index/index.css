@@ -317,6 +317,7 @@
 .content_image{
     width: 100%;
     height: 1.3rem;
+    border-radius: 0.08rem;
 }
 .content_right{
     padding:2%;
