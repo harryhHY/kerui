@@ -6,6 +6,7 @@
 /* globals swan */
 App({
     api: "https://quanjingjiaju.com",
+    c:176,
     onLaunch(options) {
         // do something when launch
         // 引导添加，参见文档： http://smartprogram.baidu.com/docs/design/component/guide_add/
