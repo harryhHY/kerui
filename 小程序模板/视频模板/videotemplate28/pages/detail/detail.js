@@ -1,5 +1,9 @@
 const app = getApp();
-let api = app.api;
+let {
+  api,
+  apifrom,
+  c
+} = app;
 Page({
   setNavigationBarColor() {
     swan.setNavigationBarColor({
@@ -46,10 +50,10 @@ Page({
           title
         } = this.data
         swan.setPageInfo({
-          title: '石榴视频，在线观看',
-          keywords: '石榴视频，夜色直播，美女直播',
-          description: '石榴视频，在线观看',
-          articleTitle: `${title}-石榴视频`,
+          title: '青青久在线视频免费观看。',
+          keywords: '青青久在线视频免费观看，桃色视频，黄瓜直播',
+          description: '青青久在线视频免费观看',
+          articleTitle: `${title}-青青久在线视频免费观看`,
           releaseDate: "2019-01-02 12:01:30",
           image: [
             "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -188,10 +192,10 @@ Page({
       success: res => {
         let news_title = res.data.params.news_title
 
-        let newTitle = `${news_title}-石榴视频`
+        let newTitle = `${news_title}-青青久在线视频免费观看`
         if (!newTitle) {
           swan.showToast({
-            title: `${news_title}-石榴视频`
+            title: `${news_title}-青青久在线视频免费观看`
           });
           return;
         }
