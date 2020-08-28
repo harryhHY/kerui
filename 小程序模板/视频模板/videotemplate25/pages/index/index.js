@@ -6,7 +6,8 @@ const app = getApp();
 let number = 30;
 let {
   api,
-  apifrom
+  apifrom,
+  c
 } = app;
 Page({
   data: {
@@ -249,7 +250,7 @@ Page({
       responseType: "text",
       data: {
         host: apifrom,
-        c: 168,
+        c: c,
       },
       success: (res) => {
         this.showHttploading(false);
@@ -289,7 +290,7 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        c: 168,
+        c: c,
         p: page, //第几页
         n: this.number, //每页条数
       },
@@ -393,7 +394,7 @@ Page({
             dataType: "json",
             responseType: "text",
             data: {
-              c: 168,
+              c: c,
               p: machpage, //第几页
               n: n, //每页条数
             },

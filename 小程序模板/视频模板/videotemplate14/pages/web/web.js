@@ -1,5 +1,5 @@
 const app = getApp();
-let {api,apifrom} = app;
+let {api,apifrom,c} = app;
 Page({
   setNavigationBarColor() {
     swan.setNavigationBarColor({
@@ -73,7 +73,7 @@ Page({
       responseType: "text",
       data: {
         host: apifrom,
-        c: 122
+        c: c
       },
       success: res => {
         let { menu } = res.data.params;
