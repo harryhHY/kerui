@@ -1,7 +1,8 @@
 const app = getApp();
 let {
   api,
-  apifrom
+  apifrom,
+  c
 } = app;
 Page({
   setNavigationBarColor() {
@@ -12,10 +13,10 @@ Page({
         timingFunc: "linear",
       },
       success: (res) => {
-        console.log("setNavigationBarColor success");
+        // console.log("setNavigationBarColor success");
       },
       fail: (err) => {
-        console.log("setNavigationBarColor fail", err);
+        // console.log("setNavigationBarColor fail", err);
       },
     });
   },
@@ -87,14 +88,14 @@ Page({
     showHttploading: false,
     changdate: 0,
     showdata: false,
-    previewlength:false
+    previewlength: false
   },
   onShow() {
     swan.setPageInfo({
-      title: "山猫比分，体育赛事比分。",
-      keywords: "即时比分 足球比分 篮球比分 网球比分",
-      description: "山猫比分，体育赛事比分。",
-      articleTitle: "山猫比分",
+      title: '体育赛事直播-足球篮球比分直播',
+      keywords: '波球直播,篮球直播,足球直播',
+      description: '波球直播,各类赛事直播',
+      articleTitle: '波球直播',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -116,10 +117,10 @@ Page({
       shares: "8",
       followers: "35",
       success: (res) => {
-        console.log("setPageInfo success");
+        // console.log("setPageInfo success");
       },
       fail: (err) => {
-        console.log("setPageInfo fail", err);
+        // console.log("setPageInfo fail", err);
       },
     });
   },
@@ -259,7 +260,7 @@ Page({
     this.setData({
       buttonList,
       contentTwo: 0,
-      activeNameTwo:0
+      activeNameTwo: 0
     });
     console.log(buttonList);
     this.getList(name, today, pipi);
@@ -283,7 +284,8 @@ Page({
         let {
           todayList,
           p,
-          previewlength
+          previewlength,
+          is_video
         } = this.data;
         this.showHttploading(false);
         let {
@@ -305,22 +307,40 @@ Page({
         }
 
         if (p == 1) {
-          this.setData({
-            todayList: data,
-          });
-          let j =0
-          for (let i = 0; i < data.length; i++) {
-            if(data[i].preview!=false){
-              j++
-            }
-          }
-          if(j%2==0){
-
+          if (is_video) {
             this.setData({
-              previewlength: true,
+              todayList: data,
             });
-            console.log(previewlength)
+            let j = 0
+            for (let i = 0; i < data.length; i++) {
+              if (data[i].preview != false) {
+                j++
+              }
+            }
+            if (j % 2 == 0) {
+              this.setData({
+                previewlength: true,
+              });
+              console.log(previewlength)
+            }
+          } else {
+            let j = 0
+            for (let i = 0; i < data.length; i++) {
+              if (data[i].preview = false) {
+                j++
+              }
+            }
+            if (j % 2 == 0) {
+              this.setData({
+                previewlength: true,
+              });
+              console.log(previewlength)
+            }
+            this.setData({
+              todayList: data,
+            });
           }
+
         } else if (p != 1 && data != false) {
           let datalist = todayList;
           let list = datalist.concat(data);
@@ -376,7 +396,7 @@ Page({
       responseType: "text",
       data: {
         host: apifrom,
-        c: 136,
+        c,
       },
       success: (res) => {
         this.showHttploading(false);
@@ -392,7 +412,7 @@ Page({
             itemBanners: banners
           });
         }
-        if (is_video == 0) {
+        if (is_video == 1) {
           this.setData({
             is_video: true,
           });
@@ -443,7 +463,6 @@ Page({
   },
   onLoad(options) {
     this.changeButtonList();
-    console.log(options.src);
     this.setNavigationBarColor();
     this.getdate(0);
     this.geth5host();

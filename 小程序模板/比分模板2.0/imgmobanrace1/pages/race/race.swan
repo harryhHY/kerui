@@ -52,9 +52,9 @@
         </tabs>
     </view>
     <view class="intro cl" s-if="{{showdata}}">
-        <view class='{{item.preview==false? "left content_today_view":(previewlength!=false) ? "content_today_view2 cl left":"content_today_view2 cl"}}' s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
+        <view class='{{item.preview==false? "left content_today_view":(previewlength!=false) ? "content_today_view2 cl left":"content_today_view3 left cl"}}' s-for="item,index in todayList" bind:tap="gotovideo" data-item = "{{item}}">
             <view class='content_body cl'>
-                <view class='content_top cl'  s-if='{{item.preview==false}}' >
+                <view class='content_top cl'  s-if='{{item.preview==false}}'>
                     <!-- <view class='logo_view'>
                         <image src="../../images/logo.png" class='logo'></image>
                         <image src="../../images/logo1.png" class='logo1'></image>
@@ -70,7 +70,7 @@
                     <image src="../../images/share2.png" class='share share_view' bindtap="openShare"></image>
                     <!-- <image src="../../images/court.png" class='court'  s-if="{{item.gameStage == null}}"></image> -->
                 </view>
-
+<!--  -->
                 <view class='gameStage ov' s-if="{{item.gameStage == null && item.preview==false}}">
                     {{item.gameStage == null?'未':' '}}
                 </view>
@@ -89,7 +89,7 @@
                             热度：{{item.hotCount}}
                         </view>
                     </view>
-                    <view class='hnameaname'>
+                    <view class='hnameaname ov'>
                         {{item.hname}} VS {{item.aname}}
                     </view>
                 </view>
@@ -109,7 +109,7 @@
                         </view>
                     </view>
                 </view>
-                <view class='content_body2 cl' s-if='{{item.preview == false}}'>
+                <view class='content_body2 cl's-if='{{item.preview == false}}'>
                     <view class="{{item.aTotalScore!=null ? 'content_left left cl':'content_left1 left cl'}}">
                         <view class='right hname'>
                             <view class='hanme_view'>
@@ -133,7 +133,7 @@
                         </view>
                     </view>
                 </view>
-                <view class='cl' s-if='{{item.preview==false}}'>
+                <view class='cl'  s-if='{{item.preview==false}}'>
                     <view class='cl hcardleft left'>
                         <view class='hRedCard right' s-if='{{item.hRedCard!=null}}'>
                             {{item.hRedCard}}
