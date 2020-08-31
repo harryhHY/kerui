@@ -1,9 +1,5 @@
 const app = getApp();
-let {
-  api,
-  apifrom,
-  c
-} = app;
+let { api, apifrom, c } = app;
 Page({
   setNavigationBarColor() {
     swan.setNavigationBarColor({
@@ -35,7 +31,8 @@ Page({
     indicator_color: "#ffffff", //指示点颜色
     indicator_active_color: "#5032b4", //选中的指示点颜色
     Bannerautoplay: true, //自动播放
-    tabs: [{
+    tabs: [
+      {
         name: "1",
         label: "足球",
       },
@@ -48,22 +45,26 @@ Page({
     activeName: "1",
     today: "",
     todayList: [],
-    buttonList: [{
+    buttonList: [
+      {
         value: 0,
-        text: ""
+        text: "",
       },
       {
         value: 1,
-        text: ""
-      }, {
+        text: "",
+      },
+      {
         value: 2,
-        text: ""
-      }, {
+        text: "",
+      },
+      {
         value: 3,
-        text: ""
-      }, {
+        text: "",
+      },
+      {
         value: 4,
-        text: ""
+        text: "",
       },
     ],
     contentTwo: 0,
@@ -88,24 +89,27 @@ Page({
     showHttploading: false,
     changdate: 0,
     showdata: false,
-    previewlength: false
+    previewlength: false,
   },
   onShow() {
     swan.setPageInfo({
-      title: '体育赛事直播-足球篮球比分直播',
-      keywords: '波球直播,篮球直播,足球直播',
-      description: '波球直播,各类赛事直播',
-      articleTitle: '波球直播',
+      title: "体育赛事直播-足球篮球比分直播",
+      keywords: "波球直播,篮球直播,足球直播",
+      description: "波球直播,各类赛事直播",
+      articleTitle: "波球直播",
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
         "https://hiphotos.baidu.com/fex/%70%69%63/item/43a7d933c895d143e7b745607ef082025baf07ab.jpg",
       ],
-      video: [{
-        url: "https://www.baidu.com/mx/v12.mp4",
-        duration: "100",
-        image: "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
-      }, ],
+      video: [
+        {
+          url: "https://www.baidu.com/mx/v12.mp4",
+          duration: "100",
+          image:
+            "https://smartprogram.baidu.com/docs/img/image-scaleToFill.png",
+        },
+      ],
       visit: {
         pv: "1000",
         uv: "100",
@@ -125,9 +129,7 @@ Page({
     });
   },
   //设置日期滚动横条
-  tabsTwo(e) {
-
-  },
+  tabsTwo(e) {},
   //分享
   openShare() {
     swan.openShare({
@@ -156,12 +158,8 @@ Page({
     return nowdate;
   },
   gotovideo(e) {
-    let {
-      is_video
-    } = this.data;
-    let {
-      item
-    } = e.currentTarget.dataset;
+    let { is_video } = this.data;
+    let { item } = e.currentTarget.dataset;
     if (is_video) {
       let item1 = JSON.stringify(item);
       swan.navigateTo({
@@ -170,11 +168,7 @@ Page({
     }
   },
   onReachBottom(e) {
-    let {
-      p,
-      today,
-      content
-    } = this.data;
+    let { p, today, content } = this.data;
     let page = ++p;
     this.setData({
       p: page,
@@ -183,18 +177,9 @@ Page({
   },
   //切换日期
   changeday(e) {
-    let {
-      name,
-      type
-    } = e.detail;
+    let { name, type } = e.detail;
     this.getdate(name);
-    let {
-      today,
-      content,
-      buttonList,
-      p,
-      todayList
-    } = this.data;
+    let { today, content, buttonList, p, todayList } = this.data;
     let pipi = 1;
     if (p != 1) {
       this.setData({
@@ -206,47 +191,37 @@ Page({
       buttonList,
       changdate: name,
       contentTwo: name,
-      activeNameTwo: name
+      activeNameTwo: name,
     });
   },
   getDate1(num) {
     let myDate = new Date();
     let m = myDate.getMonth() + 1;
     let r = myDate.getDate() + num;
-    return `${m}月${r}日`
+    return `${m}月${r}日`;
   },
   //循环出日期
   changeButtonList() {
-    let {
-      buttonList
-    } = this.data;
+    let { buttonList } = this.data;
     let list = [];
     for (let v = 0; v < 5; v++) {
-      let nowdate = this.getDate1(v)
-      list.push(nowdate)
+      let nowdate = this.getDate1(v);
+      list.push(nowdate);
     }
-    this.getDate1()
+    this.getDate1();
     for (let i = 0; i < 5; i++) {
       buttonList[i].text = list[i];
     }
     this.setData({
       buttonList,
     });
-    console.log(buttonList);
   },
   //切换种类
   tabsOne(e) {
-    let {
-      buttonList
-    } = this.data;
+    let { buttonList } = this.data;
     this.getdate(0);
-    let {
-      today,
-      p
-    } = this.data;
-    let {
-      name
-    } = e.detail;
+    let { today, p } = this.data;
+    let { name } = e.detail;
     this.setData({
       content: name,
       activeName: name,
@@ -260,12 +235,11 @@ Page({
     this.setData({
       buttonList,
       contentTwo: 0,
-      activeNameTwo: 0
+      activeNameTwo: 0,
     });
-    console.log(buttonList);
     this.getList(name, today, pipi);
   },
-  async getList(type, date, p = 1) {
+  getList(type, date, p = 1) {
     this.showHttploading(true);
     swan.request({
       url: `${api}/inter`,
@@ -281,18 +255,9 @@ Page({
         p,
       },
       success: (res) => {
-        this.geth5host();
-        let {
-          todayList,
-          p,
-          previewlength,
-          is_video
-        } = this.data;
-        console.log(is_video)
+        let { todayList, p, previewlength, is_video } = this.data;
         this.showHttploading(false);
-        let {
-          data
-        } = res.data.params;
+        let { data } = res.data.params;
         if (data != false) {
           this.setData({
             showdata: true,
@@ -302,7 +267,6 @@ Page({
             showdata: false,
           });
         } else if (p == 1 && data == false) {
-          console.log(todayList)
           this.setData({
             showdata: false,
           });
@@ -310,10 +274,10 @@ Page({
 
         if (p == 1) {
           if (is_video) {
-            let j = 0
+            let j = 0;
             for (let i = 0; i < data.length; i++) {
               if (data[i].preview != false) {
-                j++
+                j++;
               }
             }
             if (j % 2 == 0) {
@@ -325,10 +289,10 @@ Page({
               todayList: data,
             });
           } else {
-            let j = 0
+            let j = 0;
             for (let i = 0; i < data.length; i++) {
-              if (data[i].preview = false) {
-                j++
+              if ((data[i].preview = false)) {
+                j++;
               }
             }
             if (j % 2 == 0) {
@@ -336,12 +300,11 @@ Page({
                 previewlength: true,
               });
             }
-            console.log(data, is_video)
+
             this.setData({
               todayList: data,
             });
           }
-
         } else if (p != 1 && data != false) {
           let datalist = todayList;
           let list = datalist.concat(data);
@@ -349,6 +312,7 @@ Page({
             todayList: list,
           });
         }
+        console.log(data, is_video);
       },
       fail: (err) => {
         console.log("错误码：" + err.errCode);
@@ -365,12 +329,7 @@ Page({
     }
   },
   handleTap1(e) {
-    let {
-      clientX,
-      clientY,
-      pageX,
-      pageY
-    } = e.changedTouches[0];
+    let { clientX, clientY, pageX, pageY } = e.changedTouches[0];
     if (clientY == pageY) {
       this.setData({
         showlodingtitle: true,
@@ -385,46 +344,47 @@ Page({
       }, 1500);
     }
   },
-  geth5host() {
-    this.showHttploading(true);
-    swan.request({
-      url: `${apifrom}/home/listn/settings`,
-      header: {
-        "content-type": "application/json",
-      },
-      method: "POST",
-      dataType: "json",
-      responseType: "text",
-      data: {
-        host: apifrom,
-        c,
-      },
-      success: (res) => {
-        this.showHttploading(false);
-        let {
-          is_banner,
-          is_video,
-          banners
-        } = res.data.params;
-        if (is_banner == 1) {
-          this.setData({
-            is_banner: true,
-            itemBanners: banners
-          });
-        }
 
-        if (is_video == 0) {
-          this.setData({
-            is_video: true,
-          });
-        }
-      },
-      fail: (err) => {
-        console.log("错误码：" + err.errCode);
-        console.log("错误信息：" + err.errMsg);
-      },
+  geth5host() {
+    return new Promise((resolve, reject) => {
+      swan.request({
+        url: `${apifrom}/home/listn/settings`,
+        header: {
+          "content-type": "application/json",
+        },
+        method: "POST",
+        dataType: "json",
+        responseType: "text",
+        data: {
+          host: apifrom,
+          c,
+        },
+        success: (res) => {
+          this.showHttploading(false);
+          let { is_banner, is_video, banners } = res.data.params;
+          if (is_banner == 1) {
+            this.setData({
+              is_banner: true,
+              itemBanners: banners,
+            });
+          }
+
+          if (is_video == 0) {
+            this.setData({
+              is_video: true,
+            });
+          } 
+          resolve(true);
+        },
+        fail: (err) => {
+          reject(err);
+          console.log("错误码：" + err.errCode);
+          console.log("错误信息：" + err.errMsg);
+        },
+      });
     });
   },
+
   showHttploading(flag) {
     this.setData({
       showHttploading: flag,
@@ -447,10 +407,7 @@ Page({
         console.log("showLoading fail", err);
       },
     });
-    let {
-      content,
-      changdate
-    } = this.data;
+    let { content, changdate } = this.data;
     let date = this.getdate(changdate);
     this.getList(content, date);
     let that = this;
@@ -463,15 +420,12 @@ Page({
     }, 1000);
   },
   onLoad(options) {
+    let { today, content, p } = this.data;
     this.changeButtonList();
     this.setNavigationBarColor();
     this.getdate(0);
-    this.geth5host();
-    let {
-      today,
-      content,
-      p
-    } = this.data;
-    this.getList(content, today, p);
+    this.geth5host().then((res) => {
+      this.getList(content, today, p);
+    });
   },
 });
