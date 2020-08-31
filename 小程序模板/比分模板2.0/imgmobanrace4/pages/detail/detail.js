@@ -1,5 +1,5 @@
 const app = getApp()
-let api = app.api;
+let {api,c} = app;
 Page({
     setNavigationBarColor() {
         swan.setNavigationBarColor({

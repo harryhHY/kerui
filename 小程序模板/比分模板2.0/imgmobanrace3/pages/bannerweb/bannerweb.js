@@ -1,5 +1,9 @@
 const app = getApp();
-let {api,apifrom} = app;
+let {
+  api,
+  apifrom,
+  c
+} = app;
 Page({
   setNavigationBarColor() {
     swan.setNavigationBarColor({
@@ -62,7 +66,7 @@ Page({
   //     }
   //   });
   // },
-  geth5host(){
+  geth5host() {
     swan.request({
       url: `${apifrom}/home/listn/settings`,
       header: {
@@ -73,12 +77,14 @@ Page({
       responseType: "text",
       data: {
         host: apifrom,
-        c: 136
+        c
       },
       success: res => {
-        let { menu } = res.data.params;
+        let {
+          menu
+        } = res.data.params;
         this.setData({
-          currentId:menu
+          currentId: menu
         })
       },
       fail: err => {
@@ -91,7 +97,7 @@ Page({
     console.log(options);
     if (options.src != undefined) {
       this.setData({
-        currentId:options.src
+        currentId: options.src
       })
     } else {
       this.geth5host();
