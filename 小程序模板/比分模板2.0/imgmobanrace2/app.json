@@ -1,7 +1,6 @@
 {
     "pages": [
         "pages/race/race",
-        "pages/message/message",
         "pages/videodetail/videodetail",
         "pages/index/index",
         "pages/detail/detail",

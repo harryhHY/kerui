@@ -4,7 +4,7 @@
  */
 const app = getApp();
 let number = 30;
-let api = app.api;
+let {api,c} = app;
 Page({
   data: {
     id: "",
@@ -145,7 +145,7 @@ Page({
       dataType: "json",
       responseType: "text",
       data: {
-        c: 136,
+        c,
         p: 1, //第几页
         n: this.number //每页条数
       },
@@ -217,7 +217,7 @@ Page({
           dataType: "json",
           responseType: "text",
           data: {
-            c: 136,
+            c,
             p: 1, //第几页
             n: number //每页条数
           },

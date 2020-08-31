@@ -369,7 +369,7 @@ Page({
             });
           }
 
-          if (is_video == 0) {
+          if (is_video == 1) {
             this.setData({
               is_video: true,
             });
@@ -420,10 +420,10 @@ Page({
     }, 1000);
   },
   onLoad(options) {
+    this.getdate(0);
     let { today, content, p } = this.data;
     this.changeButtonList();
     this.setNavigationBarColor();
-    this.getdate(0);
     this.geth5host().then((res) => {
       this.getList(content, today, p);
     });
