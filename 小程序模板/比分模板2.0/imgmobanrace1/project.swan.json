@@ -2,7 +2,8 @@
     "appid": "18617227",
     "compilation-args": {
         "common": {
-            "enhance": true
+            "enhance": true,
+            "useStrict": false
         }
     },
     "host": "baiduboxapp",

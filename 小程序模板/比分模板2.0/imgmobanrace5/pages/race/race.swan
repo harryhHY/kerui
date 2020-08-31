@@ -70,44 +70,11 @@
                     <image src="../../images/share2.png" class='share share_view' bindtap="openShare"></image>
                     <!-- <image src="../../images/court.png" class='court'  s-if="{{item.gameStage == null}}"></image> -->
                 </view>
-<!--  -->
                 <view class='gameStage ov' s-if="{{item.gameStage == null && item.preview==false}}">
                     {{item.gameStage == null?'未':' '}}
                 </view>
                 <view class='gameStage ov' s-if="{{item.gameStage != null && item.preview==false}}">
                     {{item.gameStage}}
-                </view>
-                <view class='preview_view left'  s-if='{{item.preview!=false && is_video!=false}}'>
-                    <view class='flex_view'>
-                        <image src="{{item.preview}}" class='preview'></image>
-                        <image src="../../images/play.png" class='play_image'></image>
-                    </view>
-
-                    <view class='hotCount_view'>
-                        <image src="../../images/hot.png" class='hotCount_image'></image>
-                        <view class='span_view hotCount'>
-                            热度：{{item.hotCount}}
-                        </view>
-                    </view>
-                    <view class='hnameaname ov'>
-                        {{item.hname}} VS {{item.aname}}
-                    </view>
-                </view>
-                <view class='live ' s-if='{{item.preview!=false && is_video!=false}}'>
-                    <view class='cl'>
-                        <view class='playtype live_span left' s-if="{{item.room != '视频直播'  && is_video }}">
-                            <image src="../../images/logo.png" class='logo'></image>
-                            <view class='span_view'>
-                                 正在直播
-                            </view>
-                        </view>
-                        <view s-if="{{item.room == '视频直播' && item.aTotalScore != null  && is_video }}" class="playtype1 live_span">
-                            <image src="../../images/logo.png" class='logo'></image>
-                              <view class='span_view'>
-                                  查看比分
-                            </view>
-                        </view>
-                    </view>
                 </view>
                 <view class='content_body2 cl's-if='{{item.preview == false}}'>
                     <view class="{{item.aTotalScore!=null ? 'content_left left cl':'content_left1 left cl'}}">
@@ -157,22 +124,39 @@
                         </view>
                     </view>
                 </view>
-
-                <!-- <view>
-                    <view class='content_bottom ov' s-if="{{item.hCornerKick!=null}}">
-                        
-
+                <!-- 直播图片 -->
+                <view class='preview_view left'  s-if='{{item.preview!=false && is_video!=false}}'>
+                    <view class='flex_view'>
+                        <image src="{{item.preview}}" class='preview'></image>
+                        <image src="../../images/play.png" class='play_image'></image>
                     </view>
-                </view> -->
-                <!-- <view  s-if="{{item.gameStage == null}}" class='cl tuijian_view'>
-                    <view class='left tuijian'>
-                        推荐
-                    </view>
-                    <view class='right' bindtap="openShare">
-                        <image src="../../images/share2.png" class='share'></image>
-                    </view>
-                </view> -->
 
+                    <view class='hotCount_view'>
+                        <image src="../../images/hot.png" class='hotCount_image'></image>
+                        <view class='span_view hotCount'>
+                            热度：{{item.hotCount}}
+                        </view>
+                    </view>
+                    <view class='hnameaname ov'>
+                        {{item.hname}} VS {{item.aname}}
+                    </view>
+                </view>
+                <view class='live ' s-if='{{item.preview!=false && is_video!=false}}'>
+                    <view class='cl'>
+                        <view class='playtype live_span left' s-if="{{item.room != '视频直播'  && is_video }}">
+                            <image src="../../images/logo.png" class='logo'></image>
+                            <view class='span_view'>
+                                 正在直播
+                            </view>
+                        </view>
+                        <view s-if="{{item.room == '视频直播' && item.aTotalScore != null  && is_video }}" class="playtype1 live_span">
+                            <image src="../../images/logo.png" class='logo'></image>
+                              <view class='span_view'>
+                                  查看比分
+                            </view>
+                        </view>
+                    </view>
+                </view>
             </view>
            
         </view>
