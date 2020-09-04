@@ -93,10 +93,10 @@ Page({
   },
   onShow() {
     swan.setPageInfo({
-      title: "体育赛事直播-足球篮球比分直播",
-      keywords: "波球直播,篮球直播,足球直播",
-      description: "波球直播,各类赛事直播",
-      articleTitle: "波球直播",
+      title:'锐纳电竞，电竞俱乐部。',
+      keywords:'锐纳电竞，score电竞，神游电竞',
+      description:'锐纳电竞，电竞俱乐部。',
+      articleTitle: '锐纳电竞',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
