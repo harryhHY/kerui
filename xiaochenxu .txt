@@ -723,3 +723,16 @@ apiform: https://z5mh2.cn
 栏目id：181
 模板类别：资讯类
 22464551
+
+
+echelon032@163.com----aa196921----qaz7410.+
+小程序名称:竞趴电竞
+title：'竞趴电竞，电竞俱乐部。'
+keywords: '竞趴电竞，比夫电竞，球长体育'
+description: '竞趴电竞，电竞俱乐部。'
+articleTitle: '竞趴电竞',
+比分api：https://z5mh2.cn
+apiform: https://z5mh2.cn
+栏目id：184
+模板类别：资讯类
+22494075
