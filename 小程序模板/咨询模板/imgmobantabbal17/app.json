@@ -3,7 +3,6 @@
         "pages/index/index",
         "pages/web/web",
         "pages/detail/detail",
-        "pages/message/message",
         "pages/bannerweb/bannerweb"
     ],
     "window": {
@@ -22,7 +21,7 @@
             },
             {
                 "pagePath": "pages/web/web",
-                "text": "留言",
+                "text": "咨询",
                 "iconPath": "./images/message.png",
                 "selectedIconPath": "./images/message1.png"
             }

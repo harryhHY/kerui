@@ -441,7 +441,10 @@
 
 .news_time {
     line-height: 0.2rem;
-    margin: 0.2rem 0 0 0.05rem;
+    position: absolute;
+    left: 0.05rem;
+    bottom: 0.05rem;
+    color: #fff;
 }
 
 .content_left {
@@ -483,11 +486,13 @@
     color: #fff;
     background-color: rgb(233, 26, 26);
 }
-.share_view{
+
+.share_view {
     display: flex;
     justify-items: center;
     margin-right: 0.1rem;
 }
+
 .share {
     width: 0.2rem;
     height: 0.2rem;

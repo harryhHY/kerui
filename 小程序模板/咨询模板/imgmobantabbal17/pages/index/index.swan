@@ -39,10 +39,10 @@
                     <view class='content_right left'>
                         <image src="{{apimg}}{{item.news_img}}" class='contentimage'></image>
                         <image src="../../images/news.png" class='newsimage'></image>
+                        <view class='news_time'>{{item.news_time}}</view>
                     </view>
                     <view class='left content_left'>
                         <view class='news_title'>{{item.news_title}}</view>
-                        <view class='news_time'>{{item.news_time}}</view>
                     </view>
                 </view>
                 <view class='news_goods cl'>

@@ -42,10 +42,10 @@ Page({
       success: (res) => {
         console.log(res.data);
         swan.setPageInfo({
-          title:'赛鱼电竞，一手电竞资讯火热呈现。',
-          keywords: '赛鱼电竞，天霸电竞，智胜电竞',
-          description: '赛鱼电竞，一手电竞资讯火热呈现。。',
-          articleTitle: '赛鱼电竞',
+          title:'天霸电竞，电竞俱乐部。',
+          keywords: '天霸电竞，98电竞，潮牛电竞',
+          description: '天霸电竞，电竞俱乐部。',
+          articleTitle: '天霸电竞',
           releaseDate: "2019-01-02 12:01:30",
           image: [
             "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
