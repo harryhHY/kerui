@@ -749,3 +749,14 @@ apiform: https://1hq61.cn
 栏目id：186
 模板类别：资讯类
 22532676
+
+Stingray23@163.com----dd123456----qaz7410.+
+小程序名称:天霸电竞
+title：'天霸电竞，电竞俱乐部。'
+keywords: '天霸电竞，98电竞，潮牛电竞'
+description: '天霸电竞，电竞俱乐部。'
+articleTitle: '天霸电竞',
+比分api：https://z5mh2.cn
+apiform: https://z5mh2.cn
+栏目id：188
+模板类别：资讯类
