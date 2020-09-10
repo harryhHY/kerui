@@ -761,3 +761,16 @@ apiform: https://z5mh2.cn
 栏目id：188
 模板类别：资讯类
 22572320
+
+
+Axelgold@163.com----dd123456----az7410.+
+小程序名称:智胜电竞
+title：'智胜电竞，电竞俱乐部。'
+keywords: '智胜电竞，潮牛电竞，电竞圈'
+description: '智胜电竞，电竞俱乐部'
+articleTitle: '智胜电竞',
+比分api：https://z5mh2.cn
+apiform: https://z5mh2.cn
+栏目id：190
+模板类别：资讯类
+22572384
