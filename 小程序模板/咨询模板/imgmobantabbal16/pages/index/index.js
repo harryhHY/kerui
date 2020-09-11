@@ -206,10 +206,10 @@ Page({
   },
   onShow() {
     swan.setPageInfo({
-      title:'赛鱼电竞，一手电竞资讯火热呈现。',
-      keywords: '赛鱼电竞，天霸电竞，智胜电竞',
-      description: '赛鱼电竞，一手电竞资讯火热呈现。。',
-      articleTitle: '赛鱼电竞',
+      title:'球长体育',
+      keywords: '球长体育，赛鱼电竞，黑猪电竞',
+      description: '球长体育',
+      articleTitle: '球长体育',
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -263,7 +263,7 @@ Page({
   },
   // 首页数据列表
   getList(p = 1) {
-    this.showHttploading(true);
+    
     console.log(api);
     let {
       page
@@ -321,7 +321,7 @@ Page({
   },
   //下拉刷新
   onPullDownRefresh() {
-    this.showHttploading(true);
+    // 
     swan.showLoading({
       title: "正在刷新页面...",
       mask: false, // 一般设置这个值为false
@@ -337,14 +337,14 @@ Page({
       page: 1,
     });
     setTimeout(function () {
-      this.showHttploading(false);
+      // this.showHttploading(false);
       swan.stopPullDownRefresh();
       swan.hideLoading();
     }, 1000);
   },
   //加载更多
   onReachBottom(e) {
-    // this.showHttploading(true);
+    // 
     console.log("onReachBottom");
     //请求分页数据
     number += 30;

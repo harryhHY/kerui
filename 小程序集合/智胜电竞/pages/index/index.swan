@@ -1,0 +1,64 @@
+<!-- index.swan -->
+<view class="container">
+<!-- 轮播图 -->
+    <view class="card-area">
+        <view class='cl headerlogo_view'>
+            <image src="../../images/logo.png" class='headerlogo left'></image>
+            <image src="../../images/logo1.png" class='headerlogo1 left'></image>
+        </view>
+        <view class='balls_view' s-if='showHttploading'>
+            <view class="balls">
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+        </view>
+        <view>
+            <swiper 
+             indicator-dots="{{indicator_dots}}"
+             indicator-color="{{indicator_color}}"
+             indicator-active-color="{{indicator_active_color}}"
+             autoplay="{{Bannerautoplay}}"
+             interval="{{autoPlayInterval}}"
+             duration="{{switchDuration}}"
+            >
+             <block s-for="item,index in itemBanners">
+                <swiper-item class="bannerImg">                    
+                    <image src="{{item.pic}}" bind:tap="goWebView" data-src="{{item.url||item.h5_url}}"  hover-stop-propagation="true"></image>
+                </swiper-item>
+            </block>
+            </swiper >
+        </view>
+        <!-- <view class='hot_view'>
+            <view class='recommend span_view'>热门推荐</view>
+            <view class='hot span_view'>HOT</view>
+        </view> -->
+        <view class="content_view cl">
+            <view s-for="item,index in items" class="content_fff span_view">
+                <view class="content cl" bind:tap="navigateTo" data-id="{{item.id}}">
+                    <view class='content_right left'>
+                        <image src="{{apimg}}{{item.news_img}}" class='contentimage'></image>
+                        <image src="../../images/news.png" class='newsimage'></image>
+                        <view class='news_time'>{{item.news_time}}</view>
+                    </view>
+                    <view class='left content_left'>
+                        <view class='news_title'>{{item.news_title}}</view>
+                        <view class='logodiv1'>
+                            <image src="../../images/logo.png" class='logoimages'></image>
+                            <image src="../../images/logo1.png" class='img2'></image>
+                        </view>
+                    </view>
+                </view>
+                <view class='news_goods cl'>
+                    <view class='left' bind:tap="praise" data-id="{{item.id}}">
+                        <image src="../../images/goodnews.png" class='goodnews'></image>
+                        {{item.news_goods}}
+                    </view>
+                    <view class='right share_view' bindtap="openShare">
+                        <image src="../../images/share.png" class='share' ></image>
+                        分享
+                    </view>
+                </view>
+            </view>
+        </view>
+</view>
