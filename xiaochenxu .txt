@@ -787,3 +787,15 @@ apiform: https://1hq61.cn
 栏目id：192
 模板类别：资讯类
 22532340
+
+Axelgold@163.com----dd123456----qaz7410.+
+小程序名称:ONE电竞
+title: 'ONE电竞，电竞俱乐部。',
+keywords: 'ONE电竞，游久电竞，score电竞',
+description: 'ONE电竞，电竞俱乐部。',
+articleTitle: 'ONE电竞',
+比分api：https://z5mh2.cn
+apiform: https://z5mh2.cn
+栏目: c=193
+模板类别:资讯类
+22616315
