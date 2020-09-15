@@ -799,3 +799,14 @@ apiform: https://z5mh2.cn
 栏目: c=193
 模板类别:资讯类
 22616315
+
+Blade02@163.com----dd123456----qaz7410.+
+小程序名称:98电竞
+title：'98电竞，电竞俱乐部。'
+keywords: '98电竞，7M即时比分，GT电竞'
+description: '98电竞，电竞俱乐部。'
+articleTitle: '98电竞',
+比分api：https://1hq61.cn
+apiform: https://1hq61.cn
+栏目id：196
+模板类别：资讯类
