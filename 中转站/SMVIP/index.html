@@ -10,7 +10,36 @@
 </head>
 
 <body>
-    pc
+    <div class="pc">
+        <img src="./image/bj.jpg" class="bgimg" alt="">
+        <a href="https://www.baidu.com/" target="_black">
+            <div class="image_div " id="shanmao">
+
+            </div>
+        </a>
+        <a href="https://www.baidu.com/" target="_black">
+            <div class="image_div " id="ledong">
+
+            </div>
+        </a>
+
+        <!-- <a href=""> -->
+        <div class="image_div " id="youhui">
+
+        </div>
+        <!-- </a> -->
+        <div id="alert_box">
+            <div class="img_box">
+                <img src="./image/弹窗.png" alt="" class="alert_img">
+                <img src="./image/x.png" alt="" class="x" id="x">
+                <a href="https://www.baidu.com/" target="_black">
+                    <div class="kefu">
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./js/pc.js"></script>
 <script>
@@ -23,6 +52,17 @@
             };
         n.addEventListener && (e.addEventListener(i, d, !1), n.addEventListener("DOMContentLoaded", d, !1))
     })(document, window);
+    var youhui = document.getElementById("youhui");
+    var alert_box = document.getElementById("alert_box");
+    var x = document.getElementById("x");
+    x.onclick = function () {
+        alert_box.style.display="none"
+        console.log(alert_box.style.display)
+    }
+    youhui.onclick = function () {
+        alert_box.style.display="block"
+        console.log(alert_box.style.display)
+    }
 </script>
 
 </html>
