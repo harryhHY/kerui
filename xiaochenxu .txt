@@ -811,3 +811,16 @@ apiform: https://1hq61.cn
 栏目id：196
 模板类别：资讯类
 22583467
+
+
+Machet25@163.com----dd123456----qaz7410.+
+小程序名称:万博体育直播
+title: '万博体育直播',
+keywords: '足、篮球直播,五大联赛,NBA直播',
+description: '万博体育直播',
+articleTitle: '万博体育直播',
+比分api：https://f9f7t.cn
+apiform: https://1hq61.cn
+栏目: c=197
+模板类别:比分2.0类
+22648896
