@@ -4,13 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web</title>
+    <title>SMVIP</title>
     <link rel="stylesheet" href="./style/index.css">
     <link rel="stylesheet" href="./style/web.css">
 </head>
 
 <body>
-    web
+    <div class="h5">
+        <img src="./image/web/bj.jpg" alt="" class="bgimg">
+        <a href="https://www.baidu.com/" target="_black">
+            <div class="image_div " id="shanmao">
+
+            </div>
+        </a>
+        <a href="https://www.baidu.com/" target="_black">
+            <div class="image_div" id="ledong">
+
+            </div>
+        </a>
+        <div class="image_div" id="youhui">
+
+        </div>
+        <div id="alert_box">
+            <div class="img_box">
+                <img src="./image/web/弹窗.png" alt="" class="alert_img">
+                <img src="./image/web/关闭.png" alt="" class="x" id="x">
+                <a href="https://www.baidu.com/" target="_black">
+                    <div class="kefu">
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./js/pc.js"></script>
 <script>
@@ -23,6 +49,17 @@
             };
         n.addEventListener && (e.addEventListener(i, d, !1), n.addEventListener("DOMContentLoaded", d, !1))
     })(document, window);
+    var youhui = document.getElementById("youhui");
+    var alert_box = document.getElementById("alert_box");
+    var x = document.getElementById("x");
+    x.onclick = function () {
+        alert_box.style.display = "none"
+        console.log(alert_box.style.display)
+    }
+    youhui.onclick = function () {
+        alert_box.style.display = "block"
+        console.log(alert_box.style.display)
+    }
 </script>
 
 </html>

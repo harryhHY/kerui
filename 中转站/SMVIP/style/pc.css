@@ -45,6 +45,7 @@ html {
 }
 
 #youhui:hover {
+    cursor: pointer;
     background-image: url('../image/3点击.png');
 }
 
@@ -78,10 +79,11 @@ html {
     height: 0.295rem;
     top: 2.78rem;
     left: 5.55rem;
-    
+
 }
 
 .kefu:hover {
+    cursor: pointer;
     background-image: url('../image/客服-点击.png');
 }
 
@@ -92,7 +94,9 @@ html {
     width: 0.255rem;
     height: 0.255rem;
 }
-.x:hover{
+
+.x:hover {
+    cursor: pointer;
     transition-duration: 1s;
     transform: rotate(180deg);
     -ms-transform: rotate(180deg);
