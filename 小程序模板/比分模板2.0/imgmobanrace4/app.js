@@ -7,7 +7,7 @@
 App({
   apifrom: "https://1hq61.cn",
   api: "https://0s0zv.cn",
-  c:136,
+  c:201,
   onLaunch(options) {
     // do something when launch
     // 引导添加，参见文档： http://smartprogram.baidu.com/docs/design/component/guide_add/
