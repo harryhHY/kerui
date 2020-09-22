@@ -12,14 +12,14 @@ html {
 
 .img_div {
     position: absolute;
-    top: 4.155rem;
-    width: 1.92rem;
-    height: .465rem;
+    top: 4.16rem;
+    width: 2.29rem;
+    height: 0.535rem;
     background-size: 100%;
 }
 
 .full {
-    left: 1.425rem;
+    left: 0.775rem;
     background-image: url("../image/进入.png");
 }
 
@@ -28,21 +28,21 @@ html {
 }
 
 .and {
-    left: 3.83rem;
-    background-image: url("../image/and.png");
+    left: 3.645rem;
+    background-image: url("../image/全站.png");
 }
 
 .and:hover {
-    background-image: url("../image/and=点击.png");
+    background-image: url("../image/全站-点击.png");
 }
 
 .ios {
-    left: 6.24rem;
-    background-image: url("../image/ios.png");
+    left: 6.52rem;
+    background-image: url("../image/体育.png");
 }
 
 .ios:hover {
-    background-image: url("../image/ios-点击.png");
+    background-image: url("../image/体育-点击.png");
 }
 
 .img_div2 {
