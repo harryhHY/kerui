@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MX</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/web.css">
+</head>
+
+<body>
+    <div class="MX">
+        <img src="./image/h5/bj.jpg" alt="" class="bgimg">
+        <a href="https://www.baidu.com/" target="_blank">
+            <div class="img_div full">
+
+            </div>
+        </a>
+        <a href="https://www.baidu.com/" target="_blank">
+            <div class="img_div and">
+
+            </div>
+        </a>
+        <a href="https://www.baidu.com/" target="_blank">
+            <div class="img_div ios">
+
+            </div>
+        </a>
+        <a href="https://www.baidu.com/" target="_blank">
+            <div class="img_div2 full2">
+
+            </div>
+        </a>
+        <a href="https://www.baidu.com/" target="_blank">
+            <div class="img_div2 full3">
+
+            </div>
+        </a>
+    </div>
+</body>
+<script src="./js/pc.js"></script>
+<script>
+    (function (n, e) {
+        var t = n.documentElement,
+            i = "orientationchange" in window ? "orientationchange" : "resize",
+            d = function () {
+                var n = t.clientWidth;
+                n && (t.style.fontSize = n / 7.5 + "px")
+            };
+        n.addEventListener && (e.addEventListener(i, d, !1), n.addEventListener("DOMContentLoaded", d, !1))
+    })(document, window);
+</script>
+
+</html>
