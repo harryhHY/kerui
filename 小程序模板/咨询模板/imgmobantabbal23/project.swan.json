@@ -11,15 +11,15 @@
     },
     "projectname": "imgmoban3",
     "publish": {
-        "version": "1.0.1"
+        "version": "1.0.2"
     },
     "setting": {
         "urlCheck": false
     },
     "swan": {
         "baiduboxapp": {
-            "swanJsVersion": "3.150.255-rc",
-            "extensionJsVersion": "1.10.4"
+            "extensionJsVersion": "1.10.4",
+            "swanJsVersion": "3.150.255-rc"
         }
     }
 }
