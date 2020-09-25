@@ -23,7 +23,7 @@ html {
 
 .full {
     background-image: url("../image/h5/进入.png");
-    top: 9.78rem;
+    top: 10.44rem;
 }
 
 .full:hover {
@@ -32,7 +32,7 @@ html {
 
 .and {
     background-image: url("../image/h5/全站.png");
-    top: 11.53rem;
+    top: 11.89rem;
 }
 
 .and:hover {
@@ -41,7 +41,7 @@ html {
 
 .ios {
     background-image: url("../image/h5/体育.png");
-    top: 13.28rem;
+    top: 13.34rem;
 }
 
 .ios:hover {
@@ -72,4 +72,14 @@ html {
 
 .full3:hover {
     background-image: url("../image/h5/体育-点击.png");
+}
+
+.banner {
+    width: 6.4rem;
+    height: 1.33rem;
+    position: absolute;
+    background-image: url("../image/h5/代理位.png");
+    background-size: 100%;
+    top: 9.04rem;
+    left: 0.51rem;
 }

@@ -70,3 +70,12 @@ html {
 .bot_btn2:hover {
     background-image: url("../image/体育-点击.png");
 }
+.banner{
+    width: 4.385rem;
+    height: 0.79rem;
+    background-image: url("../image/代理位.png");
+    background-size: 100%;
+    position: absolute;
+    top:4.89rem ;
+    left:0.45rem ;
+}
