@@ -900,3 +900,29 @@ apiform: https://1hq61.cn
 栏目: c=209
 模板类别:比分2.0
 22748488
+
+
+pt5911vy939@163.com----aa441520----pt5911vy939@163.com----exwpzcxsmtee
+小程序名称:百事通直播
+title: '百事通直播,精彩赛事直播。',
+keywords: '百事通直播,篮球直播,足球直播',
+description: '百事通直播,精彩赛事直播。',
+articleTitle: '百事通直播',
+比分api：https://f9f7t.cn
+apiform: https://z5mh2.cn
+栏目: c=113
+模板类别:比分2.0
+18617160
+
+
+bpogl99464jvm1@163.com----aa120155----rbk3924zhisdx
+小程序名称:so米直播
+title: 'so米直播，是知名体育平台。',
+keywords: 'so米直播,体育直播,足球直播,篮球直播,电竞直播',
+description: 'so米直播,是知名体育平台。',
+articleTitle: 'so米直播',
+比分api：https://u0q94.cn
+apiform: https://1hq61.cn
+栏目: c=90
+模板类别:比分2.0
+18758755
