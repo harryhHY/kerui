@@ -28,10 +28,10 @@ Page({
   },
   onshow() {
     swan.setPageInfo({
-      title: '石榴视频，在线观看',
-      keywords: '石榴视频，夜色直播，美女直播',
-      description: '石榴视频，在线观看',
-      articleTitle: '石榴视频',
+      title: '草莓视频，好视频都在这。',
+      keywords: '草莓视频污，免费视频，香草视频',
+      description: '草莓视频，好视频都在这。',
+      articleTitle: `草莓视频`,
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
