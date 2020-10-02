@@ -3,7 +3,8 @@
         "pages/index/index",
         "pages/web/web",
         "pages/detail/detail",
-        "pages/newpage/new"
+        "pages/newpage/new",
+        "pages/bannerweb/bannerweb"
     ],
     "window": {
         "navigationBarBackgroundColor": "#ffffff",

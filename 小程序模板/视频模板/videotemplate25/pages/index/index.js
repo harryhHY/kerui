@@ -399,6 +399,9 @@ Page({
               n: n, //每页条数
             },
             success: (res) => {
+              let {
+                data
+              } = res
               this.showHttploading(false);
               if (data != false) {
                 let {
@@ -413,7 +416,7 @@ Page({
                 this.setData({
                   page: machpage,
                   items: items,
-                  itemNews: newsArr,
+                  // itemNews: newsArr,
                   apimg: api,
                 });
               }

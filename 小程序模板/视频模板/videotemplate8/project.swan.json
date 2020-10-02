@@ -11,15 +11,15 @@
     },
     "projectname": "videotemplate2",
     "publish": {
-        "version": "1.0.4.0"
+        "version": "1.0.1"
     },
     "setting": {
         "urlCheck": false
     },
     "swan": {
         "baiduboxapp": {
-            "swanJsVersion": "3.190.255-rc",
-            "extensionJsVersion": "100.14.255"
+            "extensionJsVersion": "100.14.255",
+            "swanJsVersion": "3.190.255-rc"
         }
     }
 }

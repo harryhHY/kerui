@@ -5,8 +5,8 @@
 
 /* globals swan */
 App({
-    api: "https://l9j0ec.cn",
-    apifrom:'https://l9j0ec.cn',
+    api: "https://1hq61.cn",
+    apifrom:'https://1hq61.cn',
     c:176,
     onLaunch(options) {
         // do something when launch

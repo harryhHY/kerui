@@ -6,7 +6,7 @@
 /* globals swan */
 App({
     api: "https://maidianer.com",
-    apifrom:'https://maidianer.com',
+    apifrom:'z5mh2.cn',
     onLaunch(options) {
         // do something when launch
         // 引导添加，参见文档： http://smartprogram.baidu.com/docs/design/component/guide_add/

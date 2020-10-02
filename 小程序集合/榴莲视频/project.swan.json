@@ -11,15 +11,15 @@
     },
     "projectname": "榴莲视频",
     "publish": {
-        "version": "1.0.9.0"
+        "version": "1.0.1"
     },
     "setting": {
         "urlCheck": false
     },
     "swan": {
         "baiduboxapp": {
-            "extensionJsVersion": "1.11.5",
-            "swanJsVersion": "3.160.8"
+            "swanJsVersion": "3.200.116",
+            "extensionJsVersion": "1.16.2"
         }
     }
 }

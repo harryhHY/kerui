@@ -72,8 +72,9 @@ Page({
   goWebView(e) {
     let src = e.currentTarget.dataset.src;
     if (this.data.is_banner == true) {
+      console.log(src)
       swan.navigateTo({
-        url: `/pages/web/web?src=${src}`
+        url: `/pages/bannerweb/bannerweb?src=${src}`,
       });
     }
   },
