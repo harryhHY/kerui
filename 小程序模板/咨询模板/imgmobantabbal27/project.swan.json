@@ -1,5 +1,5 @@
 {
-    "appid": "19296416",
+    "appid": "18433786",
     "compilation-args": {
         "common": {
             "enhance": true
@@ -7,7 +7,7 @@
     },
     "host": "baiduboxapp",
     "preview": {
-        "packageId": 601131
+        "packageId": 474626
     },
     "projectname": "imgmoban3",
     "publish": {
@@ -18,8 +18,8 @@
     },
     "swan": {
         "baiduboxapp": {
-            "swanJsVersion": "3.200.116",
-            "extensionJsVersion": "1.16.2"
+            "swanJsVersion": "3.150.255-rc",
+            "extensionJsVersion": "1.10.4"
         }
     }
 }

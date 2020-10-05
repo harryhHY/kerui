@@ -50,6 +50,7 @@
                         </view>
 
                         <view class='news_goods cl'>
+                            <view class='tuijian span_view'>推荐</view>
                             <image src="../../images/goodnews.png" class='goodnews'></image>
                             {{item.news_goods}}
                             <image src="../../images/share3.png" class='share3 right' bindtap='openShare'></image>
