@@ -7,6 +7,12 @@
 App({
   apifrom: "https://1hq61.cn",
   api: "https://f9f7t.cn",
+  little:{
+    title: "山猫比分，体育赛事比分。",
+    keywords: "即时比分 足球比分 篮球比分 网球比分",
+    description: "山猫比分，体育赛事比分。",
+    articleTitle: "山猫比分",
+  },
   onLaunch(options) {
     // do something when launch
     // 引导添加，参见文档： http://smartprogram.baidu.com/docs/design/component/guide_add/

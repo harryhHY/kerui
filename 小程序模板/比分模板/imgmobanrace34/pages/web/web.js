@@ -1,5 +1,5 @@
 const app = getApp();
-let {api,apifrom} = app;
+let {api,apifrom,little} = app;
 Page({
   setNavigationBarColor() {
     swan.setNavigationBarColor({
@@ -28,10 +28,10 @@ Page({
   },
   onshow() {
     swan.setPageInfo({
-      title: '山猫比分，体育赛事比分。',
-      keywords: '即时比分 足球比分 篮球比分 网球比分',
-      description: '山猫比分，体育赛事比分。',
-      articleTitle: '山猫比分',
+      title: little.title,
+      keywords: little.keywords,
+      description: little.description,
+      articleTitle: little.articleTitle,
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",

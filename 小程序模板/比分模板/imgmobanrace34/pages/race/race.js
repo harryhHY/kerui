@@ -1,7 +1,8 @@
 const app = getApp();
 let {
   api,
-  apifrom
+  apifrom,
+  little
 } = app;
 Page({
   setNavigationBarColor() {
@@ -12,10 +13,10 @@ Page({
         timingFunc: "linear",
       },
       success: (res) => {
-        console.log("setNavigationBarColor success");
+        // console.log("setNavigationBarColor success");
       },
       fail: (err) => {
-        console.log("setNavigationBarColor fail", err);
+        // console.log("setNavigationBarColor fail", err);
       },
     });
   },
@@ -90,10 +91,10 @@ Page({
   },
   onShow() {
     swan.setPageInfo({
-      title: "山猫比分，体育赛事比分。",
-      keywords: "即时比分 足球比分 篮球比分 网球比分",
-      description: "山猫比分，体育赛事比分。",
-      articleTitle: "山猫比分",
+      title: little.title,
+      keywords: little.keywords,
+      description: little.description,
+      articleTitle: little.articleTitle,
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
@@ -115,10 +116,10 @@ Page({
       shares: "8",
       followers: "35",
       success: (res) => {
-        console.log("setPageInfo success");
+        // console.log("setPageInfo success");
       },
       fail: (err) => {
-        console.log("setPageInfo fail", err);
+        // console.log("setPageInfo fail", err);
       },
     });
   },
@@ -230,7 +231,6 @@ Page({
     this.setData({
       buttonList,
     });
-    console.log(buttonList);
   },
  tabsOne(e) {
     let {
@@ -259,7 +259,6 @@ Page({
       contentTwo: 0,
       activeNameTwo:0
     });
-    console.log(buttonList);
     this.getList(name, today, pipi);
   },
   getList(type, date, p = 1) {
@@ -369,7 +368,6 @@ Page({
           is_video,
           banners
         } = res.data.params;
-        console.log(banners.h5_url)
         if (is_banner == 1) {
           this.setData({
             is_banner: true,
@@ -427,7 +425,7 @@ Page({
   },
   onLoad(options) {
     this.changeButtonList();
-    console.log(options.src);
+    // console.log(options.src);
     this.setNavigationBarColor();
     this.getdate(0);
     this.geth5host();
