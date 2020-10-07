@@ -7,7 +7,8 @@ let number = 30;
 let {
   api,
   apifrom,
-  c
+  c,
+  little
 } = app;
 Page({
   data: {
@@ -162,10 +163,10 @@ Page({
 
   onShow() {
     swan.setPageInfo({
-      title: '蘑菇视频，免费视频观看。',
-      keywords: '蘑菇视频，性感视频，石榴视频',
-      description: '蘑菇视频，免费视频观看。',
-      articleTitle: '蘑菇视频',
+      title:little.title,
+      keywords: little.keywords,
+      description:little.description,
+      articleTitle: little.articleTitle,
       releaseDate: "2019-01-02 12:01:30",
       image: [
         "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",

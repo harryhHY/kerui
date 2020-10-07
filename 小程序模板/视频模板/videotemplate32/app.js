@@ -8,6 +8,12 @@ App({
     api: "https://z5mh2.cn",
     apifrom:'https://z5mh2.cn',
     c:176,
+    little: {
+        title: '蘑菇视频，免费视频观看。',
+        keywords: '蘑菇视频，性感视频，石榴视频',
+        description: '蘑菇视频，免费视频观看。',
+        articleTitle: '蘑菇视频',
+    },
     onLaunch(options) {
         // do something when launch
         // 引导添加，参见文档： http://smartprogram.baidu.com/docs/design/component/guide_add/

@@ -38,19 +38,19 @@
                             {{item.news_title}}
                         </view>
                         <image src="../../images/Player.png" class='player'></image>
-                        <image src="../../images/newimage.png" class='newimage'></image>
+                        <!-- <image src="../../images/newimage.png" class='newimage'></image> -->
                     </view>
                     <view class='content_right left'>
                         <view class='logo_view'>
-                            <image src="../../images/logo.png" class='logo'></image>
-                            <image src="../../images/logo1.png" class='logo1'></image>
+                            <!-- <image src="../../images/logo.png" class='logo'></image>
+                            <image src="../../images/logo1.png" class='logo1'></image> -->
                             <view class='span_view news_time'>
                                 {{item.news_time}}
                             </view>
                         </view>
 
                         <view class='news_goods cl'>
-                            <view class='tuijian span_view'>推荐</view>
+                            <!-- <view class='tuijian span_view'>推荐</view> -->
                             <image src="../../images/goodnews.png" class='goodnews'></image>
                             {{item.news_goods}}
                             <image src="../../images/share3.png" class='share3 right' bindtap='openShare'></image>
