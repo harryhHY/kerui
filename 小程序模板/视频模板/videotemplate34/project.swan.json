@@ -1,5 +1,5 @@
 {
-    "appid": "18617160",
+    "appid": "19938816",
     "compilation-args": {
         "common": {
             "enhance": true
@@ -7,9 +7,9 @@
     },
     "host": "baiduboxapp",
     "preview": {
-        "packageId": 581438
+        "packageId": 514890
     },
-    "projectname": "imgmoban3",
+    "projectname": "videotemplate9",
     "publish": {
         "version": "1.0.2"
     },

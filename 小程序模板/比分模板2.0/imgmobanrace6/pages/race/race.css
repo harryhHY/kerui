@@ -344,9 +344,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: absolute;
+  /* position: absolute;
   top:0.9rem;
-  left:0.03rem;
+  left:0.03rem; */
 }
 .hotCount{
   color: #f00;

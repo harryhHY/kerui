@@ -131,14 +131,14 @@
                         <image src="../../images/play.png" class='play_image'></image>
                     </view>
 
+                    <view class='hnameaname ov'>
+                        {{item.hname}} VS {{item.aname}}
+                    </view>
                     <view class='hotCount_view'>
                         <image src="../../images/hot.png" class='hotCount_image'></image>
                         <view class='span_view hotCount'>
                             热度：{{item.hotCount}}
                         </view>
-                    </view>
-                    <view class='hnameaname ov'>
-                        {{item.hname}} VS {{item.aname}}
                     </view>
                 </view>
                 <view class='live ' s-if='{{item.preview!=false && is_video!=false}}'>

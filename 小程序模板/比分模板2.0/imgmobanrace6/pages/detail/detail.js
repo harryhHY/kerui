@@ -1,5 +1,5 @@
 const app = getApp()
-let {api} = app;
+let {api,little} = app;
 Page({
     setNavigationBarColor() {
         swan.setNavigationBarColor({
@@ -42,10 +42,10 @@ Page({
         success: res => {
           console.log(res.data);
           swan.setPageInfo({
-            title: '百事通直播,精彩赛事直播。',
-            keywords: '百事通直播,篮球直播,足球直播',
-            description: '百事通直播,精彩赛事直播。',
-            articleTitle: '百事通直播',
+            title:little.title,
+            keywords: little.keywords,
+            description:little.description,
+            articleTitle: little.articleTitle,
             releaseDate: "2019-01-02 12:01:30",
             image: [
               "https://c.hiphotos.baidu.com/forum/w%3D480/sign=73c62dda83b1cb133e693d1bed5456da/f33725109313b07e8dee163d02d7912396dd8cfe.jpg",
