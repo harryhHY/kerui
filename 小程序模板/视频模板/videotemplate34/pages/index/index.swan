@@ -38,7 +38,7 @@
                             {{item.news_title}}
                         </view>
                         <image src="../../images/Player.png" class='player'></image>
-                        <!-- <image src="../../images/newimage.png" class='newimage'></image> -->
+                        <image src="../../images/new1.png" class='newimage'></image>
                     </view>
                     <view class='content_right left'>
                         <view class='logo_view'>
@@ -51,10 +51,15 @@
 
                         <view class='news_goods cl'>
                             <!-- <view class='tuijian span_view'>推荐</view> -->
-                            <image src="../../images/goodnews.png" class='goodnews'></image>
-                            {{item.news_goods}}
-                            <image src="../../images/share3.png" class='share3 right' bindtap='openShare'></image>
-                            分享
+                            <view class='span_view disc disc1'>
+                                <image src="../../images/goodnews.png" class='goodnews left'></image>
+                                <view class='span_view left span_goods' >{{item.news_goods}}</view>
+                            </view>
+                            <view class='span_view disc disc2'>
+                                <image src="../../images/share3.png" class='share3 right' bindtap='openShare'></image>
+                                <view class='span_view right'>分享</view>
+                            </view>
+              
                         </view>
                     </view>
                 </view>
