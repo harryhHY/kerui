@@ -148,6 +148,9 @@
                             <view class='span_view'>
                                  正在直播
                             </view>
+                            <view class='span_view gameTimeFormat1'>
+                                {{item.gameTimeFormat}}
+                            </view>
                         </view>
                         <view s-if="{{item.room == '视频直播' && item.aTotalScore != null  && is_video }}" class="playtype1 live_span">
                             <image src="../../images/logo.png" class='logo'></image>

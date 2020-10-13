@@ -37,7 +37,10 @@
   align-items: center;
   justify-content: space-between;
 }
-
+.gameTimeFormat1{
+  color: #000;
+  margin-left: 0.2rem;
+}
 .balls view {
   width: 0.8em;
   height: 0.8em;
