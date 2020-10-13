@@ -38,7 +38,7 @@
                             {{item.news_title}}
                         </view>
                         <image src="../../images/Player.png" class='player'></image>
-                        <image src="../../images/new1.png" class='newimage'></image>
+                        <image src="../../images/hot1.png" class='newimage'></image>
                     </view>
                     <view class='content_right left'>
                         <view class='logo_view'>
