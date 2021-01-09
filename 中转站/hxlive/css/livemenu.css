@@ -1,0 +1,79 @@
+.liveContentLeft {
+    width: 1.095rem;
+    height: 3.6rem;
+    border-top: 6px solid #f84f52;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-family: 'SourceHanSansCN-Regular';
+    margin:auto 0; 
+}
+
+.live_header {
+    font-size: 0.09rem;
+    color: #f84f52;
+    margin: 0.095rem 0 0.04rem 0;
+}
+
+.live_header img {
+    width: 0.105rem;
+    height: 0.105rem;
+    margin: 0 0.03rem;
+}
+
+.liveLeftmenu {
+    width: 98%;
+    margin: 0 1%;
+    background-color: #f2f3f3;
+    position: relative;
+    font-size: 0.09rem;
+    text-align: center;
+    color: #f84f52;
+}
+
+.liveLeftmenu1 {
+    color: #5b5b5b;
+}
+
+.live_drop {
+    background-image: url('../image/down2@2x.png');
+    width: 0.085rem;
+    height: 0.045rem;
+    position: absolute;
+    top: 0.045rem;
+    right: 0.045rem;
+}
+
+.live_drop1 {
+    background-image: url('../image/down1@2x.png');
+}
+
+.liveMenu_Content {
+    margin: 0.095rem 0 0.095rem 0.015rem;
+}
+
+.Column {
+    background-color: #f2f3f3;
+    color: #fe7376;
+    font-size: 0.08rem;
+    width: 0.33rem;
+    height: 0.115rem;
+    border-radius: 0.06rem;
+    margin-right: 0.035rem;
+    text-align: center;
+    line-height: 0.115rem;
+    margin-top: 0.045rem;
+}
+
+.ColumnClick {
+    background-color: #f84f52;
+    color: #ffffff;
+}
+
+.Column:nth-child(3n) {
+    margin-right: 0;
+}
+
+.Column:hover {
+    background-color: #f84f52;
+    color: #ffffff;
+}

@@ -1,0 +1,220 @@
+#livehome{
+    width: 100%;
+    height: 100%;
+    /* position: fixed; */
+    overflow: auto;
+    background: url('../image/home_bg.png') no-repeat;
+    background-size: 100%;
+}
+.news_con{
+    width: 7.54rem;
+    margin: auto;
+    margin-top: 0.05rem;
+}
+/* 中间新闻 */
+.middle{
+    width: 4.445rem;
+    margin-left: 0.05rem;
+    background-color: #FFF;
+    font-family: 'SourceHanSansCN-Regular';
+    float: left;
+}
+.main_news{
+    width: 100%;
+    padding: 0.2rem;
+    box-sizing: border-box;
+}
+.newstitle{
+    width: 4.045rem;
+    color: #363642;
+    font-size: 0.12rem;
+    font-weight: 500;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+.newstitle img{
+    width: 0.19rem;
+    height: 0.11rem;
+}
+.newstime{
+    width: 100%;
+    height: 0.1rem;
+    line-height: 0.1rem;
+    margin-top: 0.1rem;
+    position: relative;
+}
+.newstime p:first-child{
+    color: #4b4b4b;
+    font-size: 0.07rem;
+    position: absolute;
+    /* top: 0.2rem; */
+    right: 1rem;
+}
+.newstime p:last-child{
+    font-size: 0.07rem;
+    position: absolute;
+    /* top: 0.2rem; */
+    right: 0;
+}
+.newsarticle{
+    width: 4.405;
+    margin-top: 0.1rem;
+}
+.newsarticle img{
+    width: 3.325rem;
+    height: 1.87rem;
+    display: block;
+    margin: auto;
+}
+.newsarticle video{
+    width: 3.325rem;
+    height: 1.87rem;
+    display: block;
+    margin: auto;
+}
+/* 为你推荐 */
+.recommend{
+    width: 4.445rem;
+    padding: 0.05rem;
+    margin-top: 0.38rem;
+    box-sizing: border-box;
+}
+.recommend_logo{
+    width: 100%;
+}
+.recommend_logo img{
+    width: 100%;
+}
+.recommend_con{
+    width: 4.1rem;
+    height: 0.7rem;
+    margin: 0.05rem 0;
+    padding: 0.075rem 0;
+    box-sizing: border-box;
+    transition: all .2s linear;
+}
+.recommend_con:hover{
+    width: 4.3rem;
+    transform: translateY(-2px);
+    box-shadow: 0 0 3px #CACACA;
+}
+.recommend_content{
+    width: 100%;
+    margin-left: 0.195rem;
+}
+.recommend_img{
+    width: 0.86rem;
+    height: 0.57rem;
+    float: left;
+}
+.recommend_img img{
+    width: 100%;
+    height: 100%;
+}
+.recommend_article{
+    width: 3rem;
+    float: left;
+    margin-left: 0.09rem;
+}
+.recommendtitle{
+    width: 100%;
+    color: #363642;
+    font-size: 0.09rem;
+    font-weight: 500;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.recommendtitle img{
+    width: 0.19rem;
+    height: 0.11rem;
+    position: relative;
+    bottom: 0.01rem;
+}
+.recommend_detail{
+    font-size: 0.07rem;
+    color: #7e7e7e;
+    margin-top: 0.1rem;
+    margin-bottom: 0.14rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.recommend_time{
+    color: #575756;
+    font-size: 0.07rem;
+}
+/* 右侧 */
+.right{
+    width: 1.9rem;
+    float: left;
+    font-family: 'SourceHanSansCN-Regular';
+    margin-left: 0.05rem;
+}
+#carousel{
+    width: 1.9rem !important;
+    height: 1.06rem !important;
+}
+#carousel .box img{
+    width: 100%;
+    height: 100%;
+}
+.layui-carousel-ind .layui-this{
+    width: 0.205rem !important;
+    border-radius: 0.025rem !important;
+    background-color: #f84f52 !important;
+}
+/* 热门直播 */
+.hotlive,.newnews{
+    width: 1.9rem;
+    margin-top: 0.05rem;
+    padding: 0.05rem 0;
+    background-color: #FFF;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 2px #888888;
+}
+.hotlive_tag{
+    width: 100%;
+    height: 0.195rem;
+    padding: 0 0.025rem;
+    box-sizing: border-box;
+}
+.hotlive_tag img{
+    width: 100%;
+    height: 100%;
+}
+.hotlive_con{
+    width: 100%;
+}
+.hotlive_con li{
+    /* height: 0.1rem; */
+    /* line-height: 0.1rem; */
+    font-size: 0.07rem;
+    width: 100%;
+    padding: 0.05rem 0.05rem;
+    box-sizing: border-box;
+    /* margin: 0.1rem 0; */
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.hotlive_con li:hover{
+    background-color: #FFF2F2;
+}
+.hotlive_con li:hover a{
+    color:#F84E51 !important;
+}
+.hotlive_con li img{
+    width: 0.085rem;
+    height: 0.08rem;
+    position: relative;
+    bottom: 0.01rem;
+    margin-right: 0.05rem;
+}
+.vs{
+    margin: 0 0.05rem;
+}
+

@@ -1,0 +1,297 @@
+.livebody {
+    display: flex;
+    justify-content: center;
+    background-image: url('../image/bg@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.liveContentLeft {
+    width: 1.095rem;
+    height: 3.6rem;
+    border-top: 6px solid #f84f52;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-family: 'SourceHanSansCN-Regular';
+    margin:auto 0; 
+}
+
+.live_header {
+    font-size: 0.09rem;
+    color: #f84f52;
+    margin: 0.095rem 0 0.04rem 0;
+}
+
+.live_header img {
+    width: 0.105rem;
+    height: 0.105rem;
+    margin: 0 0.03rem;
+}
+
+.liveLeftmenu {
+    width: 98%;
+    margin: 0 1%;
+    background-color: #f2f3f3;
+    position: relative;
+    font-size: 0.09rem;
+    text-align: center;
+    color: #f84f52;
+}
+
+.liveLeftmenu1 {
+    color: #5b5b5b;
+}
+
+.live_drop {
+    background-image: url('../image/down2@2x.png');
+    width: 0.085rem;
+    height: 0.045rem;
+    position: absolute;
+    top: 0.045rem;
+    right: 0.045rem;
+}
+
+.live_drop1 {
+    background-image: url('../image/down1@2x.png');
+}
+
+.liveMenu_Content {
+    margin: 0.095rem 0 0.095rem 0.015rem;
+}
+
+.Column {
+    background-color: #f2f3f3;
+    color: #fe7376;
+    font-size: 0.08rem;
+    width: 0.33rem;
+    height: 0.115rem;
+    border-radius: 0.06rem;
+    margin-right: 0.035rem;
+    text-align: center;
+    line-height: 0.115rem;
+    margin-top: 0.045rem;
+}
+
+.ColumnClick {
+    background-color: #f84f52;
+    color: #ffffff;
+}
+
+.Column:nth-child(3n) {
+    margin-right: 0;
+}
+
+.Column:hover {
+    background-color: #f84f52;
+    color: #ffffff;
+}
+.liveCenterHeaderF {
+    background-image: url('../image/btn-football1@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:0.755rem;
+    height: 0.24rem;
+}
+
+.liveCenterHeaderB {
+    background-image: url('../image/btn-basketball1@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:0.755rem;
+    height: 0.24rem;
+}
+
+.liveCenterHeaderO {
+    background-image: url('../image/btn-others1@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:0.755rem;
+    height: 0.24rem;
+}
+
+.liveCenterHeaderF1{
+    background-image: url('../image/btn-football2@2x.png');
+}
+.liveCenterHeaderB1{
+    background-image: url('../image/btn-basketball2@2x.png')
+}
+.liveCenterHeaderO1{
+    background-image: url('../image/btn-others2@2x.png');
+}
+
+
+
+.liveCenter {
+    width: 4.465rem;
+    margin: 0.05rem;
+    background-color: #fff;
+}
+
+.liveCenterHeader {
+    border-bottom: 1px solid #f2f3f3;
+    padding: 0.065rem 0;
+}
+
+
+.borderLeft {
+    height: 0.1rem;
+    width: 0.02rem;
+    background-color: #f84f52;
+    margin-left: 0.08rem;
+    margin-right: 0.045rem;
+}
+
+.livedel_time {
+    font-size: 0.08rem;
+    background-color: #f3f3f3;
+    padding-top: 0.04rem;
+    padding-bottom: 0.04rem;
+}
+
+.Team_information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'SourceHanSansCN-Regular';
+    color: #4f4f4f;
+    font-size: 0.08rem;
+    margin: 0.15rem 0;
+}
+
+.Team_information .hicon,
+.aicon {
+    width: 0.225rem;
+    height: 0.225rem;
+    margin: 0 0.085rem 0 0.05rem;
+}
+
+.gameS {
+    margin: 0 0.15rem;
+}
+
+.player {
+    width: 4.245rem;
+    height: 2.4rem;
+    margin: 0.03rem 0.08rem 0 0.08rem;
+    padding: 5px;
+    background-color: #f3f3f3;
+}
+
+#dplayer {
+    width: 4.245rem;
+    height: 2.4rem;
+}
+
+.source {
+    margin: 0 0.08rem;
+    padding: 0.03rem;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.source_div {
+    font-size: 0.08rem;
+    color: #fff;
+    background-color: #ff871c;
+    border-radius: 4px;
+    width: 0.43rem;
+    height: 0.14rem;
+    text-align: center;
+    line-height: 0.14rem;
+    margin-right: 0.135rem;
+}
+
+.source_div1 {
+    font-size: 0.08rem;
+    width: 0.43rem;
+    height: 0.14rem;
+    color: #ff871c;
+    border: 1px solid #ff871c;
+    text-align: center;
+    line-height: 0.14rem;
+    border-radius: 4px;
+    margin-right: 0.135rem;
+}
+
+.clicktodaylive {
+    font-family: 'HiraginoSansGB-W3';
+    font-size: 0.09rem;
+    color: #1a90fc;
+    margin-left: 0.08rem;
+    margin-top: 0.055rem;
+}
+
+
+.liveContentRight {
+    width: 1.9rem;
+    margin-top: 0.05rem;
+}
+
+.hotlive {
+    background-color: #fff;
+    padding-bottom: 0.085rem;
+}
+.hotnews{
+    background-color: #fff;
+    padding-bottom: 0.085rem;
+    margin-top: 0.05rem;
+}
+.news_title{
+    width: 1.43rem;
+    margin-left: 0.035rem;
+}
+.hotliveimg {
+    width: 1.845rem;
+    height: 0.175rem;
+    margin-top: .08rem;
+    margin-left: 0.025rem;
+    margin-bottom: 0.055rem;
+}
+
+.liveicon {
+    width: 0.085rem;
+    height: 0.08rem;
+}
+
+.hotlivecontent {
+    font-size: 0.08rem;
+    padding-left: 0.09rem;
+    display: flex;
+    align-items: center;
+    height: 0.17rem;
+    color: #000;
+}
+
+.hotlivecontent:hover {
+    cursor: pointer;
+    background-color: #fff2f2;
+    color: #f84f52;
+}
+
+
+.columnbt{
+    background-image: url('../image/btn2@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 0.37rem;
+    height: 0.12rem;
+    line-height: 0.12rem;
+    text-align: center;
+    margin-left: 0.075rem;
+    color: #7d7d7d;
+    margin-top: 0.05rem;
+}
+.columnbt:hover{
+    cursor: pointer;
+}
+.Column_div{
+    font-size: 0.08rem;
+    color: #7d7d7d;
+    margin: 0.06rem 0;
+}
+.columnbt1{
+    background-image: url('../image/btn1@2x.png');
+    color: #fff;
+}

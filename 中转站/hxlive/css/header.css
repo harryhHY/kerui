@@ -1,0 +1,101 @@
+/* 头 */
+.header{
+    position: relative;
+}
+.head_logo{
+    width: 0.88rem;
+    height: 0.215rem;
+    position: absolute;
+    top: 0.08rem;
+    left: 1.7rem;
+}
+.head_collect{
+    width: 0.61rem;
+    height: 0.175rem;
+    position: absolute;
+    top: 0.08rem;
+    right: 1.7rem;
+    cursor: pointer;
+    background: url('../image/colloect.png') no-repeat;
+    background-size:100%;
+}
+.head_collect:hover{
+    background: url('../image/colloect_bg.png') no-repeat;
+    background-size:100%;
+}
+.head_logo img{
+    width: 100%;
+    height: 100%;
+}
+.whitehead{
+    width: 100%;
+    height: 0.375rem;
+    overflow: hidden;
+    box-shadow: 0 2px 3px -1px #cacaca;
+}
+.whitehead ul {
+    width: 100%;
+    margin-left: 3.025rem;
+    height: 0.205rem;
+    margin-top: 0.08rem;
+    overflow: hidden;
+}
+.whitehead ul li{
+    width: 0.43rem;
+    height: 0.205rem;
+    margin-right: 0.25rem;
+    float: left;
+}
+.whitehead ul li:hover{
+    cursor: pointer;
+}
+.head_home{
+    background: url('../image/head_home.png') no-repeat;
+    background-size:100%;
+}
+.head_home_bg{
+    background: url('../image/head_home_bg.png') no-repeat;
+    background-size:59% 41%;
+    background-position: center;
+}
+.head_live{
+    background: url('../image/head_live.png') no-repeat;
+    background-size:100%;
+}
+.head_live_bg{
+    background: url('../image/head_live_bg.png') no-repeat;
+    background-size:59% 41%;
+    background-position: center;
+}
+.head_news{
+    background: url('../image/head_news.png') no-repeat;
+    background-size:100%;
+}
+.head_news_bg{
+    background: url('../image/head_news_bg.png') no-repeat;
+    background-size:59% 41%;
+    background-position: center;
+}
+.toast_box {
+    /* width: 100%; */
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    /* justify-content: center; */
+    z-index: 120;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+             
+.toast_box p {
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: max-content;
+    /* 提示框的背景色 */
+    background: #707070;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 6px;
+    opacity: 0.8;
+} 

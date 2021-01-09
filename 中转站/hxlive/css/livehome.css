@@ -1,0 +1,222 @@
+.livebody {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.liveCenter {
+    margin: 0.05rem;
+    width: 4.465rem;
+    background-color: #fff;
+    padding: 0 0.08rem;
+}
+
+.liveCenterHeader {
+    border-bottom: 1px solid #ff871c;
+}
+
+.liveCenterHeaderF {
+    background-image: url('../image/btn-football1@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:0.755rem;
+    height: 0.24rem;
+}
+.liveCenterHeaderB {
+    background-image: url('../image/btn-basketball1@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:0.755rem;
+    height: 0.24rem;
+}
+
+.liveCenterHeaderO {
+    background-image: url('../image/btn-others1@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:0.755rem;
+    height: 0.24rem;
+}
+.liveCenterHeaderO1{
+    background-image: url('../image/btn-others2@2x.png');
+}
+.liveCenterHeaderF1{
+    background-image: url('../image/btn-football2@2x.png');
+}
+.liveCenterHeaderB1{
+    background-image: url('../image/btn-basketball2@2x.png')
+}
+.livedel_time {
+    font-size: 0.08rem;
+    background-color: #f3f3f3;
+    padding-top: 0.04rem;
+    padding-bottom: 0.04rem;
+    padding-left: 0.065rem;
+}
+
+
+
+.liveContentRight {
+    width: 1.9rem;
+    margin-top: 0.05rem;
+}
+
+.hotlive {
+    background-color: #fff;
+    padding-bottom: 0.085rem;
+}
+
+.hotnews {
+    background-color: #fff;
+    padding-bottom: 0.085rem;
+    margin-top: 0.05rem;
+}
+
+.news_title {
+    width: 1.43rem;
+    margin-left: 0.035rem;
+    color: #7d7d7d;
+}
+
+.hotliveimg {
+    width: 1.845rem;
+    height: 0.175rem;
+    margin-top: .08rem;
+    margin-left: 0.025rem;
+    margin-bottom: 0.055rem;
+}
+
+.liveicon {
+    width: 0.085rem;
+    height: 0.08rem;
+}
+
+.hotlivecontent {
+    font-size: 0.08rem;
+    padding-left: 0.09rem;
+    display: flex;
+    align-items: center;
+    color: #7d7d7d;
+    height: 0.17rem;
+}
+
+.hotlivecontent:hover {
+    cursor: pointer;
+    background-color: #fff3e8;
+    color: #ff871c;
+    
+}
+
+.liveList{
+    display: flex;
+    align-items: center;
+    font-size: 0.08rem;
+    text-align: center;
+    font-family: 'SourceHanSansCN-Regular';
+    padding: 0.1rem 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+.liveList:nth-child(2n){
+    background-color: #fafafa;
+}
+.liveList:hover{
+    background-image: url('../image/btn-交互状态@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.bigtype{
+    width: 0.195rem;
+    height: 0.11rem;
+    line-height: 0.11rem;
+    background-color: #3dbefd;
+    color: #fdffff;
+    border-radius: 3px;
+    margin: auto;
+    font-family: 'SimHei';
+    font-size: 0.07rem;
+}
+.lname{
+    width: 0.4rem;
+  
+    font-size: 0.06rem;
+    color: #4f4f4f;
+}
+.hname{
+    width: 0.8rem;
+    text-align: right;
+    font-size: 0.07rem;
+    color: #4f4f4f;
+}
+.aname{
+    width: 0.8rem;
+    text-align: left;
+    font-size: 0.07rem;
+    color: #4f4f4f;
+}
+.liveList_hname{
+    width: 0.225rem;
+    height: 0.225rem;
+    margin-left: 0.06rem;
+}
+.hscore , .ascore{
+    margin: 0 0.09rem;
+    width: 0.235rem;
+    font-size: 0.135rem;
+}
+.gametime{
+    border-bottom: 1px solid #757574;
+    width: 0.315rem;
+    font-family: 'SimHei';
+    font-size: 0.08rem;
+    color: #212121;
+}
+.midGameSta{
+    font-size: 0.07rem;
+    color: #4f4f4f;
+}
+.liveList_aname{
+    width: 0.225rem;
+    height: 0.225rem;
+    margin-right:0.06rem ;
+}
+.gamestate{
+    color:#016dff;
+    font-size: 0.07rem;
+    margin-right: 0.075rem;
+    width: 0.275rem;
+}
+.gotolive{
+    background-image: url('../image/btn-live1@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 0.52rem;
+    height: 0.15rem;
+    margin-right: 0.08rem;
+}
+.gotolive:hover{
+    background-image: url('../image/btn-live2@2x.png');
+}
+.columnbt{
+    background-image: url('../image/btn2@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 0.37rem;
+    height: 0.12rem;
+    line-height: 0.12rem;
+    text-align: center;
+    margin-left: 0.075rem;
+    margin-top: 0.05rem;
+    color: #7d7d7d;
+}
+.columnbt:hover{
+    cursor: pointer;
+}
+.Column_div{
+    font-size: 0.08rem;
+    color: #7d7d7d;
+    margin: 0.06rem 0;
+}
+.columnbt1{
+    background-image: url('../image/btn1@2x.png');
+    color: #fff;
+}
