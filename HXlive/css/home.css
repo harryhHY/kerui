@@ -1,0 +1,480 @@
+#home{
+    width: 100%;
+    height: 100%;
+    /* position: fixed; */
+    font-family: 'SourceHanSansCN-Regular';
+    overflow: auto;
+    background: url('../image/home_bg.png') no-repeat;
+    background-size: 100%;
+}
+.first{
+    width: 6.405rem;
+    height: 3.5rem;
+    margin: auto;
+    margin-top: 0.055rem;
+}
+/* 热点新闻 */
+.hot_news{
+    width: 3.9rem;
+    height: 100%;
+    float: left;
+    background-color: #F7F7F7;
+    box-shadow: 2px 2px 2px #888888;
+}
+.hot_news_logo{
+    width: 3.9rem;
+    height: 0.275rem;
+}
+.hot_news_logo img{
+    width: 100%;
+    height: 100%;
+}
+.hot_news_content{
+    width: 100%;
+    height: 3.225rem;
+    padding: 0.06rem 0.08rem;
+}
+.content_news{
+    width: 3.74rem;
+    height: 0.62rem;
+}
+.content_news_title{
+    height: 0.125rem;
+}
+.news_title{
+    width: 90%;
+    height: 0.125rem;
+    line-height: 0.125rem;
+    font-size: 0.09rem;
+    font-weight: 500;
+    /* font-family: SourceHanSansCN-Regular; */
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.news_title:hover{
+    color: #f84f52;
+    cursor: pointer;
+}
+.hot_tag{
+    width: 0.275rem;
+    height: 0.125rem;
+    float: left;
+    display: inline-block;
+    margin-right: 0.06rem;
+    text-align: center;
+    font-weight: 500;
+    color: #FFF;
+    background: url('../image/hot.png') no-repeat;
+    background-size: 100%;
+}
+.other_hot_news{
+    width: 3.74rem;
+    padding: 0 0.01rem;
+    font-size: 0.08rem;
+    color: #77777F;
+    margin-top: 0.085rem;
+}
+.other_hot_news p{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}   
+.left_news{
+    width: 1.85rem;
+    padding-right: 0.09rem;
+    box-sizing: border-box;
+    float: left;
+    border-right: 1px solid #CACACA;
+}
+.right_news{
+    width: 1.85rem;
+    padding-left: 0.09rem;
+    box-sizing: border-box;
+    float: right;
+}
+.news_two{
+    margin-top: 0.085rem;
+}
+.news_one:hover,.news_two:hover{
+    color: #f84f52;
+    cursor: pointer;
+}
+/* 今日直播 */
+.today_live{
+    width: 2.43rem;
+    height: 100%;
+    float: right;
+    background-color: #F7F7F7;
+    box-shadow: 2px 2px 2px #888888;
+}
+.live_tabs{
+    width: 100%;
+    font-size: 0.09rem;
+    font-weight: 550;
+    font-family: SimHei;
+    color: #77777F;
+    padding: 0 0.09rem;
+    box-sizing: border-box;
+    display: flex;
+}
+.live_tabs li{
+    text-align: center;
+    float: left;
+    flex: 1;
+    cursor: pointer;
+    padding: 0.125rem 0 0.04rem 0;
+    box-sizing: border-box;
+}
+.selete{
+    color: #f84f52;
+    border-bottom: 2px solid;
+}
+.live_content>div{
+    display: none;
+}
+.live_content .active{
+    display: block;
+}
+.live_content{
+    margin-top: 0.05rem;
+    padding: 0 0.09rem;
+    box-sizing: border-box;
+}
+.content{
+    width: 2.25rem;
+    height: 0.43rem;
+    padding: 0.1rem 0;
+    box-sizing: border-box;
+    /* display:table-cell; */
+    vertical-align:middle;
+    border-bottom: 1px solid #e7e7e7;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+.content:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 0 2px #CACACA;
+}
+.content>a>div{
+    float: left;  
+}
+.one{
+    width: 0.35rem;
+    /* height: 0.23rem; */
+    
+}
+.one img{
+    width: 0.19rem;
+    height: 0.11rem;
+    margin-left: 0.08rem;
+}
+.one_team_name{
+    width: 0.35rem;
+    font-size: 0.05rem;
+    color: #575656;
+    text-align: center;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    /* transform:scale(0.6);
+    -webkit-transform:scale(0.6);
+    -moz-transform:scale(0.6); */
+}
+.two,.eight{
+    width: 0.45rem;
+    color: #3f3f40;
+    line-height: 0.23rem;
+    font-size: 0.05rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.three,.seven{
+    width: 0.17rem;
+    height: 0.17rem;
+}
+.three img,.seven img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0.01rem;
+}
+.four,.six{
+    width: 0.15rem;
+    height: 100%;
+    color: #014D7E;
+    text-align: center;
+    line-height: 0.23rem;
+}
+.five{
+    width: 0.35rem;
+    font-size: 0.06rem;
+}
+.five p{
+    width: 100%;
+    text-align: center;
+}
+.five p:first-child{
+    border-bottom: 1px solid #77777F;
+}
+.five p:last-child{
+    color: #77777F;
+}
+.morerace{
+    width: 0.64rem;
+    height: 0.15rem;
+    margin: 0 auto;
+    margin-top: 0.2rem;
+}
+.morerace img{
+    width: 100%;
+    height: 100%;
+}
+/* 足球直播 */
+.second{
+    width: 6.405rem;
+    /* height: 2.485rem; */
+    overflow: hidden;
+    margin: auto;
+    margin-top: 0.055rem;
+    background-color: #F7F7F7;
+    box-shadow: 2px 2px 2px #888888;
+}
+.football_live_logo{
+    width: 6.405rem;
+}
+.football_live_logo img{
+    width: 100%;
+}
+.football{
+    width: 6.405rem;
+    padding: 0 0.08rem;
+    box-sizing: border-box;
+}
+.foot_tabs{
+    width: 6.1rem;
+    color: #837c7b;
+    text-align: center;
+    /* height: 0.27rem; */
+    padding: 0.09rem 0;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.sign_line{
+    width: 0.03rem;
+    height: 0.12rem;
+    margin-top: 0.09rem;
+    margin-right: 0.065rem;
+    background-color: red;
+    float: left;
+}
+.foot_tabs li{
+    width: 0.5rem;
+    height: 0.09rem;
+    margin-bottom:0.05rem;
+    font-size: 0.09rem;
+    float: left;
+    cursor: pointer;
+}
+.more_football_live{
+    width: 0.5rem;
+    height: 0.09rem;
+    background: url('../image/more_bg.png') no-repeat;
+    background-size: 0.275rem;
+    position: absolute;
+    right: 0;
+    top: 0.12rem;
+    z-index: 999;
+    float: right;
+}
+.more_football_live:hover{
+    width: 0.5rem;
+    height: 0.09rem;
+    background: url('../image/more.png') no-repeat;
+    background-size: 0.275rem;
+    position: absolute;
+    right: 0;
+    top: 0.12rem;
+    z-index: 999;
+    float: right;
+}
+.foot_tabs>li>span,.basket_tabs>li>span,.other_tabs>li>span{
+    color: #837c7b;
+}
+.line{
+    margin-left: 0.125rem;
+}
+.footselected{
+    color: #f84f52;
+}
+.football_content>div{
+    display: none;
+}
+.football_content .football_active{
+    display: block;
+}
+.football_cover{
+    width: 1.4rem;
+    height: 0.825rem;
+    float: left;
+    margin-right: 0.215rem;
+    margin-bottom: 0.15rem;
+    position: relative;
+}
+.football_cover:nth-child(4n){
+    margin-right: 0;
+}
+.football_cover img{
+    width: 100%;
+    height: 100%;
+}
+.label{
+    width: 0.29rem;
+    height: 0.135rem;
+    line-height: 0.135rem;
+    text-align: center;
+    font-size: 0.09rem;
+    color: #fbfbfb;
+    background: url('../image/label.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left: 0;
+    top: 0.02rem;
+}
+/* 篮球新闻 */
+.third{
+    width: 6.405rem;
+    /* height: 2.485rem; */
+    overflow: hidden;
+    margin: auto;
+    margin-top: 0.055rem;
+    background-color: #F7F7F7;
+    box-shadow: 2px 2px 2px #888888;
+}
+.basketball{
+    width: 6.405rem;
+    padding: 0 0.08rem;
+    box-sizing: border-box;
+}
+.basketball_live_logo{
+    width: 6.405rem;
+}
+.basketball_live_logo img{
+    width: 100%;
+}
+.basket_tabs{
+    width: 6.1rem;
+    color: #837c7b;
+    text-align: center;
+    /* height: 0.27rem; */
+    padding: 0.09rem 0;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.basket_tabs li{
+    width: 0.5rem;
+    height: 0.09rem;
+    margin-bottom:0.05rem;
+    font-size: 0.09rem;
+    float: left;
+    cursor: pointer;
+}
+.basketselected{
+    color: #f84f52;
+}
+.basketball_content>div{
+    display: none;
+}
+.basketball_content .basketball_active{
+    display: block;
+}
+.basketball_cover{
+    width: 1.4rem;
+    height: 0.825rem;
+    float: left;
+    margin-right: 0.215rem;
+    margin-bottom: 0.15rem;
+    position: relative;
+}
+.basketball_cover:nth-child(4n){
+    margin-right: 0;
+}
+.basketball_cover img{
+    width: 100%;
+    height: 100%;
+}
+/* 其他 */
+.fourth{
+    width: 6.405rem;
+    /* height: 2.485rem; */
+    overflow: hidden;
+    margin: auto;
+    margin-top: 0.055rem;
+    background-color: #F7F7F7;
+    box-shadow: 2px 2px 2px #888888;
+}
+.other_live_logo{
+    width: 6.405rem;
+}
+.other_live_logo img{
+    width: 100%;
+}
+.other{
+    width: 6.405rem;
+    padding: 0 0.08rem;
+    box-sizing: border-box;
+}
+.other_tabs{
+    width: 6.1rem;
+    color: #837c7b;
+    text-align: center;
+    /* height: 0.27rem; */
+    padding: 0.09rem 0;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+.other_tabs li{
+    width: 0.5rem;
+    height: 0.09rem;
+    margin-bottom:0.05rem;
+    font-size: 0.09rem;
+    float: left;
+    cursor: pointer;
+}
+.otherselected{
+    color: #f84f52;
+}
+.other_content>div{
+    display: none;
+}
+.other_content .other_active{
+    display: block;
+}
+.other_cover{
+    width: 1.4rem;
+    height: 0.825rem;
+    float: left;
+    margin-right: 0.215rem;
+    margin-bottom: 0.15rem;
+    position: relative;
+}
+.other_cover:nth-child(4n){
+    margin-right: 0;
+}
+.other_cover img{
+    width: 100%;
+    height: 100%;
+}
+.nodata{
+    text-align: center;
+    margin: 0.1rem 0;
+    box-sizing: border-box;
+    color: #3f3f40;
+}
