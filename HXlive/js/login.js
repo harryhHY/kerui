@@ -1,0 +1,3 @@
+function closelogindiv(){
+        $("#logindiv").hide()
+}

@@ -1,0 +1,22 @@
+#logindiv{
+    width: 2.19rem;
+    border-top: 0.03rem solid #ff871d;
+    border-bottom: 0.03rem solid #ff871d;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 0.08rem;
+    font-family: 'SourceHanSansCN-Regular';
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 100;
+}
+.close_div img{
+    margin-right: 0.085rem;
+    margin-top: 0.06rem;
+    width: 0.125rem;
+    height: 0.13rem;
+}
