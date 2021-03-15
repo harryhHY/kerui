@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manbetx体育</title>
+    <script>
+        function isPcFun() {
+          let u = navigator.userAgent;
+          let Agents = [
+            "Android",
+            "iPhone",
+            "webOS",
+            "BlackBerry",
+            "SymbianOS",
+            "Windows Phone",
+            "iPad",
+            "iPod"
+          ];
+          let flag = true;
+          for (let i = 0; i < Agents.length; i++) {
+            if (u.indexOf(Agents[i]) > 0) {
+              flag = false;
+              break;
+            }
+          }
+          return flag;
+        }
+        var isPc = isPcFun();
+        if (!isPc) {
+          window.location.href = "./m.html";
+        }
+      </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg {
+            width: 100%;
+            /* position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0; */
+        }
+
+        img {
+            display: block;
+        }
+
+        .wrap {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .btns {
+            position: absolute;
+            width: 33%;
+            top:41%;
+            left: 12%;
+        }
+
+        .btn3 {
+            width: 60%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .obtn2 {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .obtn2 img {
+            flex: 1;
+            width: 50%;
+        }
+
+        .btn1 img , .btn2 img, .btn3 img {
+            width: 100%;
+        }
+
+        .pop-up {
+            width: 100%;
+            display: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            z-index: 999;
+            top: 0px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .pop-up img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .btns1 {
+            position: absolute;
+            top: 58%;
+            right: 16%;
+            display: flex;
+            width: 36%;
+
+        }
+
+        .btns1 img {
+            flex: 1;
+            display: block;
+            width: 50%;
+        }
+
+        .alert {
+            position: fixed;
+            top: 50%;
+            right: 1%;
+            transform: translateY(-50%);
+            width: 14%;
+        }
+
+        .alert img {
+            width: 100%;
+        }
+
+        .alert .qq {
+            position: absolute;
+            color: #fff;
+            left: 18%;
+            top: 66%;
+            width: 66%;
+        }
+
+        .alert .close {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img src="./image/pc1.png" class="bg">
+        <img src="./image/pc.png" class="bg">
+        <div class="btns">
+            <div class="obtn">
+                <a class="btn3" onclick="show()">
+                    <img src="./image/btn3.png"></a>
+                
+            </div>
+            <!-- <div class="obtn2 pop-btn" onclick="show()">
+                <a class="btn1"><img src="./image/btn1.png"></a>
+                <a class="btn2"><img src="./image/btn2.png"></a>
+            </div> -->
+        </div>
+        <!-- <div class="btns1 pop-btn" onclick="show()">
+            <img src="./image/btn4.png" alt="">
+            <img src="./image/btn5.png" alt="">
+        </div> -->
+    </div>
+    <div class="pop-up" onclick="hide()">
+        <img src="./image/pop.png" style="width:80%;">
+    </div>
+    <div class="alert">
+        <img src="./image/alert.png">
+        <div class="qq">
+           <img src="./image/btn.png">
+        </div>
+        <div class="close"></div>
+    </div>
+
+<script src="./image/jquery.min.js"></script>
+<script src="./image/clipboard.min.js"></script>
+<script>
+    function show() {
+        document.querySelector('.pop-up').style.display = 'block'
+    }
+
+    function hide() {
+        document.querySelector('.pop-up').style.display = 'none'
+    }
+
+    $('.close').on('click', function(e) {
+        $('.alert').hide();
+        return false;
+    })
+
+
+    var clipboard = new ClipboardJS('.alert', {
+      text: function () {
+        return '1943510020'
+      }
+    });
+
+    clipboard.on('success', function (e) {
+      alert('以为您复制客服QQ"1943510020，请添加领取福利。')
+      e.clearSelection();
+    });
+</script>
+</body></html>

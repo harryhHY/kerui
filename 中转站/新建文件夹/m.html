@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manbetx体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .bg {
+            width: 100%;
+        }
+
+        .btns {
+            position: absolute;
+            width: 90%;
+            top: 16%;
+            left: 5%;
+        }
+
+        .btn3 {
+            width: 60%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .obtn2 {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .obtn2 img {
+            flex: 1;
+            width: 50%;
+        }
+
+        .btn1 img,
+        .btn2 img,
+        .btn3 img {
+            width: 100%;
+        }
+
+        .group {
+            position: absolute;
+            top: 45%;
+            width: 90%;
+            left: 5%;
+        }
+
+        .banner {
+            position: absolute;
+            top: 63%;
+            width: 90%;
+            left: 5%;
+        }
+
+        .btns1 {
+            position: absolute;
+            top: 64%;
+            right: 0;
+            display: flex;
+            width: 60%;
+
+        }
+
+        .btns1 a {
+            flex: 1;
+            display: block;
+            width: 50%;
+        }
+
+        .btns1 a img {
+            width: 100%;
+        }
+
+        .alert {
+            position: fixed;
+            top: 50%;
+            right: 1%;
+            transform: translateY(-50%);
+                width: 30%;
+        }
+
+        .alert img {
+            width: 100%;
+        }
+
+        .alert .qq {
+            position: absolute;
+            color: #fff;
+            left: 20%;
+            top: 66%;
+            width: 66%;
+        }
+
+        .alert .close {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 999;
+        }
+    </style>
+         <script src="image/js/jquery.min.js"></script>
+     <script src="image/js/dialog.js"></script>
+    <script>
+         if (isPc) {
+                window.location.href = "./index.html";
+          }
+    </script>
+    <link rel="stylesheet" href="image/js/dialog.css">
+<body>
+    <div class="wrap">
+        <img src="./image/bg.png" class="bg">
+        <div class="btns">
+            <div class="obtn">
+                <a href="./2.html" class="btn3">
+                    <img src="./image/btn3.png"></a>
+
+            </div>
+            <!-- <div class="obtn2">
+                <a href="./2.html" class="btn1"><img src="./image/btn1.png"></a>
+                <a href="./2.html" class="btn2"><img src="./image/btn2.png"></a>
+
+            </div> -->
+        </div>
+        <div class="btns1 pop-btn">
+            <a href="./2.html">
+                <img src="./image/btn4.png" alt="">
+            </a>
+            <a href="./2.html">
+                <img src="./image/btn5.png" alt="">
+            </a>
+        </div>
+        <div class="alert">
+            <img src="./image/alert.png">
+            <div class="qq">
+               <img src="./image/btn.png">
+            </div>
+            <div class="close">
+        </div>
+    </div>
+    </div>
+</body>
+
+<script src="./image/js/jquery.min.js"></script>
+<script src="./image/js/clipboard.min.js"></script>
+<script>
+    $('.close').on('click', function(e) {
+        $('.alert').hide();
+        return false;
+    })
+
+
+    var clipboard = new ClipboardJS('.alert', {
+      text: function () {
+        return '1943510020'
+      }
+    });
+
+    clipboard.on('success', function (e) {
+    alert('以为您复制客服QQ：1943510020，请添加领取福利。')
+      e.clearSelection();
+    });
+
+
+</script>
+
+</html>
