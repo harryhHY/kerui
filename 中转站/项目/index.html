@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="stylesheet" href="./style/pc.css" />
+    <title>ManBetX万博-免费提供在线体育电竞精彩赛事直播</title>
+  </head>
+
+  <body>
+    <div class="pc">
+      <img src="./image/bj.jpg" alt="" class="bg" />
+      <a href="https://www.baidu.com/" target="_blank">
+        <div class="img_div full"></div>
+      </a>
+      <a href="https://www.360.cn/" target="_blank">
+        <div class="img_div and"></div>
+      </a>
+      <a href="https://www.iqiyi.com/" target="_blank">
+        <div class="img_div ios"></div>
+      </a>
+      <!-- <a href="https://www.360.cn/" target="_blank">
+            <div class="img_div2 bot_btn">
+
+            </div>
+        </a>
+        <a href="https://www.baidu.com/" target="_blank">
+            <div class="img_div2 bot_btn2">
+
+            </div>
+        </a> -->
+    </div>
+  </body>
+  <script>
+    (function (n, e) {
+      var t = n.documentElement,
+        i = "orientationchange" in window ? "orientationchange" : "resize",
+        d = function () {
+          var n = t.clientWidth;
+          n && (t.style.fontSize = n / 9.6 + "px");
+        };
+      n.addEventListener &&
+        (e.addEventListener(i, d, !1),
+        n.addEventListener("DOMContentLoaded", d, !1));
+    })(document, window);
+    function equi() {
+      var ua = navigator.userAgent;
+      var isWindowsPhone = /(?:Windows Phone)/.test(ua);
+      var isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone;
+      var isAndroid = /(?:Android)/.test(ua);
+      var isFireFox = /(?:Firefox)/.test(ua);
+      // var isChrome = /(?:Chrome|CriOS)/.test(ua);
+      var isTablet =
+        /(?:iPad|PlayBook)/.test(ua) ||
+        (isAndroid && !/(?:Mobile)/.test(ua)) ||
+        (isFireFox && /(?:Tablet)/.test(ua));
+      // window模拟器环境始终为false
+      var isIOSMobile =
+        /iPad|iPhone|iPod/.test(navigator.platform) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      var isPhone = /(?:iPhone)/.test(ua) && !isTablet;
+      var isPc = !isPhone && !isAndroid && !isSymbian && !isTablet;
+      return isPc ? (!isIOSMobile ? true : false) : false;
+    }
+    var isWeb = equi(); //是否是pc端
+    if (!isWeb) {
+      window.location.href = "./web.html";
+    }
+  </script>
+</html>

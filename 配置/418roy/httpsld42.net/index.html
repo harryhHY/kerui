@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/index.css" />
+  <title>PC</title>
+  <style>
+    .pc {
+      width: 100%;
+      min-height: 10.8rem;
+      position: relative;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-image: url('./image/bg.png');
+    }
+
+
+    .ios {
+      /* background-image: url('./image/qq@2x.png');
+      background-size: 100%;
+      background-repeat: no-repeat; */
+      position: absolute;
+      top: 3.4rem;
+      left: 11.6rem;
+      color: #baa48b;
+      font-size: 0.36rem;
+    }
+
+
+    .and {
+      /* width: 2.47rem;
+      height: 0.155rem; */
+      /* background-image: url('./image/qq2@2x.png');
+      background-size: 100%;
+      background-repeat: no-repeat; */
+      position: absolute;
+      top: 8.05rem;
+      left: 11.08rem;
+      color: #425585;
+      font-size: 0.31rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pc">
+    <a href="https://ld42.tv/">
+      <div class="ios">
+        联系QQ:2305764027
+      </div>
+    </a>
+    <a href="https://ld42.tv/">
+      <div class="and">
+        联系客服 QQ:2305764027 即可申请
+      </div>
+    </a>
+  </div>
+</body>
+<script>
+  window.onresize = function () {
+    init()
+  }
+  //页面刚刷新时调用
+  init()
+
+  function init() {
+    if (window.innerWidth > 800) {
+      var whdef = 100 / 1920;
+    } else {
+      var whdef = 100 / 750;
+    }
+    var wH = window.innerHeight; // 当前窗口的高度
+    var wW = window.innerWidth; // 当前窗口的宽度
+    var rem = wW * whdef; // 以默认比例值乘以当前窗口宽度,得到该宽度下的相应FONT-SIZE值
+    // $('html').css('font-size', rem + "px");
+    document.documentElement.style.fontSize = rem + "px";
+    console.log(rem);
+
+  }
+
+  function equi() {
+    var ua = navigator.userAgent;
+    var isWindowsPhone = /(?:Windows Phone)/.test(ua);
+    var isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone;
+    var isAndroid = /(?:Android)/.test(ua);
+    var isFireFox = /(?:Firefox)/.test(ua);
+    // var isChrome = /(?:Chrome|CriOS)/.test(ua);
+    var isTablet =
+      /(?:iPad|PlayBook)/.test(ua) ||
+      (isAndroid && !/(?:Mobile)/.test(ua)) ||
+      (isFireFox && /(?:Tablet)/.test(ua));
+    // window模拟器环境始终为false
+    var isIOSMobile =
+      /iPad|iPhone|iPod/.test(navigator.platform) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var isPhone = /(?:iPhone)/.test(ua) && !isTablet;
+    var isPc = !isPhone && !isAndroid && !isSymbian && !isTablet;
+    return isPc ? (!isIOSMobile ? true : false) : false;
+  }
+  var isWeb = equi(); //是否是pc端
+  if (!isWeb) {
+    window.location.href = "./web.html";
+  }
+</script>
+
+</html>
