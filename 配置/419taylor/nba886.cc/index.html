@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <title>ldsports</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="pc">
+        <div class="full">
+            <img class="fullbg" src="./image/bg.png" alt="">
+            <div class="pcqq1">
+                <!-- <img src="./image/qqpc1.png" alt=""> -->
+                联系QQ:89670396
+            </div>
+            <div class="pcqq2">
+                <!-- <img src="./image/qqpc2.png" alt=""> -->
+                更多续存优惠请联系客服QQ:89670396
+            </div>
+            <!-- 网页版入口 -->
+            <a href="https://ledong869.cc/">
+                <div class="pcenter"></div>
+            </a>
+        </div>
+    </div>
+    <div id="h5">
+        <div class="h5full">
+            <img class="h5fullbg" src="./image/h5bg.png" alt="">
+            <!-- 网页版入口 -->
+            <a href="https://ledong869.cc/">
+                <div class="h5enter"></div>
+            </a>
+            <div class="h5qq1">
+                <!-- <img src="./image/qqh51.png" alt=""> -->
+                加QQ:89670396 免费领取礼金
+            </div>
+            <div class="h5qq2">
+                <!-- <img src="./image/qqh52.png" alt=""> -->
+                更多续存优惠请联系客服QQ:89670396
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    
+window.onresize =function (){// 绑定到窗口缩放的事件
+    init();
+};
+//页面刚刷新时调用
+init()
+function  init() {
+    var whdef;
+    var wH = window.innerHeight;// 当前窗口的高度
+    // var wW = window.innerWidth;// 当前窗口的宽度
+    var wW = document.body.clientWidth;
+    if(wW >769){
+        whdef = 100 / 1920;
+    }else{
+        whdef = 100 / 750;
+    }
+    console.log(wW);
+    var rem = wW * whdef;// 以默认比例值乘以当前窗口宽度,得到该宽度下的相应FONT-SIZE值
+    document.documentElement.style.fontSize =rem + "px";
+}
+</script>
+</html>
