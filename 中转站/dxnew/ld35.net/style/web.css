@@ -1,0 +1,75 @@
+html {
+    font-size: calc(100vw/7.5);
+}
+
+.MX {
+    position: relative;
+}
+
+.bgimg {
+    width: 100%;
+}
+
+.img_div {
+    position: absolute;
+    background-size: 100%;
+    width: 4.9rem;
+    height: 1.15rem;
+    /* left: 1.28rem; */
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.full {
+    background-image: url("../image/h5/进入.png");
+    top: 9.78rem;
+}
+
+.full:hover {
+    background-image: url("../image/h5/进入点击.png");
+}
+
+.and {
+    background-image: url("../image/h5/全站.png");
+    top: 11.53rem;
+}
+
+.and:hover {
+    background-image: url("../image/h5/全站点击.png");
+}
+
+.ios {
+    background-image: url("../image/h5/体育.png");
+    top: 13.28rem;
+}
+
+.ios:hover {
+    background-image: url("../image/h5/体育-点击png.png");
+}
+
+.img_div2 {
+    position: absolute;
+    top: 15.09rem;
+    background-size: 100%;
+    width: 3.09rem;
+    height: 0.94rem;
+}
+
+.full2 {
+    background-image: url("../image/h5/全站.png");
+    left: 0.4rem;
+}
+
+.full2:hover {
+    background-image: url("../image/h5/全站-点击.png");
+}
+
+.full3 {
+    background-image: url("../image/h5/体育.png");
+    left: 4.04rem;
+}
+
+.full3:hover {
+    background-image: url("../image/h5/体育-点击.png");
+}
