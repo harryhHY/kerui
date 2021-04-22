@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/index.css" />
+  <title>PC</title>
+  <style>
+    .pc {
+      width: 100%;
+      min-height: 12.5rem;
+      position: relative;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-image: url('./image/bg.png');
+    }
+
+
+    .ios {
+      width: 4.88rem;
+      height: 0.44rem;
+      background-image: url('./image/客服QQ-564030002@2x.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 4.3rem;
+      left: 11.35rem;
+      color: #f8d587;
+    }
+
+
+    .and {
+      width: 3.99rem;
+      height: 1.11rem;
+      background-image: url('./image/btn1@2x.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 9.08rem;
+      right: 3.41rem;
+    }
+    .and:hover{
+      background-image: url('./image/btn1-1@2x.png');
+    }
+    .bbox{
+      position: absolute;
+      top: 8.26rem;
+      left: 2.37rem;
+      color: #3691f9;
+      font-size: 0.3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pc">
+    <div class="ios">
+    </div>
+    <div class="bbox">
+      更多优惠请联系客服QQ：93974457
+    </div>
+    <a href="https://iman399.com/">
+      <div class="and">
+      </div>
+    </a>
+  </div>
+</body>
+<script>
+  window.onresize = function () {
+    init()
+  }
+  //页面刚刷新时调用
+  init()
+
+  function init() {
+    if (window.innerWidth > 800) {
+      var whdef = 100 / 1920;
+    } else {
+      var whdef = 100 / 750;
+    }
+    var wH = window.innerHeight; // 当前窗口的高度
+    var wW = window.innerWidth; // 当前窗口的宽度
+    var rem = wW * whdef; // 以默认比例值乘以当前窗口宽度,得到该宽度下的相应FONT-SIZE值
+    // $('html').css('font-size', rem + "px");
+    document.documentElement.style.fontSize = rem + "px";
+    console.log(rem);
+
+  }
+
+  function equi() {
+    var ua = navigator.userAgent;
+    var isWindowsPhone = /(?:Windows Phone)/.test(ua);
+    var isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone;
+    var isAndroid = /(?:Android)/.test(ua);
+    var isFireFox = /(?:Firefox)/.test(ua);
+    // var isChrome = /(?:Chrome|CriOS)/.test(ua);
+    var isTablet =
+      /(?:iPad|PlayBook)/.test(ua) ||
+      (isAndroid && !/(?:Mobile)/.test(ua)) ||
+      (isFireFox && /(?:Tablet)/.test(ua));
+    // window模拟器环境始终为false
+    var isIOSMobile =
+      /iPad|iPhone|iPod/.test(navigator.platform) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var isPhone = /(?:iPhone)/.test(ua) && !isTablet;
+    var isPc = !isPhone && !isAndroid && !isSymbian && !isTablet;
+    return isPc ? (!isIOSMobile ? true : false) : false;
+  }
+  var isWeb = equi(); //是否是pc端
+  if (!isWeb) {
+    window.location.href = "./web.html";
+  }
+</script>
+
+</html>
