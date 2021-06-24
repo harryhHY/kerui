@@ -4,63 +4,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>乐聊</title>
   <link rel="stylesheet" href="./style/index.css" />
-  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="./js/clipboard.min.js"></script>
-  <title>LD</title>
   <style>
-    .pc {
-      background-image: url('./image/bg2.jpg');
+    .h5 {
+      background-image: url('./image/h5/bg2.jpg');
       background-size: 100%;
       background-repeat: no-repeat;
-      height: 11.5rem;
+      height: 30.08rem;
       position: relative;
     }
 
-    .yh {
-      width: 2.12rem;
-      height: 2.4rem;
-      background-image: url('./image/service-1@2x.png');
+    .kflx {
       background-size: 100%;
       background-repeat: no-repeat;
       position: absolute;
-      right: 0;
-      top: 5.5rem;
-    }
-
-    .yh:hover {
-      background-image: url('./image/service-2@2x.png');
+      background-image: url('./image/h5/service-1@2x.png');
+      width: 2.82rem;
+      height: 0.88rem;
+      right: 0.06rem;
+      top: 6.06rem;
     }
 
     .lxfsbox {
       position: absolute;
-      top: 3.79rem;
-      left: 10.41rem;
+      top: 8.85rem;
+      left: 0.67rem;
     }
 
     .copybtn {
-      background-image: url('./image/btn1@2x.png');
+      background-image: url('./image/h5/btn1@2x.png');
       background-size: 100%;
       background-repeat: no-repeat;
-      width: 0.87rem;
-      height: 0.37rem;
-    }
-
-    .copybtn:hover {
-      cursor: pointer;
-      background-image: url('./image/btn2@2x.png');
-    }
-
-    .copytitle {
-      margin-left: 0.16rem;
+      width: 0.86rem;
+      height: 0.36rem;
     }
 
     .copye_div {
       font-family: 'MicrosoftYaHei';
       font-size: 0.32rem;
-      color: #2f3134;
+      color: rgb(47, 49, 52);
       line-height: 0.37rem;
       margin-top: 0.35rem;
+    }
+
+    .copytitle {
+      margin-left: 0.16rem;
     }
 
     .lxfsbox .copye_div:first-child {
@@ -69,8 +60,8 @@
 
     .qrcode {
       position: absolute;
-      top: 5.94rem;
-      left: 10.39rem;
+      top: 10.99rem;
+      left: 0.66rem;
       font-family: 'SourceHanSansCN-Regular';
       font-size: 0.16rem;
       color: #36393c;
@@ -80,25 +71,25 @@
     }
 
     .qrcode_box1 {
-      background-image: url('./image/frame1@2x.png');
+      background-image: url('./image/h5/frame1@2x.png');
       background-size: 100%;
       background-repeat: no-repeat;
-      width: 2.45rem;
-      height: 1.61rem;
+      width: 2.42rem;
+      height: 1.59rem;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .descriptionbox {
-      margin-left: 0.14rem;
+      margin-left: 0.1rem;
     }
 
     .qrcode_box2 {
-      background-image: url('./image/frame2@2x.png');
+      background-image: url('./image/h5/frame2@2x.png');
       background-size: 100%;
       background-repeat: no-repeat;
-      width: 3.3rem;
+      width: 3.25rem;
       height: 1.61rem;
       display: flex;
       align-items: center;
@@ -107,7 +98,7 @@
     }
 
     .qb_b1 {
-      margin-left: 0.21rem;
+      /* margin-left: 0.21rem; */
     }
 
     .qb_bz {
@@ -119,14 +110,14 @@
     }
 
     .qrcodeimg {
-      width: 1.02rem;
-      height: 1.03rem;
+      width: 1.01rem;
+      height: 1.02rem;
     }
   </style>
 </head>
 
 <body>
-  <div class="pc">
+  <div class="h5">
     <div class="lxfsbox">
       <div class="cl copye_div">
         <div class="left copybtn" id="copyqq" data-clipboard-action="copy" data-clipboard-target="div"
@@ -142,7 +133,7 @@
       </div>
       <div class="cl copye_div">
         <div class="left copybtn" id="copytelegram" data-clipboard-action="copy" data-clipboard-target="div"
-        data-clipboard-text="@shawn710">
+          data-clipboard-text="@shawn710">
 
         </div>
         <div class="left copytitle">
@@ -154,7 +145,7 @@
       </div>
       <div class="cl copye_div">
         <div class="left copybtn" id="copyskype" data-clipboard-action="copy" data-clipboard-target="div"
-        data-clipboard-text="live:.cid.814bb4410537de92">
+          data-clipboard-text="live:.cid.814bb4410537de92">
 
         </div>
         <div class="left copytitle">
@@ -167,7 +158,7 @@
     </div>
     <div class="qrcode">
       <div class="qrcode_box1">
-        <img src="./image/QRcode@2x.png" alt="" class="qrcodeimg">
+        <img src="./image/QRcode@2x.png" alt="" class="qrcodeimg" style="margin-left: 0.05rem;">
         <div class="descriptionbox">
           <div>扫描添加</div>
           <div style="margin-top: 0.14rem;">微信二维码</div>
@@ -179,30 +170,30 @@
             步骤一
           </div>
           <img src="./image/QRcode@2x.png" alt="" class="qrcodeimg">
-          <div>
+          <div style="font-size: 12px;">
             扫码下载乐聊APP
           </div>
         </div>
         <div>
-          <img src="./image/ic-Next@2x.png" alt="" style="margin:0 0.2rem;width: 0.24rem;height:0.23rem">
+          <img src="./image/ic-Next@2x.png" alt="" style="width: 0.24rem;height:0.23rem">
         </div>
         <div class="qb_b1" style="margin-left: 0rem;">
           <div class="qb_bz">
             步骤二
           </div>
           <img src="./image/QRcode@2x.png" alt="" class="qrcodeimg">
-          <div>
+          <div style="font-size: 12px;">
             加好友领取优惠
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="yh">
+    <!-- <div class="kflx">
 
     </div> -->
   </div>
 </body>
-<script src="https://talk8.cc/index/index/chatBoxJs/u/60d44d0c7d6b8?pc=ld_pc.png"></script>
+<script src="https://talk8.cc/index/index/chatBoxJs/u/60d44d0c7d6b8?h5=ld_h5.png"></script>
 <script>whisperChat.init();</script>
 <script>
   $(document).ready(function () {
@@ -242,8 +233,8 @@
       console.log(e)
     });
   })
-
-
+</script>
+<script>
   window.onresize = function () {
     init()
   }
@@ -285,8 +276,8 @@
     return isPc ? (!isIOSMobile ? true : false) : false;
   }
   var isWeb = equi(); //是否是pc端
-  if (!isWeb) {
-    window.location.href = "./web2.html";
+  if (isWeb) {
+    window.location.href = "./index2.html";
   }
 </script>
 
