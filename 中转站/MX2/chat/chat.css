@@ -1,0 +1,152 @@
+body {
+    border-radius: 3px;
+    font-size: 0.35rem;
+    height:100%;
+}
+#chat {
+    color: #fff;
+    /* font-size: 0.08rem; */
+    font-family: 'SourceHanSansCN-Regular';
+    background-color: #fff;
+    height: 99%;
+    margin-top: 0.05rem;
+    background: #333333;
+    word-wrap:break-word;
+}
+
+.announcement_div {
+    background-color: #e8f3ff;
+    /* font-size: 0.07rem; */
+    position: fixed;
+    top: 0;
+}
+
+.system_announcement_div {
+    display: inline;
+    line-height: 0.17rem;
+}
+
+.announcement_div img {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0.03rem 0.04rem 0.03rem 0.02rem;
+}
+
+.system_announcement {
+    color: #ff871d;
+}
+
+.chat_main {
+    padding-top: 1rem;
+    height: 82%;
+    overflow-y: scroll;
+}
+
+.chat_main::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+}
+
+.chat_main::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    -webkit-box-shadow: inset 0 0 5px rgba(6, 6, 6, 0.2);
+    background: #5b5f63;
+}
+
+.chat_main::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(6, 6, 6, 0.2);
+    border-radius: 1px;
+    background: #00284d;
+}
+
+.chat_send_div {
+    margin-left: 5px;
+    margin-top: 7px;
+}
+
+.user_img img {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+}
+.sendborder{
+    display: flex;
+    background-image: linear-gradient(to left, #4e96d1, #1d54a5);
+    height: 14%;
+}
+@media screen and (min-width: 850px) and (max-width: 1261px) {
+    .sendborder{
+        display: flex;
+        background-image: linear-gradient(to left, #4e96d1, #1d54a5);
+        height: 14%;
+    }
+    .chat_main {
+        height: 78%;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (min-width: 1262px) and (max-width: 1920px) {
+    .sendborder{
+        display: flex;
+        background-image: linear-gradient(to left, #4e96d1, #1d54a5);
+        height: 9%;
+    }
+    .chat_main {
+        height: 86%;
+        overflow-y: scroll;
+    }
+}
+
+.send_div {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    height: 36px;
+    margin: 12px auto;
+    border-radius: 5px;
+}
+
+.send_div button {
+    display: block;
+    width: 30%;
+    height: 100%;
+    color: #f4f4f4;
+    font-size: 12px;
+    border: none;
+    background: #1e55a6;
+}
+
+.send_input {
+    color: #9093a6;
+    height: 100%;
+    width: 70%;
+    font-size: 14px;
+    border:none;
+    border-radius: 5px 0 0 5px;
+    background: #333333;
+}
+
+.toast_box {
+    /* width: 100%; */
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    /* justify-content: center; */
+    z-index: 120;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.toast_box p {
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: max-content;
+    /* 提示框的背景色 */
+    background: #707070;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 6px;
+    opacity: 0.8;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>乐聊</title>
+  <link rel="stylesheet" href="./style/index.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <style>
+    .h5 {
+      background-image: url('./image/h5/bg.jpg');
+      height: 40.1rem;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="h5">
+
+  </div>
+</body>
+<script>
+  function alertbox() {
+    alert("即将上架，敬请期待")
+  }
+  var u = navigator.userAgent;
+
+  var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+
+  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+  function test() {
+    if (isAndroid == true) {
+      $(".btn_box1").show()
+      $(".btn_box").hide()
+      $("#qrimg").attr("src", "./image/and.jpeg")
+    } else {
+      $(".btn_box1").hide()
+      $(".btn_box").show()
+      $("#qrimg").attr("src", "./image/ll.jpeg")
+    }
+  }
+  test()
+</script>
+<script>
+  window.onresize = function () {
+    init()
+  }
+  //页面刚刷新时调用
+  init()
+
+  function init() {
+    if (window.innerWidth > 800) {
+      var whdef = 100 / 1920;
+    } else {
+      var whdef = 100 / 750;
+    }
+    var wH = window.innerHeight; // 当前窗口的高度
+    var wW = window.innerWidth; // 当前窗口的宽度
+    var rem = wW * whdef; // 以默认比例值乘以当前窗口宽度,得到该宽度下的相应FONT-SIZE值
+    // $('html').css('font-size', rem + "px");
+    document.documentElement.style.fontSize = rem + "px";
+    console.log(rem);
+
+  }
+
+  function equi() {
+    var ua = navigator.userAgent;
+    var isWindowsPhone = /(?:Windows Phone)/.test(ua);
+    var isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone;
+    var isAndroid = /(?:Android)/.test(ua);
+    var isFireFox = /(?:Firefox)/.test(ua);
+    // var isChrome = /(?:Chrome|CriOS)/.test(ua);
+    var isTablet =
+      /(?:iPad|PlayBook)/.test(ua) ||
+      (isAndroid && !/(?:Mobile)/.test(ua)) ||
+      (isFireFox && /(?:Tablet)/.test(ua));
+    // window模拟器环境始终为false
+    var isIOSMobile =
+      /iPad|iPhone|iPod/.test(navigator.platform) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var isPhone = /(?:iPhone)/.test(ua) && !isTablet;
+    var isPc = !isPhone && !isAndroid && !isSymbian && !isTablet;
+    return isPc ? (!isIOSMobile ? true : false) : false;
+  }
+  var isWeb = equi(); //是否是pc端
+  if (isWeb) {
+    window.location.href = "./index.html";
+  }
+</script>
+
+</html>

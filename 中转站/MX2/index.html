@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-22 19:15:08
+ * @LastEditTime: 2021-06-23 21:38:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit id
+ * @FilePath: \MX2\index.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,9 +50,33 @@
 
             </div>
         </a> -->
+        <div id="WS-SHOW-CHAT"
+            style="width: 200px;height:200px;background-color: #ff0;position: fixed;right:0;bottom: 0;">
+            <!-- <img src="./image/代理位.png" alt="" id="closebtn"
+                style="position: absolute;right: 10px; top: 10px;z-index:100;width:21px;height:21px"> -->
+        </div>
     </div>
 </body>
 <!-- <script src="./js/pc.js"></script> -->
+<script>
+    var close_style = "position: absolute;right: 10px; top: 10px;z-index:100;width:21px;height:21px"
+    var closePCdiv = document.createElement("img");
+    var ws_ck_div = document.getElementById("WS-SHOW-CHAT")
+    closePCdiv.setAttribute("style", close_style);
+    closePCdiv.setAttribute("src", "./image/代理位.png")
+    closePCdiv.setAttribute("id", "closebtn");
+    ws_ck_div.appendChild(closePCdiv)
+
+    window.onload = function () {
+        var btn = document.getElementById("closebtn")
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            console.log('closepcbtn')
+            var chatbtn = document.getElementById("WS-SHOW-CHAT")
+            chatbtn.setAttribute('style', "display:none")
+        })
+    }
+</script>
 <script>
     (function (n, e) {
         var t = n.documentElement,
