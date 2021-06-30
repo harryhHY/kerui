@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>乐聊</title>
+  <link rel="stylesheet" href="./style/index.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <style>
+    .h5 {
+      background-image: url('./image/h5/h5.jpg');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      height: 16.24rem;
+      position: relative;
+    }
+    .gotolink{
+      position: absolute;
+      background-image: url('./image/h5/but1.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 2.7rem;
+      height: 0.75rem;
+      left: .82rem;
+      top: 10.78rem;
+    }
+
+    .gotoh52{
+      position: absolute;
+      background-image: url('./image/h5/but2.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 2.7rem;
+      height: 0.75rem;
+      right: 0.82rem;
+      top: 10.78rem;
+    }
+ 
+    .kflx{
+      background-size: 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+      background-image: url('./image/h5/but3.png');
+      width: 3.97rem;
+      height: 1.01rem;
+      right: 0rem;
+      left: 0;
+      margin: auto;
+      top: 14.9rem;
+    }
+    .qrcode{
+      background-size: 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+      background-image: url('./image/h5/QR code.png');
+      width: 2rem;
+      height: 2rem;
+      top: 11.83rem;
+      left: 0;
+      right:0;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="h5">
+    <a href="">
+      <div class="gotolink">
+        
+      </div>
+    </a>
+    <a href="">
+      <div class="gotoh52">
+
+      </div>
+    </a>
+    <div class="qrcode">
+
+    </div>
+    <a href="http://www.nowqiu.com/">
+      <div class="kflx">
+        
+      </div>
+    </a>
+  </div>
+</body>
+
+<script>
+  window.onresize = function () {
+    init()
+  }
+  //页面刚刷新时调用
+  init()
+
+  function init() {
+    if (window.innerWidth > 800) {
+      var whdef = 100 / 1920;
+    } else {
+      var whdef = 100 / 750;
+    }
+    var wH = window.innerHeight; // 当前窗口的高度
+    var wW = window.innerWidth; // 当前窗口的宽度
+    var rem = wW * whdef; // 以默认比例值乘以当前窗口宽度,得到该宽度下的相应FONT-SIZE值
+    // $('html').css('font-size', rem + "px");
+    document.documentElement.style.fontSize = rem + "px";
+    console.log(rem);
+
+  }
+
+  function equi() {
+    var ua = navigator.userAgent;
+    var isWindowsPhone = /(?:Windows Phone)/.test(ua);
+    var isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone;
+    var isAndroid = /(?:Android)/.test(ua);
+    var isFireFox = /(?:Firefox)/.test(ua);
+    // var isChrome = /(?:Chrome|CriOS)/.test(ua);
+    var isTablet =
+      /(?:iPad|PlayBook)/.test(ua) ||
+      (isAndroid && !/(?:Mobile)/.test(ua)) ||
+      (isFireFox && /(?:Tablet)/.test(ua));
+    // window模拟器环境始终为false
+    var isIOSMobile =
+      /iPad|iPhone|iPod/.test(navigator.platform) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var isPhone = /(?:iPhone)/.test(ua) && !isTablet;
+    var isPc = !isPhone && !isAndroid && !isSymbian && !isTablet;
+    return isPc ? (!isIOSMobile ? true : false) : false;
+  }
+  var isWeb = equi(); //是否是pc端
+  if (isWeb) {
+    window.location.href = "./index.html";
+  }
+</script>
+
+</html>
